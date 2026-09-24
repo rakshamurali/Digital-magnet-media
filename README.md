@@ -1,6 +1,6 @@
 # Digital Magnet Media — Exact Jekyll Source
 
-This project is generated directly from the production HTML used by the live Digital Magnet Media preview. It preserves the four pages, visual layouts, remote image assets, typography, clapboard and curtain entrance, animations, forms, navigation, shared company wordmark, and shared footer.
+This project is generated directly from the production HTML used by the live Digital Magnet Media preview. It preserves the four pages, visual layouts, original image assets, typography, clapboard and curtain entrance, animations, forms, navigation, shared company wordmark, and shared footer.
 
 ## Run locally
 
@@ -21,3 +21,7 @@ This project is generated directly from the production HTML used by the live Dig
 
 Page-specific styling and JavaScript remain inline because that is how the production preview is implemented. The only extraction is the identical shared footer, moved into a Jekyll include and SCSS entry point.
 
+
+## Image hosting
+
+Recovered artwork is bundled in `assets/images/` and referenced with Jekyll’s `relative_url` filter so it works under the configured GitHub Pages base URL. Keep these files with the deployment. Some original Google `/aida/` URLs return HTTP 403; the remaining remote references require the original image files or replacement artwork. `static-original/` retains the original snapshots.
