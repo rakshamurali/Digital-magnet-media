@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services &amp; Works — Digital Magnet Media</title>
+<meta content="Explore Digital Magnet Media’s services, campaign capabilities, and selected commercial work." name="description"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231a0a08'/%3E%3Cpath d='M14 46V18h8l10 15 10-15h8v28h-8V30L32 44 22 30v16z' fill='%23d4a020'/%3E%3C/svg%3E">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            cream: "#F5F2EC",
+            "cream-dark": "#ECE7DC",
+            "cream-light": "#FAF8F4",
+            crimson: "#8B1C14",
+            "crimson-deep": "#6A130D",
+            "crimson-light": "#FBEAE9",
+            gold: "#D4A020",
+            "gold-light": "#F8F1DD",
+            "ink-dark": "#1A1817",
+            "ink-muted": "#5F5B57",
+            "ink-subtle": "#8D8882"
+          },
+          fontFamily: {
+            display: ["Bebas Neue", "sans-serif"],
+            serif: ["Cormorant Garamond", "serif"],
+            sans: ["DM Sans", "sans-serif"],
+            mono: ["Space Grotesk", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .dmm-brand { display: flex; flex-direction: column; text-decoration: none; line-height: 1; }
+    .dmm-wordmark { font-family: "Bebas Neue", sans-serif; font-size: 28px; letter-spacing: 1.4px; color: #8B1C14; line-height: .95; text-transform: uppercase; font-weight: 400; }
+    .dmm-tagline { font-family: "DM Sans", sans-serif; font-size: 9px; letter-spacing: .22em; color: #665C58; text-transform: uppercase; font-weight: 600; margin-top: 4px; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: #F5F2EC;
+      color: #1A1817;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .watermark-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(60px, 12vw, 150px);
+      letter-spacing: 0.15em;
+      color: rgba(139, 28, 20, 0.035);
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
+      z-index: 0;
+    }
+
+    .service-icon-box {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .service-icon-box:hover {
+      transform: translateY(-4px);
+    }
+    .service-icon-box:hover .icon-glow {
+      opacity: 1;
+    }
+
+    .editorial-border {
+      border: 1px solid rgba(139, 28, 20, 0.14);
+    }
+
+    .subtle-card {
+      background: #FAF8F4;
+      border: 1px solid rgba(26, 24, 23, 0.08);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .subtle-card:hover {
+      border-color: #8B1C14;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px -12px rgba(139, 28, 20, 0.09);
+    }
+
+    /* Subtle Marquee */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 35s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-crimson selection:text-cream">
+<!-- TOP MINIMAL NOTIFICATION BAR -->
+<div class="w-full bg-[#1A1817] text-[#ECE7DC] py-2 px-6 flex justify-between items-center text-xs tracking-wider font-mono border-b border-crimson/30">
+<div class="flex items-center space-x-3">
+<span class="inline-block w-2 h-2 rounded-full bg-crimson animate-ping"></span>
+<span class="text-gold uppercase text-[11px] tracking-widest font-semibold">DIGITAL MAGNET MEDIA</span>
+<span class="text-ink-subtle hidden sm:inline">|</span>
+<span class="text-cream/80 hidden sm:inline text-[11px]">SERVICES &amp; BOX OFFICE PORTFOLIO</span>
+</div>
+<div class="flex items-center space-x-6 text-[11px]">
+<span class="text-cream/70 hidden md:inline">ROI FIRST • CINEMATIC IMPACT</span>
+<span class="text-gold tracking-widest uppercase">BENGALURU • NEW YORK</span>
+</div>
+</div>
+<!-- NAVIGATION HEADER -->
+<header class="sticky top-0 z-50 bg-[#F5F2EC]/90 backdrop-blur-md border-b border-[#1A1817]/10 transition-colors">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="dmm-brand" href="index.html">
+<span class="dmm-wordmark">DIGITAL MAGNET MEDIA</span>
+<span class="dmm-tagline">BRANDS. CINEMA. IMPACT.</span>
+</a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center space-x-9 text-sm font-sans font-medium tracking-wide text-ink-muted">
+<a class="hover:text-crimson transition-colors" href="index.html">Home</a>
+<a class="hover:text-crimson transition-colors" href="about.html">About</a>
+<a class="text-crimson font-semibold relative py-1 border-b-2 border-crimson" href="services.html">Services &amp; Works</a>
+<a class="hover:text-crimson transition-colors" href="contact.html">Contact</a>
+</nav>
+<!-- CTA Action -->
+<div class="flex items-center gap-4">
+<a class="inline-flex items-center gap-2 bg-crimson hover:bg-crimson-deep text-cream text-xs font-mono font-semibold tracking-wider uppercase px-5 py-2.5 rounded-sm shadow-sm transition-all hover:shadow-md active:translate-y-0.5" href="contact.html">
+<span>START A PROJECT</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<!-- HERO STATEMENT SECTION -->
+<section class="relative pt-20 pb-16 px-6 lg:px-12 overflow-hidden border-b border-[#1A1817]/10">
+<div class="max-w-7xl mx-auto text-center relative z-10">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-crimson-light border border-crimson/20 text-crimson font-mono text-xs uppercase tracking-widest mb-6">
+<span class="w-1.5 h-1.5 rounded-full bg-crimson"></span>
+<span>FULL-SERVICE DIGITAL MARKETING &amp; CREATIVE SUITE</span>
+</div>
+<h1 class="font-display text-6xl sm:text-7xl lg:text-8xl tracking-tight text-ink-dark uppercase max-w-5xl mx-auto leading-[0.92] mb-6">
+        PERFORMANCE ARITHMETIC. <br/>
+<span class="text-crimson font-normal">CINEMATIC RESONANCE.</span>
+</h1>
+<p class="font-serif italic text-2xl lg:text-3xl text-ink-muted max-w-3xl mx-auto leading-relaxed font-light mb-8">
+        We bridge the grandeur of high-drama storytelling with high-precision digital distribution to engineer predictable, whistle-worthy revenue.
+      </p>
+<!-- Minimal Metrics Ribbon -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-[#1A1817]/10 text-center">
+<div>
+<span class="block font-display text-4xl text-crimson">₹140Cr+</span>
+<span class="font-mono text-[11px] uppercase tracking-wider text-ink-muted">Client Revenue Driven</span>
+</div>
+<div>
+<span class="block font-display text-4xl text-ink-dark">11.4x</span>
+<span class="font-mono text-[11px] uppercase tracking-wider text-ink-muted">Average Blended ROAS</span>
+</div>
+<div>
+<span class="block font-display text-4xl text-crimson">98.4%</span>
+<span class="font-mono text-[11px] uppercase tracking-wider text-ink-muted">Client Retention Rate</span>
+</div>
+<div>
+<span class="block font-display text-4xl text-ink-dark">48M+</span>
+<span class="font-mono text-[11px] uppercase tracking-wider text-ink-muted">Organic Viral Impressions</span>
+</div>
+</div>
+</div>
+</section>
+<!-- TRUSTED CLIENTS MARQUEE TICKER -->
+<div class="w-full py-5 bg-[#FAF8F4] border-b border-[#1A1817]/10 overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 mb-3 flex items-center justify-between text-[11px] font-mono uppercase tracking-widest text-ink-subtle">
+<span>TRUSTED BY INDUSTRY TITANS &amp; AMBITIOUS HIGH-GROWTH BRANDS</span>
+<span class="hidden sm:inline">GLOBAL IMPACT • PAN-INDIA FOOTPRINT</span>
+</div>
+<div class="relative w-full overflow-hidden">
+<div class="animate-marquee flex items-center gap-14 py-2 font-display text-2xl tracking-widest text-ink-dark/40 uppercase select-none">
+<span class="hover:text-crimson transition-colors">DECCAN BREWERY</span>
+<span class="text-gold text-sm">✦</span>
+<span class="hover:text-crimson transition-colors">BLAZR ACTIVEWEAR</span>
+<span class="text-gold text-sm">✦</span>
+<span class="hover:text-crimson transition-colors">VERDANT BOTANICALS</span>
+<span class="text-gold text-sm">✦</span>
+<span class="hover:text-crimson transition-colors">LUMINARY ARCHITECTS</span>
+<span class="text-gold text-sm">✦</span>
+<span class="hover:text-crimson transition-colors">ZOLT ENERGY</span>
+<span class="text-gold text-sm">✦</span>
+<span class="hover:text-crimson transition-colors">MYSORE SILK HERITAGE</span>
+<span class="text-gold text-sm">✦</span>
+<span class="hover:text-crimson transition-colors">PAYKITE FINANCIAL</span>
+<span class="text-gold text-sm">✦</span>
+<!-- Duplicated for seamless loop -->
+<span class="hover:text-crimson transition-colors">DECCAN BREWERY</span>
+<span class="text-gold text-sm">✦</span>
+<span class="hover:text-crimson transition-colors">BLAZR ACTIVEWEAR</span>
+<span class="text-gold text-sm">✦</span>
+<span class="hover:text-crimson transition-colors">VERDANT BOTANICALS</span>
+<span class="text-gold text-sm">✦</span>
+<span class="hover:text-crimson transition-colors">LUMINARY ARCHITECTS</span>
+<span class="text-gold text-sm">✦</span>
+<span class="hover:text-crimson transition-colors">ZOLT ENERGY</span>
+<span class="text-gold text-sm">✦</span>
+<span class="hover:text-crimson transition-colors">MYSORE SILK HERITAGE</span>
+<span class="text-gold text-sm">✦</span>
+<span class="hover:text-crimson transition-colors">PAYKITE FINANCIAL</span>
+<span class="text-gold text-sm">✦</span>
+</div>
+</div>
+</div>
+<!-- CORE SERVICES SECTION (INSPIRED BY THE USER'S ATTACHED IMAGE) -->
+<section class="relative py-24 px-6 lg:px-12 bg-[#F5F2EC] overflow-hidden border-b border-[#1A1817]/10" id="services">
+<!-- Watermark Text Matching the Shared Image -->
+<div class="watermark-text">DIGITAL MARKETING</div>
+<div class="max-w-7xl mx-auto relative z-10">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-crimson font-mono text-xs uppercase tracking-widest font-semibold block mb-2">01 // CORE ARCHITECTURE</span>
+<h2 class="font-serif italic text-4xl lg:text-5xl text-ink-dark mb-4">Our Practice Areas</h2>
+<p class="font-sans text-sm text-ink-muted leading-relaxed">
+          From search strategy to lifecycle campaigns, every capability is planned and delivered by experienced specialists.
+        </p>
+</div>
+<!-- HORIZONTAL MINIMALIST LINE-ART ICON STRIP (EXACT DESIGN OF THE ATTACHED IMAGE) -->
+<div class="w-full overflow-x-auto pb-8 pt-4 scrollbar-none">
+<div class="min-w-[980px] grid grid-cols-7 gap-4 items-end text-center">
+<!-- 01 SEO & Rankings -->
+<div class="service-icon-box flex flex-col items-center group cursor-pointer">
+<div class="relative h-28 w-24 flex items-center justify-center mb-4">
+<!-- Handcrafted SVG line art -->
+<svg fill="none" height="84" viewbox="0 0 100 100" width="84" xmlns="http://www.w3.org/2000/svg">
+<!-- Tiny decorative gold dots & arrows -->
+<circle cx="28" cy="26" fill="none" r="3" stroke="#D4A020" stroke-width="1.5"></circle>
+<path d="M78 24L86 16M86 16H79M86 16V23" stroke="#D4A020" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<text fill="#D4A020" font-family="Space Grotesk" font-size="8" x="74" y="32">SEO ↑</text>
+<!-- Magnifying glass circle & handle -->
+<circle cx="48" cy="46" fill="#FAF8F4" r="24" stroke="#8B1C14" stroke-width="2.5"></circle>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="2.5" x1="38" x2="58" y1="46" y2="46"></line>
+<line stroke="#4A100B" stroke-linecap="round" stroke-width="3.5" x1="65" x2="84" y1="63" y2="82"></line>
+<text fill="#8D8882" font-family="Space Grotesk" font-size="7" x="18" y="74">#rank 1</text>
+</svg>
+</div>
+<!-- Underline indicator -->
+<div class="w-14 h-0.5 bg-crimson/25 mb-4 group-hover:w-20 group-hover:bg-crimson transition-all"></div>
+<!-- Labels Matching Cursive/Serif Aesthetic in Reference -->
+<h3 class="font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
+              SEO &amp;<br/>Rankings
+            </h3>
+<span class="text-[10px] font-mono text-ink-subtle uppercase tracking-wider mt-1.5">Algorithmic Moat</span>
+</div>
+<!-- 02 Social Media -->
+<div class="service-icon-box flex flex-col items-center group cursor-pointer">
+<div class="relative h-28 w-24 flex items-center justify-center mb-4">
+<svg fill="none" height="84" viewbox="0 0 100 100" width="84" xmlns="http://www.w3.org/2000/svg">
+<!-- Counter bubble -->
+<rect fill="#8B1C14" height="15" rx="7.5" width="28" x="8" y="16"></rect>
+<text fill="#F5F2EC" font-family="Space Grotesk" font-size="8" font-weight="bold" x="13" y="27">+12k</text>
+<!-- Phone silhouette -->
+<rect fill="#FAF8F4" height="66" rx="8" stroke="#8B1C14" stroke-width="2.5" width="38" x="30" y="18"></rect>
+<!-- Chat speech bars inside screen -->
+<rect fill="#F8F1DD" height="9" rx="2" stroke="#D4A020" stroke-width="1.8" width="24" x="37" y="28"></rect>
+<rect fill="#F8F1DD" height="9" rx="2" stroke="#D4A020" stroke-width="1.8" width="24" x="37" y="42"></rect>
+<circle cx="49" cy="74" fill="none" r="3" stroke="#8B1C14" stroke-width="1.8"></circle>
+<!-- Floating comment pin & speech dot -->
+<path d="M72 20C72 16.5 75 14 78 14C81 14 84 16.5 84 20C84 24 78 28 78 28C78 28 72 24 72 20Z" fill="#FAF8F4" stroke="#D4A020" stroke-width="1.5"></path>
+<path d="M74 34L85 34L81 44L74 44Z" fill="none" stroke="#8B1C14" stroke-width="1.5"></path>
+</svg>
+</div>
+<div class="w-14 h-0.5 bg-crimson/25 mb-4 group-hover:w-20 group-hover:bg-crimson transition-all"></div>
+<h3 class="font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
+              Social<br/>Media
+            </h3>
+<span class="text-[10px] font-mono text-ink-subtle uppercase tracking-wider mt-1.5">Viral Narrative</span>
+</div>
+<!-- 03 Paid Ads -->
+<div class="service-icon-box flex flex-col items-center group cursor-pointer">
+<div class="relative h-28 w-24 flex items-center justify-center mb-4">
+<svg fill="none" height="84" viewbox="0 0 100 100" width="84" xmlns="http://www.w3.org/2000/svg">
+<!-- Network nodes with currency symbol -->
+<line stroke="#8B1C14" stroke-width="2.5" x1="48" x2="48" y1="78" y2="46"></line>
+<line stroke="#8B1C14" stroke-width="2" x1="48" x2="28" y1="46" y2="28"></line>
+<line stroke="#8B1C14" stroke-width="2" x1="48" x2="68" y1="46" y2="28"></line>
+<!-- Central Node -->
+<circle cx="48" cy="46" fill="#F8F1DD" r="10" stroke="#8B1C14" stroke-width="2"></circle>
+<text fill="#8B1C14" font-family="DM Sans" font-size="10" font-weight="bold" x="44" y="50">₹</text>
+<!-- Left Node -->
+<circle cx="28" cy="28" fill="#FAF8F4" r="6" stroke="#8B1C14" stroke-width="1.8"></circle>
+<!-- Right Node with ₹ -->
+<circle cx="68" cy="28" fill="#F8F1DD" r="8" stroke="#D4A020" stroke-width="1.8"></circle>
+<text fill="#8B1C14" font-family="DM Sans" font-size="8" x="65" y="31">₹</text>
+<!-- Extra floating coin node -->
+<circle cx="82" cy="18" fill="#FAF8F4" r="7" stroke="#D4A020" stroke-width="1.5"></circle>
+<text fill="#D4A020" font-family="DM Sans" font-size="7" x="79" y="21">₹</text>
+<!-- Lightning conversion spark -->
+<path d="M72 44L84 38L78 52L90 46" opacity="0.6" stroke="#8B1C14" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+<!-- Ground bar -->
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="2.5" x1="38" x2="58" y1="80" y2="80"></line>
+</svg>
+</div>
+<div class="w-14 h-0.5 bg-crimson/25 mb-4 group-hover:w-20 group-hover:bg-crimson transition-all"></div>
+<h3 class="font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
+              Paid<br/>Ads
+            </h3>
+<span class="text-[10px] font-mono text-ink-subtle uppercase tracking-wider mt-1.5">ROAS Engineering</span>
+</div>
+<!-- 04 Content Marketing -->
+<div class="service-icon-box flex flex-col items-center group cursor-pointer">
+<div class="relative h-28 w-24 flex items-center justify-center mb-4">
+<svg fill="none" height="84" viewbox="0 0 100 100" width="84" xmlns="http://www.w3.org/2000/svg">
+<!-- Content tree / interconnected editorial network -->
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="3" x1="50" x2="50" y1="78" y2="44"></line>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="2" x1="50" x2="68" y1="56" y2="38"></line>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="2" x1="50" x2="34" y1="62" y2="46"></line>
+<!-- Cluster leaves/rings in gold and crimson -->
+<circle cx="36" cy="42" fill="none" r="10" stroke="#8B1C14" stroke-width="1.8"></circle>
+<circle cx="48" cy="30" fill="none" r="12" stroke="#D4A020" stroke-width="2"></circle>
+<circle cx="62" cy="34" fill="none" r="11" stroke="#8B1C14" stroke-width="1.8"></circle>
+<circle cx="50" cy="42" fill="none" r="8" stroke="#D4A020" stroke-dasharray="2 2" stroke-width="1.5"></circle>
+<!-- Base roots/lines -->
+<line stroke="#D4A020" stroke-linecap="round" stroke-width="2" x1="26" x2="74" y1="78" y2="78"></line>
+<line stroke="#D4A020" stroke-dasharray="3 2" stroke-linecap="round" stroke-width="1.5" x1="32" x2="68" y1="82" y2="82"></line>
+</svg>
+</div>
+<div class="w-14 h-0.5 bg-crimson/25 mb-4 group-hover:w-20 group-hover:bg-crimson transition-all"></div>
+<h3 class="font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
+              Content<br/>Marketing
+            </h3>
+<span class="text-[10px] font-mono text-ink-subtle uppercase tracking-wider mt-1.5">Editorial Authority</span>
+</div>
+<!-- 05 Email Campaigns -->
+<div class="service-icon-box flex flex-col items-center group cursor-pointer">
+<div class="relative h-28 w-24 flex items-center justify-center mb-4">
+<svg fill="none" height="84" viewbox="0 0 100 100" width="84" xmlns="http://www.w3.org/2000/svg">
+<!-- Speed lines -->
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="1.5" x1="12" x2="22" y1="36" y2="36"></line>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="1.5" x1="10" x2="20" y1="42" y2="42"></line>
+<!-- Envelope Body -->
+<rect fill="#FAF8F4" height="34" rx="3" stroke="#8B1C14" stroke-width="2" width="46" x="24" y="30"></rect>
+<!-- Opened letter sheet coming out -->
+<path d="M30 30V18C30 16.5 31.5 15 33 15H61C62.5 15 64 16.5 64 18V30" fill="#F8F1DD" stroke="#D4A020" stroke-width="2"></path>
+<line stroke="#D4A020" stroke-linecap="round" stroke-width="1.8" x1="36" x2="58" y1="21" y2="21"></line>
+<line stroke="#D4A020" stroke-linecap="round" stroke-width="1.8" x1="36" x2="52" y1="26" y2="26"></line>
+<!-- Envelope fold -->
+<path d="M25 31L47 48L69 31" stroke="#8B1C14" stroke-width="2"></path>
+<!-- Open Rate Badge -->
+<rect fill="#6A130D" height="15" rx="3" width="28" x="62" y="44"></rect>
+<text fill="#F8F1DD" font-family="Space Grotesk" font-size="6" font-weight="bold" x="65" y="51">OPEN</text>
+<text fill="#F8F1DD" font-family="Space Grotesk" font-size="6" x="67" y="57">42%</text>
+<!-- Sparkle stars -->
+<path d="M78 20L80 16L82 20L86 22L82 24L80 28L78 24L74 22Z" fill="#D4A020"></path>
+<line opacity="0.4" stroke="#8B1C14" stroke-width="1.5" x1="20" x2="72" y1="80" y2="80"></line>
+</svg>
+</div>
+<div class="w-14 h-0.5 bg-crimson/25 mb-4 group-hover:w-20 group-hover:bg-crimson transition-all"></div>
+<h3 class="font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
+              Email<br/>Campaigns
+            </h3>
+<span class="text-[10px] font-mono text-ink-subtle uppercase tracking-wider mt-1.5">Lifecycle Retention</span>
+</div>
+<!-- 06 Analytics & Reporting -->
+<div class="service-icon-box flex flex-col items-center group cursor-pointer">
+<div class="relative h-28 w-24 flex items-center justify-center mb-4">
+<svg fill="none" height="84" viewbox="0 0 100 100" width="84" xmlns="http://www.w3.org/2000/svg">
+<!-- Grid backdrop -->
+<rect fill="#FAF8F4" height="48" stroke="#8B1C14" stroke-width="2" width="46" x="22" y="24"></rect>
+<line opacity="0.3" stroke="#8B1C14" stroke-width="1" x1="22" x2="68" y1="40" y2="40"></line>
+<line opacity="0.3" stroke="#8B1C14" stroke-width="1" x1="22" x2="68" y1="56" y2="56"></line>
+<line opacity="0.3" stroke="#8B1C14" stroke-width="1" x1="37" x2="37" y1="24" y2="72"></line>
+<line opacity="0.3" stroke="#8B1C14" stroke-width="1" x1="52" x2="52" y1="24" y2="72"></line>
+<!-- Vertical Growth Bars inside -->
+<rect fill="#8B1C14" height="14" opacity="0.4" width="6" x="27" y="58"></rect>
+<rect fill="#8B1C14" height="28" opacity="0.6" width="6" x="42" y="44"></rect>
+<rect fill="#8B1C14" height="40" width="6" x="57" y="32"></rect>
+<!-- Upward Rocketing Arrow Line with gold circles -->
+<path d="M28 62L43 46L58 32L78 14" stroke="#8B1C14" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M68 14H78V24" stroke="#8B1C14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle cx="28" cy="62" fill="#F8F1DD" r="3" stroke="#D4A020" stroke-width="1.5"></circle>
+<circle cx="43" cy="46" fill="#F8F1DD" r="3" stroke="#D4A020" stroke-width="1.5"></circle>
+<circle cx="58" cy="32" fill="#F8F1DD" r="3" stroke="#D4A020" stroke-width="1.5"></circle>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="2" x1="18" x2="74" y1="78" y2="78"></line>
+</svg>
+</div>
+<div class="w-14 h-0.5 bg-crimson/25 mb-4 group-hover:w-20 group-hover:bg-crimson transition-all"></div>
+<h3 class="font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
+              Analytics &amp;<br/>Reporting
+            </h3>
+<span class="text-[10px] font-mono text-ink-subtle uppercase tracking-wider mt-1.5">Real-time P&amp;L</span>
+</div>
+<!-- 07 Brand Identity -->
+<div class="service-icon-box flex flex-col items-center group cursor-pointer">
+<div class="relative h-28 w-24 flex items-center justify-center mb-4">
+<svg fill="none" height="84" viewbox="0 0 100 100" width="84" xmlns="http://www.w3.org/2000/svg">
+<!-- Royal Gold Crown on Top -->
+<path d="M30 36L38 24L50 34L62 24L70 36H30Z" fill="#F8F1DD" stroke="#D4A020" stroke-linejoin="round" stroke-width="2"></path>
+<circle cx="50" cy="28" fill="#8B1C14" r="2.5"></circle>
+<!-- Tiny floating sparkle star -->
+<path d="M78 22L80 18L82 22L86 24L82 26L80 30L78 26L74 24Z" fill="#D4A020"></path>
+<!-- Prestige Price / Luggage Tag -->
+<rect fill="#FAF8F4" height="24" rx="4" stroke="#8B1C14" stroke-width="2" width="36" x="32" y="44"></rect>
+<circle cx="40" cy="56" fill="#F8F1DD" r="3" stroke="#D4A020" stroke-width="1.8"></circle>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="1.8" x1="48" x2="62" y1="52" y2="52"></line>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="1.8" x1="48" x2="58" y1="59" y2="59"></line>
+<line opacity="0.4" stroke="#8B1C14" stroke-width="1.5" x1="24" x2="76" y1="78" y2="78"></line>
+</svg>
+</div>
+<div class="w-14 h-0.5 bg-crimson/25 mb-4 group-hover:w-20 group-hover:bg-crimson transition-all"></div>
+<h3 class="font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
+              Brand<br/>Identity
+            </h3>
+<span class="text-[10px] font-mono text-ink-subtle uppercase tracking-wider mt-1.5">Prestige &amp; Moat</span>
+</div>
+</div>
+</div>
+<!-- Scope / Details Bento Beneath Icon Strip -->
+<div class="mt-12 pt-10 border-t border-[#1A1817]/10 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-crimson font-mono text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-base">verified</span>
+<span>END-TO-END EXECUTION</span>
+</div>
+<p class="text-ink-muted leading-relaxed">
+            No fragmented vendor handoffs. We unify creative production, digital distribution, and attribution under one roof so campaigns launch faster and perform harder.
+          </p>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-crimson font-mono text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-base">equalizer</span>
+<span>PROPRIETARY ROAS MODELS</span>
+</div>
+<p class="text-ink-muted leading-relaxed">
+            Every paid campaign operates with custom bid algorithms, rapid 12-angle split testing, and strict CAC caps calibrated to your gross margin economics.
+          </p>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-crimson font-mono text-xs font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-base">theater_comedy</span>
+<span>SOUTH ASIAN POP CULTURE MASTERY</span>
+</div>
+<p class="text-ink-muted leading-relaxed">
+            We combine cultural insight, strong visual direction, and audience-first storytelling to create social content built for attention and action.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- WORKS DONE / BLOCKBUSTER CASE STUDIES SECTION -->
+<section class="py-24 px-6 lg:px-12 bg-[#FAF8F4] border-b border-[#1A1817]/10" id="works">
+<div class="max-w-7xl mx-auto">
+<!-- Section Header with Filter Tag Elements -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 pb-6 border-b border-[#1A1817]/10">
+<div>
+<span class="text-crimson font-mono text-xs uppercase tracking-widest font-semibold block mb-2">02 // BOX OFFICE RELEASES</span>
+<h2 class="font-display text-5xl lg:text-6xl text-ink-dark tracking-tight uppercase">Works Done &amp; Commercial Hits</h2>
+</div>
+<p class="font-serif italic text-xl text-ink-muted max-w-md mt-4 md:mt-0 font-light">
+          Real balance sheets transformed. Explore our marquee releases across D2C, tech, retail, and experiential brands.
+        </p>
+</div>
+<!-- Case Studies Grid (6 Refined Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Case 01: OceanBrew -->
+<div class="subtle-card p-8 flex flex-col justify-between rounded-sm">
+<div>
+<div class="flex justify-between items-center text-xs font-mono mb-6">
+<span class="text-crimson font-semibold tracking-wider uppercase">BRAND STRATEGY &amp; SEARCH</span>
+<span class="text-ink-subtle">BENGALURU</span>
+</div>
+<h3 class="font-display text-3xl text-ink-dark uppercase tracking-wide mb-3">OCEANBREW CRAFT</h3>
+<p class="text-sm text-ink-muted leading-relaxed mb-6 font-sans">
+              Rebranded an artisanal coastal microbrewery with Sandalwood-inspired lore, custom typographic packaging, and full digital SEO conquest.
+            </p>
+</div>
+<div>
+<div class="p-4 rounded-sm bg-cream border border-crimson/15 mb-6">
+<span class="text-[11px] font-mono text-ink-muted uppercase block">OUTCOME METRIC</span>
+<span class="font-display text-3xl text-crimson">+340% ORGANIC SEARCH GROWTH</span>
+<span class="text-xs text-ink-muted block mt-0.5">Expanded from 2 to 14 regional retail accounts</span>
+</div>
+<a class="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-ink-dark hover:text-crimson transition-colors uppercase" href="contact.html">
+<span>EXPLORE DIRECTORIAL LOG</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Case 02: Blazr Activewear -->
+<div class="subtle-card p-8 flex flex-col justify-between rounded-sm">
+<div>
+<div class="flex justify-between items-center text-xs font-mono mb-6">
+<span class="text-crimson font-semibold tracking-wider uppercase">PAID MEDIA &amp; ROAS</span>
+<span class="text-ink-subtle">PAN-INDIA / D2C</span>
+</div>
+<h3 class="font-display text-3xl text-ink-dark uppercase tracking-wide mb-3">BLAZR ACTIVEWEAR</h3>
+<p class="text-sm text-ink-muted leading-relaxed mb-6 font-sans">
+              Re-architected Meta and Google performance funnels with 12 cinematic angle variations targeting urban fitness enthusiasts.
+            </p>
+</div>
+<div>
+<div class="p-4 rounded-sm bg-cream border border-crimson/15 mb-6">
+<span class="text-[11px] font-mono text-ink-muted uppercase block">OUTCOME METRIC</span>
+<span class="font-display text-3xl text-crimson">-40% BLENDED CAC • 8.8X ROAS</span>
+<span class="text-xs text-ink-muted block mt-0.5">Scaled monthly run rate from ₹18L to ₹1.4Cr</span>
+</div>
+<a class="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-ink-dark hover:text-crimson transition-colors uppercase" href="contact.html">
+<span>EXPLORE DIRECTORIAL LOG</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Case 03: Verdant Wellness -->
+<div class="subtle-card p-8 flex flex-col justify-between rounded-sm">
+<div>
+<div class="flex justify-between items-center text-xs font-mono mb-6">
+<span class="text-crimson font-semibold tracking-wider uppercase">VIRAL SOCIAL &amp; REELS</span>
+<span class="text-ink-subtle">NEW YORK &amp; BLR</span>
+</div>
+<h3 class="font-display text-3xl text-ink-dark uppercase tracking-wide mb-3">VERDANT BOTANICALS</h3>
+<p class="text-sm text-ink-muted leading-relaxed mb-6 font-sans">
+              Deployed 40 pattern-breaking micro-skits leveraging fast-twitch audio tropes. Transformed botanical skincare into an organic TikTok sensation.
+            </p>
+</div>
+<div>
+<div class="p-4 rounded-sm bg-cream border border-crimson/15 mb-6">
+<span class="text-[11px] font-mono text-ink-muted uppercase block">OUTCOME METRIC</span>
+<span class="font-display text-3xl text-crimson">28M+ VIEWS • 4.2% ENGAGEMENT</span>
+<span class="text-xs text-ink-muted block mt-0.5">Achieved 100% stock sellout in 9 days</span>
+</div>
+<a class="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-ink-dark hover:text-crimson transition-colors uppercase" href="contact.html">
+<span>EXPLORE DIRECTORIAL LOG</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Case 04: Luminary Studio -->
+<div class="subtle-card p-8 flex flex-col justify-between rounded-sm">
+<div>
+<div class="flex justify-between items-center text-xs font-mono mb-6">
+<span class="text-crimson font-semibold tracking-wider uppercase">WEB CINEMA &amp; UI/UX</span>
+<span class="text-ink-subtle">GLOBAL ARCHITECTURE</span>
+</div>
+<h3 class="font-display text-3xl text-ink-dark uppercase tracking-wide mb-3">LUMINARY ARCHITECTS</h3>
+<p class="text-sm text-ink-muted leading-relaxed mb-6 font-sans">
+              Designed and deployed an interactive digital gallery with kinetic typography and sub-second loading ergonomics for luxury clientele.
+            </p>
+</div>
+<div>
+<div class="p-4 rounded-sm bg-cream border border-crimson/15 mb-6">
+<span class="text-[11px] font-mono text-ink-muted uppercase block">OUTCOME METRIC</span>
+<span class="font-display text-3xl text-crimson">3X QUALIFIED INBOUND PIPELINE</span>
+<span class="text-xs text-ink-muted block mt-0.5">Average contract value rose by ₹65 Lakhs</span>
+</div>
+<a class="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-ink-dark hover:text-crimson transition-colors uppercase" href="contact.html">
+<span>EXPLORE DIRECTORIAL LOG</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Case 05: Zolt Energy -->
+<div class="subtle-card p-8 flex flex-col justify-between rounded-sm">
+<div>
+<div class="flex justify-between items-center text-xs font-mono mb-6">
+<span class="text-crimson font-semibold tracking-wider uppercase">CONTENT &amp; SEARCH BIBLE</span>
+<span class="text-ink-subtle">CLEAN NUTRITION</span>
+</div>
+<h3 class="font-display text-3xl text-ink-dark uppercase tracking-wide mb-3">ZOLT CLEAN ENERGY</h3>
+<p class="text-sm text-ink-muted leading-relaxed mb-6 font-sans">
+              Established topical search clusters and educational video stories capturing high-intent commercial keywords in the functional beverage category.
+            </p>
+</div>
+<div>
+<div class="p-4 rounded-sm bg-cream border border-crimson/15 mb-6">
+<span class="text-[11px] font-mono text-ink-muted uppercase block">OUTCOME METRIC</span>
+<span class="font-display text-3xl text-crimson">12X VERIFIED ROI • #1 SERP RANK</span>
+<span class="text-xs text-ink-muted block mt-0.5">Captured 48 top positions within 6 months</span>
+</div>
+<a class="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-ink-dark hover:text-crimson transition-colors uppercase" href="contact.html">
+<span>EXPLORE DIRECTORIAL LOG</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Case 06: Mysore Silk D2C -->
+<div class="subtle-card p-8 flex flex-col justify-between rounded-sm">
+<div>
+<div class="flex justify-between items-center text-xs font-mono mb-6">
+<span class="text-crimson font-semibold tracking-wider uppercase">HERITAGE ECOMMERCE</span>
+<span class="text-ink-subtle">KARNATAKA</span>
+</div>
+<h3 class="font-display text-3xl text-ink-dark uppercase tracking-wide mb-3">MYSORE SILK HERITAGE</h3>
+<p class="text-sm text-ink-muted leading-relaxed mb-6 font-sans">
+              Transitioned 4th-generation handloom weavers to a direct-to-consumer digital flagship with VIP drop campaigns and localized festive creative.
+            </p>
+</div>
+<div>
+<div class="p-4 rounded-sm bg-cream border border-crimson/15 mb-6">
+<span class="text-[11px] font-mono text-ink-muted uppercase block">OUTCOME METRIC</span>
+<span class="font-display text-3xl text-crimson">+210% RETENTION • ₹3.8CR FESTIVE</span>
+<span class="text-xs text-ink-muted block mt-0.5">Zero unsold inventory in Diwali season</span>
+</div>
+<a class="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wider text-ink-dark hover:text-crimson transition-colors uppercase" href="contact.html">
+<span>EXPLORE DIRECTORIAL LOG</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CLIENT REVIEWS & TESTIMONIALS SECTION -->
+<section class="py-24 px-6 lg:px-12 bg-[#F5F2EC] border-b border-[#1A1817]/10" id="testimonials">
+<div class="max-w-7xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-crimson font-mono text-xs uppercase tracking-widest font-semibold block mb-2">03 // DIRECTORS CUT</span>
+<h2 class="font-serif italic text-4xl lg:text-5xl text-ink-dark mb-4">Client Verdicts</h2>
+<p class="font-sans text-sm text-ink-muted">
+          Hear directly from the founders, CMOs, and venture leaders who trusted us with their commercial growth.
+        </p>
+</div>
+<!-- Testimonials Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Review 1 -->
+<div class="bg-[#FAF8F4] p-8 border border-[#1A1817]/10 rounded-sm flex flex-col justify-between relative shadow-sm">
+<div>
+<div class="flex items-center gap-1 text-gold mb-4">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-serif italic text-xl text-ink-dark leading-snug mb-6 font-normal">
+              "Digital Magnet Media transformed our business. We went from burning cash on generic product photo ads to generating an 8.4x return with cinema-level video storytelling."
+            </p>
+</div>
+<div class="pt-6 border-t border-[#1A1817]/10 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-crimson-light text-crimson font-mono font-bold flex items-center justify-center text-sm">
+              VK
+            </div>
+<div>
+<h4 class="font-sans font-semibold text-sm text-ink-dark">Vikram Kulkarni</h4>
+<p class="font-mono text-[11px] text-ink-muted">Founder &amp; CEO, Deccan Brew Co.</p>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-[#FAF8F4] p-8 border border-crimson/30 rounded-sm flex flex-col justify-between relative shadow-sm">
+<div class="absolute -top-3 right-6 bg-crimson text-cream font-mono text-[10px] tracking-wider uppercase px-2.5 py-0.5 rounded-sm">
+            VERIFIED OUTCOME
+          </div>
+<div>
+<div class="flex items-center gap-1 text-gold mb-4">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-serif italic text-xl text-ink-dark leading-snug mb-6 font-normal">
+              "Their team thinks like showrunners, not spreadsheet clerks. They cracked a viral angle for our activewear brand that brought in ₹1.4 Crores in 45 days. Complete game changer."
+            </p>
+</div>
+<div class="pt-6 border-t border-[#1A1817]/10 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-crimson-deep text-cream font-mono font-bold flex items-center justify-center text-sm">
+              AR
+            </div>
+<div>
+<h4 class="font-sans font-semibold text-sm text-ink-dark">Ananya Rao</h4>
+<p class="font-mono text-[11px] text-ink-muted">VP Growth, Blazr Technologies</p>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-[#FAF8F4] p-8 border border-[#1A1817]/10 rounded-sm flex flex-col justify-between relative shadow-sm">
+<div>
+<div class="flex items-center gap-1 text-gold mb-4">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-serif italic text-xl text-ink-dark leading-snug mb-6 font-normal">
+              "The design, technical performance, and SEO execution are flawless. Our organic inbound inquiries tripled within two quarters. Unrivaled creative discipline."
+            </p>
+</div>
+<div class="pt-6 border-t border-[#1A1817]/10 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gold-light text-crimson font-mono font-bold flex items-center justify-center text-sm">
+              MS
+            </div>
+<div>
+<h4 class="font-sans font-semibold text-sm text-ink-dark">Michael Stern</h4>
+<p class="font-mono text-[11px] text-ink-muted">Principal, Luminary NY</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- START A PROJECT CALLOUT SECTION -->
+<section class="py-20 px-6 lg:px-12 bg-[#1A1817] text-[#F5F2EC] relative overflow-hidden" id="contact">
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<span class="text-gold font-mono text-xs uppercase tracking-widest font-semibold block mb-4">READY TO SCALE?</span>
+<h2 class="font-display text-5xl lg:text-7xl tracking-tight uppercase mb-6 leading-none">
+        LET'S PRODUCE YOUR NEXT <br/><span class="text-crimson">COMMERCIAL HIT.</span>
+</h2>
+<p class="font-serif italic text-xl lg:text-2xl text-cream/80 max-w-2xl mx-auto mb-10 font-light">
+        Schedule a private directorial briefing. We analyze your unit economics and present an actionable campaign blueprint within 48 hours.
+      </p>
+<!-- Clean Action Form -->
+<form class="max-w-xl mx-auto flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault();">
+<input class="flex-1 bg-[#282523] border border-cream/20 text-cream px-4 py-3.5 text-sm focus:border-crimson focus:ring-0 rounded-sm placeholder:text-cream/40" placeholder="Enter your corporate email..." required="" type="email"/>
+<button class="bg-crimson hover:bg-crimson-deep text-cream px-8 py-3.5 text-xs font-mono font-bold uppercase tracking-wider rounded-sm transition-colors flex items-center justify-center gap-2" type="submit">
+<span>AUDITION BRAND</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</form>
+<div class="flex items-center justify-center gap-6 mt-8 text-[11px] font-mono text-cream/50 tracking-wider">
+<span>STRICT CONFIDENTIALITY</span>
+<span>•</span>
+<span>NO RETAINER COMMITMENT FOR AUDIT</span>
+</div>
+</div>
+</section>
+<!-- ELEGANT FOOTER -->
+<style>
+.site-footer{background:#12100f;color:#e9e1d8;padding:64px 24px 28px;border-top:3px solid #8b1c14;font-family:"DM Sans",sans-serif}
+.site-footer__inner{max-width:1180px;margin:0 auto}
+.site-footer__top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:44px;padding-bottom:38px}
+.site-footer__wordmark{font-family:"Bebas Neue",sans-serif;font-size:30px;letter-spacing:1.5px;line-height:1;color:#fff;text-transform:uppercase}
+.site-footer__tag{font-size:10px;letter-spacing:.22em;color:#d4a020;text-transform:uppercase;font-weight:700;margin-top:7px}
+.site-footer__copy{max-width:420px;color:#bdb1aa;font-size:14px;line-height:1.7;margin-top:18px}
+.site-footer__title{font-size:11px;letter-spacing:.18em;color:#d4a020;text-transform:uppercase;font-weight:700;margin-bottom:12px}
+.site-footer__text{color:#bdb1aa;font-size:13px;line-height:1.75}
+.site-footer__bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.site-footer__bottom p{margin:0;color:#837873;font-size:11px;letter-spacing:.06em}
+.site-footer__links{display:flex;gap:22px;flex-wrap:wrap}
+.site-footer__links a{color:#cfc4bd;font-size:12px;text-decoration:none;transition:color .2s}
+.site-footer__links a:hover{color:#d4a020}
+@media(max-width:760px){.site-footer__top{grid-template-columns:1fr;gap:28px}.site-footer__bottom{align-items:flex-start;flex-direction:column}.site-footer{padding-top:48px}}
+</style>
+<footer class="site-footer">
+<div class="site-footer__inner">
+<div class="site-footer__top">
+<div>
+<div class="site-footer__wordmark">DIGITAL MAGNET MEDIA</div>
+<div class="site-footer__tag">BRANDS. CINEMA. IMPACT.</div>
+<p class="site-footer__copy">A digital marketing studio combining clear strategy, cinematic creative, performance media, and conversion-focused web experiences.</p>
+</div>
+<div>
+<div class="site-footer__title">Bengaluru Studio</div>
+<div class="site-footer__text">Nagarbhaavi, Bengaluru<br>Karnataka, India<br>+91 80 4122 9080</div>
+</div>
+<div>
+<div class="site-footer__title">New York Desk</div>
+<div class="site-footer__text">Broadway &amp; SoHo<br>New York, NY, USA<br>+1 212 640 8820</div>
+</div>
+</div>
+<div class="site-footer__bottom">
+<p>© 2026 DIGITAL MAGNET MEDIA. ALL RIGHTS RESERVED.</p>
+<div class="site-footer__links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services &amp; Works</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
+

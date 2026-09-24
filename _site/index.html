@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Digital Magnet Media — cinematic brand strategy, growth marketing, content, social, technology, and creative direction." name="description"/>
+<title>Digital Magnet Media — Brands. Cinema. Impact.</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&amp;family=Caveat:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#F5F2EC;--bg1:#EDEAE2;--ink:#1A0A08;--cr:#8B1C14;--cr2:#A82018;
+  --gd:#B8860B;--gd2:#D4A020;--tx:#2C1C18;--tx2:#6A4A40;--tx3:#9A7A70;
+  --ln:rgba(26,10,8,.1);--lnm:rgba(26,10,8,.18);
+  --BB:'Bebas Neue',sans-serif;--CG:'Cormorant Garamond',serif;
+  --DM:'DM Sans',sans-serif;--CV:'Caveat',cursive;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--DM);background:var(--bg);color:var(--tx);overflow-x:hidden;}
+
+/* REFINED, LIGHT & MINIMAL ENTRANCE OVERLAY */
+#entranceOverlay{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  transition:opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.75s ease;
+  user-select:none;
+}
+#entranceOverlay.opened{
+  pointer-events:none;
+  opacity:0;
+  visibility:hidden;
+}
+
+/* WARM IVORY TRANSLUCENT LINEN SCRIM */
+.theater-spotlight{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 48%, rgba(255, 252, 246, 0.94) 0%, rgba(245, 240, 230, 0.92) 55%, rgba(232, 225, 212, 0.97) 100%);
+  pointer-events:none;
+  z-index:15;
+  transition:opacity 0.8s ease;
+}
+.flash-overlay{
+  position:absolute;
+  inset:0;
+  background:#fff;
+  opacity:0;
+  pointer-events:none;
+  z-index:30;
+  transition:opacity 0.2s ease;
+}
+.flash-overlay.active{
+  opacity:0.4;
+}
+
+/* MINIMAL TRANSLUCENT LINEN CURTAIN PANELS */
+.curtain-panel{
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:50.5%;
+  height:100%;
+  z-index:10;
+  transition:transform 1.25s cubic-bezier(0.75, 0, 0.15, 1);
+  overflow:hidden;
+  background:
+    repeating-linear-gradient(90deg,
+      #F5F2EC 0%,
+      #EFECE4 6%,
+      #F8F6F1 12%,
+      #ECE8DF 18%,
+      #F5F2EC 24%
+    );
+  box-shadow:inset 0 0 70px rgba(184, 134, 11, 0.08);
+}
+.curtain-left{
+  left:0;
+  transform-origin:left center;
+  border-right:1px solid rgba(139, 28, 20, 0.18);
+}
+.curtain-right{
+  right:0;
+  transform-origin:right center;
+  border-left:1px solid rgba(139, 28, 20, 0.18);
+}
+.curtain-valance{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:40px;
+  background:rgba(245, 242, 236, 0.96);
+  border-bottom:1px solid rgba(139, 28, 20, 0.15);
+  z-index:25;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  backdrop-filter:blur(6px);
+}
+.valance-gold-cord{
+  height:2px;
+  width:100%;
+  background:linear-gradient(90deg, rgba(212,160,32,0.1), rgba(212,160,32,0.6) 50%, rgba(212,160,32,0.1));
+  position:absolute;
+  bottom:-2px;
+}
+
+/* OPENING TRANSITION */
+#entranceOverlay.opening .curtain-left{
+  transform:translateX(-100%);
+}
+#entranceOverlay.opening .curtain-right{
+  transform:translateX(100%);
+}
+#entranceOverlay.opening .theater-spotlight{
+  opacity:0;
+}
+#entranceOverlay.opening #clapboardSlate{
+  transform:scale(0.92) translateY(-24px);
+  opacity:0;
+  pointer-events:none;
+}
+
+/* REFINED, CLASSY LIGHT CLAPBOARD */
+.slate-container{
+  position:relative;
+  z-index:22;
+  cursor:pointer;
+  transition:transform 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2), opacity 0.4s ease;
+}
+.slate-box{
+  width:min(410px, 86vw);
+  background:#FAF8F5;
+  border-radius:8px;
+  box-shadow:0 24px 60px rgba(44, 28, 24, 0.12), 0 4px 16px rgba(139, 28, 20, 0.06);
+  overflow:hidden;
+  position:relative;
+  border:1px solid rgba(139, 28, 20, 0.22);
+}
+
+/* REFINED TOP CLAPPER STICKS (CRIMSON & CREAM) */
+.clapper-holder{
+  background:#EDEAE2;
+  position:relative;
+  padding:0;
+}
+.clapper-base-stick{
+  height:28px;
+  background:repeating-linear-gradient(
+    -45deg,
+    #8B1C14,
+    #8B1C14 14px,
+    #FAF8F5 14px,
+    #FAF8F5 28px
+  );
+  border-bottom:1.5px solid rgba(139, 28, 20, 0.35);
+  position:relative;
+}
+.clapper-arm-stick{
+  height:28px;
+  background:repeating-linear-gradient(
+    -45deg,
+    #8B1C14,
+    #8B1C14 14px,
+    #FAF8F5 14px,
+    #FAF8F5 28px
+  );
+  border-bottom:1.5px solid rgba(139, 28, 20, 0.35);
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  transform-origin:left bottom;
+  transform:rotate(-14deg);
+  transition:transform 0.2s cubic-bezier(0.2, 0.9, 0.3, 1.3);
+  box-shadow:0 8px 16px rgba(44, 28, 24, 0.18);
+  z-index:5;
+}
+.clapper-hinge{
+  position:absolute;
+  left:10px;
+  top:16px;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#B8860B;
+  border:2px solid #FAF8F5;
+  z-index:10;
+  box-shadow:0 1px 3px rgba(0,0,0,0.25);
+}
+
+/* CLAPPED STATE */
+.clapped .clapper-arm-stick{
+  transform:rotate(0deg) !important;
+}
+
+/* LIGHT MINIMAL SLATE BODY */
+.slate-body{
+  padding:22px 24px 20px;
+  background:#FAF8F5;
+  color:var(--tx);
+}
+.slate-header-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(139, 28, 20, 0.14);
+  padding-bottom:10px;
+  margin-bottom:12px;
+}
+.slate-studio{
+  font-family:var(--DM);
+  font-size:8.5px;
+  letter-spacing:3px;
+  color:var(--gd);
+  text-transform:uppercase;
+  font-weight:700;
+  display:block;
+}
+.slate-prod{
+  font-family:var(--BB);
+  font-size:22px;
+  letter-spacing:1.5px;
+  color:var(--cr);
+  line-height:1.05;
+}
+.slate-badge-roll{
+  border:1px solid rgba(139,28,20,0.3);
+  color:var(--cr);
+  font-family:var(--DM);
+  font-size:9.5px;
+  letter-spacing:1.5px;
+  padding:3px 8px;
+  border-radius:3px;
+  font-weight:700;
+  background:rgba(139,28,20,0.04);
+}
+.slate-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  border:1px solid rgba(139, 28, 20, 0.15);
+  background:rgba(237, 234, 226, 0.45);
+  border-radius:4px;
+  margin-bottom:12px;
+}
+.slate-cell{
+  padding:8px 10px;
+  border-right:1px solid rgba(139, 28, 20, 0.15);
+}
+.slate-cell:last-child{
+  border-right:none;
+}
+.slate-label{
+  font-family:var(--DM);
+  font-size:7.5px;
+  letter-spacing:1.5px;
+  color:var(--tx2);
+  text-transform:uppercase;
+  font-weight:700;
+  display:block;
+  margin-bottom:2px;
+}
+.slate-val{
+  font-family:var(--BB);
+  font-size:19px;
+  letter-spacing:1px;
+  color:var(--ink);
+  line-height:1;
+}
+.slate-info-row{
+  display:flex;
+  justify-content:space-between;
+  font-family:var(--DM);
+  font-size:9px;
+  letter-spacing:1.2px;
+  color:var(--tx2);
+  padding:5px 0;
+  border-bottom:1px dashed rgba(139, 28, 20, 0.12);
+  text-transform:uppercase;
+}
+.slate-info-row span b{
+  color:var(--cr);
+}
+
+/* MINIMAL CLASSY CTA BUTTON */
+.action-trigger-btn{
+  margin-top:14px;
+  width:100%;
+  padding:11px 18px;
+  background:var(--cr);
+  color:#fff;
+  border:1px solid var(--cr);
+  font-family:var(--DM);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  border-radius:24px;
+  cursor:pointer;
+  box-shadow:0 3px 12px rgba(139, 28, 20, 0.18);
+  transition:all 0.25s ease;
+}
+.action-trigger-btn:hover{
+  background:var(--cr2);
+  transform:translateY(-1px);
+  box-shadow:0 6px 18px rgba(139, 28, 20, 0.26);
+}
+.action-trigger-btn svg{
+  width:14px;
+  height:14px;
+  fill:currentColor;
+  transition:transform 0.2s ease;
+}
+.action-trigger-btn:hover svg{
+  transform:translateX(3px);
+}
+.click-hint{
+  font-family:var(--CG);
+  font-style:italic;
+  font-size:12.5px;
+  color:var(--tx3);
+  text-align:center;
+  margin-top:9px;
+}
+
+/* REPLAY FLOATING BUTTON */
+#replayEntranceBtn{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  z-index:900;
+  background:rgba(245,242,236,0.92);
+  color:var(--cr);
+  border:1px solid rgba(139,28,20,0.25);
+  backdrop-filter:blur(6px);
+  padding:8px 16px;
+  border-radius:24px;
+  font-family:var(--DM);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  box-shadow:0 4px 16px rgba(44,28,24,0.08);
+  transition:all 0.2s ease;
+}
+#replayEntranceBtn:hover{
+  background:#fff;
+  border-color:var(--cr);
+  transform:translateY(-1px);
+  box-shadow:0 6px 20px rgba(139,28,20,0.15);
+}
+
+/* NAV */
+nav{background:rgba(245,242,236,.97);border-bottom:1px solid var(--ln);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(8px);}
+.brand{cursor:pointer;user-select:none;}
+.dmm-brand{display:flex;flex-direction:column;text-decoration:none;line-height:1;}
+.dmm-wordmark{font-family:var(--BB);font-size:28px;letter-spacing:1.4px;color:#8B1C14;line-height:.95;text-transform:uppercase;font-weight:400;}
+.dmm-tagline{font-family:var(--DM);font-size:9px;letter-spacing:.22em;color:#665C58;text-transform:uppercase;font-weight:600;margin-top:4px;}
+.logo-d{font-family:var(--BB);font-size:22px;letter-spacing:2px;text-transform:uppercase;color:var(--cr);display:block;line-height:1;}
+.logo-m{display:none;}
+.logo-t{font-family:var(--CG);font-style:italic;font-size:9px;color:var(--tx3);}
+.nul{display:flex;gap:28px;list-style:none;align-items:center;}
+.nul a{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx2);text-decoration:none;cursor:pointer;position:relative;transition:color .2s;font-weight:500;}
+.nul a:hover,.nul a.on{color:var(--ink);font-weight:700;}
+.nul a.on::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--cr);}
+.nav-actions{display:flex;align-items:center;gap:16px;}
+.ncta{font-family:var(--BB);font-size:14px;letter-spacing:2px;color:#fff;background:var(--cr);border:none;padding:10px 22px;cursor:pointer;transition:all .2s;clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,6px 100%,0 calc(100% - 6px));box-shadow:2px 2px 0px rgba(26,10,8,0.2);}
+.ncta:hover{background:var(--cr2);transform:translate(-1px,-1px);box-shadow:3px 3px 0px rgba(26,10,8,0.3);}
+.nav-replay-btn{background:none;border:1px solid var(--lnm);padding:6px 12px;font-family:var(--DM);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx2);border-radius:2px;cursor:pointer;transition:all .2s;}
+.nav-replay-btn:hover{color:var(--cr);border-color:var(--cr);background:rgba(139,28,20,0.05);}
+
+/* HERO */
+.hero{min-height:92vh;background:var(--bg);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 40px 60px;}
+.hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 60px,rgba(26,10,8,.02) 60px,rgba(26,10,8,.02) 61px);pointer-events:none;z-index:2;}
+.hero::after{content:'';position:absolute;left:40px;top:15%;bottom:15%;width:1px;background:linear-gradient(to bottom,transparent,var(--gd2) 35%,var(--gd2) 65%,transparent);z-index:4;}
+.spr{height:18px;background:var(--ink);display:flex;align-items:center;overflow:hidden;}
+.spr.t{position:absolute;top:0;left:0;right:0;z-index:5;}
+.spr.b{position:absolute;bottom:0;left:0;right:0;z-index:5;}
+.sphole{width:12px;height:7px;border-radius:2px;background:rgba(245,242,236,.18);margin:0 6px;flex-shrink:0;}
+.h-scene{position:absolute;top:32px;right:40px;font-family:var(--DM);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--tx2);z-index:5;display:flex;align-items:center;gap:10px;background:rgba(245,242,236,0.7);padding:4px 10px;border-radius:3px;backdrop-filter:blur(4px);}
+.h-scene::before{content:'';width:16px;height:1px;background:var(--gd2);}
+.h-year{position:absolute;right:32px;bottom:50px;font-family:var(--BB);font-size:min(140px,16vw);color:rgba(139,28,20,.05);line-height:1;pointer-events:none;user-select:none;z-index:2;letter-spacing:-4px;}
+.h-content-wrap{position:relative;z-index:5;max-width:820px;}
+.h-head{font-family:var(--BB);font-size:min(108px,10.5vw);line-height:.88;letter-spacing:2px;color:var(--ink);position:relative;z-index:5;text-shadow:0 1px 3px rgba(245,242,236,0.8);}
+.h-head .cr{color:var(--cr);}
+.h-head .gd{color:var(--gd2);}
+.h-head em{font-family:var(--CG);font-style:italic;font-weight:400;}
+.h-tag{font-family:var(--CG);font-style:italic;font-size:min(21px,2.3vw);font-weight:400;color:var(--tx);margin-top:18px;max-width:540px;z-index:5;position:relative;line-height:1.6;background:linear-gradient(90deg,rgba(245,242,236,0.85),rgba(245,242,236,0.4));padding:6px 12px 6px 0;border-radius:4px;}
+.h-tag .kw{color:var(--cr);border-bottom:1px solid rgba(139,28,20,.4);font-weight:600;}
+.h-bot{display:flex;align-items:flex-end;justify-content:space-between;margin-top:36px;z-index:5;position:relative;}
+.h-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-cr{font-family:var(--BB);font-size:14px;letter-spacing:2px;color:#fff;background:var(--cr);border:none;padding:12px 28px;cursor:pointer;clip-path:polygon(0 0,calc(100% - 7px) 0,100% 7px,100% 100%,7px 100%,0 calc(100% - 7px));transition:all .2s;box-shadow:2px 2px 0px rgba(26,10,8,0.25);}
+.btn-cr:hover{background:var(--cr2);transform:translate(-1px,-1px);box-shadow:3px 3px 0px rgba(26,10,8,0.35);}
+.btn-ol{font-family:var(--BB);font-size:14px;letter-spacing:2px;color:var(--ink);background:rgba(245,242,236,0.65);backdrop-filter:blur(4px);border:1.5px solid var(--lnm);padding:11px 24px;cursor:pointer;transition:border-color .2s,color .2s,background .2s;}
+.btn-ol:hover{border-color:var(--cr);color:var(--cr);background:rgba(139,28,20,0.06);}
+.h-scroll-ind{display:flex;align-items:center;gap:6px;}
+.hsl{width:1px;height:32px;background:linear-gradient(to bottom,var(--cr),transparent);}
+.hsb{font-family:var(--CV);font-size:11px;color:var(--tx3);writing-mode:vertical-rl;letter-spacing:2px;}
+
+/* CINEMATIC HERO BACKGROUND SYSTEM */
+.cine-backdrop{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;}
+.projector-beam{
+  position:absolute;
+  top:-20%;
+  left:35%;
+  width:680px;
+  height:140%;
+  background:radial-gradient(ellipse at 50% 0%,rgba(212,160,32,.18) 0%,rgba(245,242,236,0.06) 45%,transparent 75%);
+  transform:rotate(-24deg);
+  transform-origin:top center;
+  mix-blend-mode:multiply;
+  animation:beamSway 14s ease-in-out infinite alternate;
+  filter:blur(24px);
+}
+@keyframes beamSway{
+  0%{transform:rotate(-28deg) scaleX(0.9);opacity:0.6;}
+  50%{transform:rotate(-21deg) scaleX(1.1);opacity:0.85;}
+  100%{transform:rotate(-25deg) scaleX(1.0);opacity:0.65;}
+}
+.cine-light-leak{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;}
+.leak-1{top:8%;right:16%;width:420px;height:420px;background:radial-gradient(circle,rgba(212,160,32,.22) 0%,rgba(139,28,20,.12) 45%,transparent 70%);}
+.leak-2{top:38%;right:2%;width:360px;height:360px;background:radial-gradient(circle,rgba(168,32,24,.15) 0%,rgba(184,134,11,.1) 50%,transparent 70%);}
+
+.spool-container{position:absolute;pointer-events:none;opacity:0.18;}
+.spool-top{top:-70px;right:90px;width:340px;height:340px;animation:spinClockwise 36s linear infinite;}
+@keyframes spinClockwise{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+/* CONTINUOUS RECURRING MOVIE POSTER SHOWREEL STRIP */
+.filmstrip-track{
+  position:absolute;
+  right:4%;
+  top:-40px;
+  bottom:-40px;
+  width:320px;
+  display:flex;
+  gap:18px;
+  transform:rotate(-5deg);
+  opacity:0.88;
+  mask-image:linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+  -webkit-mask-image:linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+  pointer-events:none;
+}
+.film-reel-vertical{
+  width:280px;
+  background:#140807;
+  border-radius:6px;
+  box-shadow:0 24px 50px rgba(26,10,8,0.22), 0 0 0 1px rgba(212,160,32,0.35);
+  position:relative;
+  overflow:hidden;
+}
+.film-inner-strip{
+  display:flex;
+  flex-direction:column;
+  animation:posterReelContinuous 32s linear infinite;
+}
+@keyframes posterReelContinuous{
+  0%{transform:translateY(0);}
+  100%{transform:translateY(-50%);}
+}
+
+/* AUTHENTIC MOVIE POSTER CARD IN FILM FRAME */
+.poster-film-frame{
+  padding:14px 10px 16px;
+  border-bottom:2px dashed rgba(212,160,32,0.3);
+  position:relative;
+  background:#140807;
+}
+.film-perforations-side{
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:8px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  padding:6px 0;
+  z-index:4;
+}
+.film-perforations-side.left{left:3px;}
+.film-perforations-side.right{right:3px;}
+.film-perf{
+  width:5px;
+  height:5px;
+  background:rgba(245,242,236,0.3);
+  border-radius:1px;
+  margin:3px 0;
+}
+.poster-card{
+  position:relative;
+  margin:0 6px;
+  border-radius:4px;
+  overflow:hidden;
+  border:1px solid rgba(212,160,32,0.3);
+  background:#1F0D0B;
+  box-shadow:0 8px 20px rgba(0,0,0,0.6);
+}
+.poster-card-visual{
+  width:100%;
+  height:180px;
+  background-size:cover;
+  background-position:center top;
+  position:relative;
+}
+.poster-card-visual::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(20,8,7,0.1) 0%, rgba(20,8,7,0.4) 60%, rgba(20,8,7,0.95) 100%);
+}
+.poster-card-badge{
+  position:absolute;
+  top:8px;
+  left:8px;
+  background:rgba(139,28,20,0.85);
+  color:#fff;
+  font-family:var(--DM);
+  font-size:7.5px;
+  letter-spacing:1.5px;
+  padding:2px 6px;
+  border-radius:2px;
+  border:1px solid rgba(212,160,32,0.4);
+  z-index:3;
+  font-weight:700;
+  text-transform:uppercase;
+}
+.poster-card-rec{
+  position:absolute;
+  top:8px;
+  right:8px;
+  background:rgba(0,0,0,0.7);
+  padding:2px 5px;
+  border-radius:2px;
+  font-family:var(--DM);
+  font-size:7px;
+  color:#fff;
+  letter-spacing:1px;
+  display:flex;
+  align-items:center;
+  gap:3px;
+  z-index:3;
+}
+.poster-rec-dot{
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:#f00;
+  animation:posterBlink 1.2s infinite alternate;
+}
+@keyframes posterBlink{from{opacity:1;}to{opacity:0.25;}}
+.poster-meta{
+  padding:10px 12px 12px;
+  background:linear-gradient(180deg, #1A0B09 0%, #110605 100%);
+  position:relative;
+  z-index:3;
+}
+.poster-title-row{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:6px;
+}
+.poster-title{
+  font-family:var(--BB);
+  font-size:18px;
+  letter-spacing:1px;
+  color:#FAF8F5;
+  line-height:1;
+}
+.poster-year{
+  font-family:var(--DM);
+  font-size:8.5px;
+  letter-spacing:1px;
+  color:var(--gd2);
+  font-weight:700;
+}
+.poster-director{
+  font-family:var(--CG);
+  font-style:italic;
+  font-size:12px;
+  color:rgba(245,242,236,0.75);
+  margin-top:2px;
+}
+.poster-stats-chip{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:7px;
+  padding-top:6px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  font-family:var(--DM);
+  font-size:7.5px;
+  letter-spacing:1.2px;
+  color:rgba(245,242,236,0.6);
+  text-transform:uppercase;
+}
+.poster-stats-chip b{
+  color:var(--gd2);
+}
+
+/* MARQUEE */
+.mq{overflow:hidden;padding:15px 0;background:var(--ink);position:relative;z-index:10;}
+.mqi{display:flex;width:max-content;animation:mqr 24s linear infinite;}
+.mq-item{display:flex;align-items:center;gap:24px;padding-right:24px;font-family:var(--BB);font-size:16px;letter-spacing:2px;color:rgba(245,242,236,.85);white-space:nowrap;}
+.mq-dot{color:var(--gd2);font-size:10px;font-style:normal;}
+@keyframes mqr{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* STATS */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);background:var(--ink);position:relative;z-index:10;}
+.stat{padding:36px 24px;border-right:1px solid rgba(245,242,236,.08);text-align:center;}
+.stat:last-child{border-right:none;}
+.stat-n{font-family:var(--BB);font-size:52px;letter-spacing:1px;color:var(--gd2);line-height:1;}
+.stat-n sup{font-size:18px;color:#fff;vertical-align:super;}
+.stat-l{font-family:var(--CV);font-size:16px;color:rgba(245,242,236,.65);margin-top:6px;}
+
+/* SECTIONS */
+.sec{padding:72px 40px;position:relative;}
+.s0{background:var(--bg);}
+.s1{background:var(--bg1);}
+.eb{display:flex;align-items:center;gap:8px;margin-bottom:12px;}
+.eb::before{content:'';width:18px;height:1px;background:var(--cr);}
+.ebt{font-family:var(--CG);font-style:italic;font-size:14px;color:var(--tx2);font-weight:600;}
+.sh{font-family:var(--BB);font-size:min(56px,5.5vw);letter-spacing:1px;line-height:.92;color:var(--ink);margin-bottom:40px;}
+.sh em{font-family:var(--CG);font-style:italic;color:var(--cr);font-size:.95em;}
+
+/* MANTRA SECTION */
+.mantra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.mantra-card{background:var(--bg);border:1px solid var(--ln);border-radius:4px;overflow:hidden;transition:transform .25s ease, box-shadow .25s ease;display:flex;flex-direction:column;box-shadow:2px 2px 0px rgba(26,10,8,0.04);}
+.mantra-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(26,10,8,0.08);border-color:rgba(139,28,20,0.3);}
+.mantra-img-box{position:relative;width:100%;aspect-ratio:1/1;background:#EDEAE2;overflow:hidden;border-bottom:1px solid var(--ln);}
+.mantra-img-box img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+.mantra-card:hover .mantra-img-box img{transform:scale(1.03);}
+.mantra-badge{position:absolute;top:14px;left:14px;background:rgba(26,10,8,0.85);backdrop-filter:blur(4px);color:var(--gd2);font-family:var(--DM);font-size:9.5px;letter-spacing:1.5px;font-weight:700;padding:4px 9px;border-radius:2px;border:1px solid rgba(212,160,32,0.35);}
+.mantra-body{padding:26px 24px;flex-grow:1;display:flex;flex-direction:column;}
+.mantra-num{font-family:var(--BB);font-size:32px;color:rgba(139,28,20,0.2);line-height:1;margin-bottom:4px;}
+.mantra-title{font-family:var(--BB);font-size:24px;letter-spacing:1px;color:var(--cr);line-height:1.1;margin-bottom:12px;}
+.mantra-desc{font-size:13.5px;color:var(--tx2);line-height:1.7;}
+
+/* SERVICES / DIRECTORS GRID */
+.srv-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1px;background:var(--ln);border:1px solid var(--ln);}
+.srv{background:var(--bg);padding:24px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;transition:background .3s, transform .2s;position:relative;overflow:hidden;}
+.srv::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cr),var(--gd2));transform:scaleX(0);transform-origin:left;transition:transform .38s;z-index:2;}
+.srv:hover{background:var(--bg1);}
+.srv:hover::before{transform:scaleX(1);}
+.srv-art{width:100%;aspect-ratio:1/1;overflow:hidden;border:1px solid rgba(139,28,20,0.18);border-radius:2px;background:#EDEAE2;position:relative;margin-bottom:16px;}
+.srv-art img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;}
+.srv:hover .srv-art img{transform:scale(1.04);}
+.srv-role-badge{position:absolute;bottom:8px;left:8px;background:rgba(26,10,8,0.85);backdrop-filter:blur(4px);padding:3px 8px;border-radius:2px;border:1px solid rgba(212,160,32,0.4);}
+.srv-role-badge span{font-family:var(--DM);font-size:9px;letter-spacing:1.5px;color:rgb(212, 160, 32);text-transform:uppercase;font-weight:700;}
+.srv-head-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
+.srv-dir-name{font-family:var(--BB);font-size:21px;letter-spacing:1px;color:var(--cr);line-height:1;}
+.srv-tag{font-family:var(--DM);font-size:8.5px;letter-spacing:1px;text-transform:uppercase;color:var(--gd);border:1px solid rgba(184, 134, 11, 0.35);padding:2px 6px;border-radius:2px;font-weight:600;background:rgba(184, 134, 11, 0.06);}
+.srv-quote{font-family:var(--CG);font-style:italic;font-size:13.5px;color:var(--tx3);margin-bottom:10px;line-height:1.35;font-weight:600;}
+.srv-div{height:1px;background:var(--ln);margin-bottom:12px;}
+.srv-title{font-family:var(--BB);font-size:18px;letter-spacing:0.5px;color:var(--ink);margin-bottom:6px;}
+.srv-desc{font-size:13px;color:var(--tx2);line-height:1.65;}
+
+/* PROCESS */
+.proc-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);}
+.proc-step{padding:40px 28px;border-right:1px solid var(--ln);position:relative;cursor:pointer;transition:background .3s;}
+.proc-step:last-child{border-right:none;}
+.proc-step:hover{background:var(--bg1);}
+.proc-arrow{position:absolute;top:50%;right:-12px;transform:translateY(-50%);font-size:18px;color:var(--gd2);z-index:2;}
+.proc-step:last-child .proc-arrow{display:none;}
+.proc-num{font-family:var(--BB);font-size:48px;letter-spacing:1px;color:rgba(139,28,20,.15);line-height:1;margin-bottom:8px;}
+.proc-title{font-family:var(--BB);font-size:20px;letter-spacing:.5px;color:var(--ink);margin-bottom:8px;}
+.proc-desc{font-size:13px;color:var(--tx2);line-height:1.7;}
+
+/* CTA BAND */
+.cta{padding:60px 40px;background:var(--ink);display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center;border-top:1px solid rgba(212,160,32,.25);}
+.cta-t{font-family:var(--BB);font-size:min(48px,4.8vw);letter-spacing:1px;line-height:.92;color:#fff;}
+.cta-t em{font-family:var(--CG);font-style:italic;color:var(--gd2);font-size:.95em;}
+.btn-gd{font-family:var(--BB);font-size:14px;letter-spacing:2px;color:var(--ink);background:var(--gd2);border:none;padding:14px 32px;cursor:pointer;transition:all .2s;font-weight:700;}
+.btn-gd:hover{background:var(--gd);transform:translate(-1px,-1px);box-shadow:3px 3px 0px rgba(0,0,0,0.4);}
+
+/* BIG QUOTE */
+.big-quote{padding:80px 96px;text-align:center;background:var(--bg);position:relative;overflow:hidden;}
+.big-quote::before{content:'"';font-family:var(--CG);font-size:240px;color:rgba(139,28,20,.05);position:absolute;left:32px;top:-36px;line-height:1;pointer-events:none;}
+.bq-text{font-family:var(--CG);font-style:italic;font-size:min(38px,3.8vw);color:var(--ink);line-height:1.28;position:relative;z-index:1;}
+.bq-text span{color:var(--cr);font-weight:600;}
+.bq-attr{font-family:var(--DM);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--tx3);margin-top:16px;font-weight:600;}
+
+/* DIALOGUES */
+.dlg-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ln);border:1px solid var(--ln);}
+.dlg{background:var(--bg);padding:32px 28px;cursor:pointer;transition:background .3s;position:relative;overflow:hidden;}
+.dlg::before{content:'"';font-family:var(--CG);font-size:72px;color:rgba(139,28,20,.07);position:absolute;top:-10px;left:8px;line-height:1;pointer-events:none;}
+.dlg:hover{background:var(--bg1);}
+.dlg-q{font-family:var(--CG);font-style:italic;font-size:16px;color:var(--ink);line-height:1.65;margin-bottom:12px;position:relative;z-index:1;}
+.dlg-attr{font-family:var(--DM);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gd);font-weight:600;}
+
+/* FOOTER */
+footer{background:var(--ink);border-top:1px solid rgba(245,242,236,.06);position:relative;z-index:10;}
+.ft-main{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;padding:52px 40px;}
+.fb-d{font-family:var(--DM);font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(245,242,236,.35);display:block;margin-bottom:3px;font-weight:600;}
+.fb-m{font-family:var(--BB);font-size:20px;letter-spacing:2px;color:var(--gd2);display:block;line-height:1;}
+.fb-t{font-family:var(--CG);font-style:italic;font-size:9px;color:rgba(245,242,236,.3);display:block;margin-top:2px;}
+.ft-brand p{font-size:13px;color:rgba(245,242,236,.35);line-height:1.7;margin-top:14px;}
+.ft-col-t{font-family:var(--BB);font-size:13px;letter-spacing:1px;color:rgba(245,242,236,.4);margin-bottom:16px;}
+.ft-link{display:block;font-size:13px;color:rgba(245,242,236,.35);margin-bottom:10px;text-decoration:none;cursor:pointer;transition:color .2s;}
+.ft-link:hover{color:var(--gd2);}
+.ft-bottom{padding:16px 40px;border-top:1px solid rgba(245,242,236,.06);display:flex;align-items:center;justify-content:space-between;}
+.ft-copy{font-size:11px;color:rgba(245,242,236,.25);}
+.ft-tl{font-family:var(--CG);font-style:italic;font-size:12px;color:rgba(245,242,236,.3);}
+
+@media (max-width: 900px) {
+  nav{padding:14px 20px;}
+  .hero{padding:0 20px 48px;}
+  .stats-row{grid-template-columns:repeat(2,1fr);}
+  .mantra-grid{grid-template-columns:1fr;}
+  .srv-grid,.proc-strip{grid-template-columns:1fr;}
+  .cta{grid-template-columns:1fr;}
+  .ft-main{grid-template-columns:1fr 1fr;}
+  .filmstrip-track{display:none;}
+  .slate-box{width:90vw;}
+}
+@media (max-width: 640px) {
+  nav{flex-wrap:wrap;gap:12px;}
+  .nul{order:3;width:100%;justify-content:center;gap:16px;overflow-x:auto;padding-top:8px;}
+  .nav-replay-btn{display:none;}
+  .ncta{padding:9px 14px;font-size:12px;}
+  .hero{min-height:82vh;}
+  .h-head{font-size:clamp(56px,18vw,84px);}
+  .sec{padding:56px 20px;}
+  .stats-row{grid-template-columns:1fr 1fr;}
+  .dlg-grid{grid-template-columns:1fr;}
+  .ft-main{grid-template-columns:1fr;padding:42px 20px;}
+  .ft-bottom{padding:16px 20px;gap:12px;align-items:flex-start;flex-direction:column;}
+}
+@media (prefers-reduced-motion: reduce) {
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
+}
+</style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231a0a08'/%3E%3Cpath d='M14 46V18h8l10 15 10-15h8v28h-8V30L32 44 22 30v16z' fill='%23d4a020'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+<!-- REFINED, LIGHT & SIMPLE ENTRANCE OVERLAY -->
+<div id="entranceOverlay" onclick="handleCurtainTrigger(event)">
+<!-- Clean Editorial Valance Header -->
+<div class="curtain-valance">
+<div style="font-family:var(--DM); font-size:8.5px; letter-spacing:3px; text-transform:uppercase; color:var(--tx2); font-weight:700;">DIGITAL MAGNET MEDIA • THE EDITORIAL SCREENING</div>
+<div class="valance-gold-cord"></div>
+</div>
+<!-- Warm Ivory Curtain Panels -->
+<div class="curtain-panel curtain-left" id="curtainLeft"></div>
+<div class="curtain-panel curtain-right" id="curtainRight"></div>
+<!-- Ambient Light Ivory Glow -->
+<div class="theater-spotlight" id="theaterSpotlight"></div>
+<div class="flash-overlay" id="flashOverlay"></div>
+<!-- Clean, Lightweight Film Slate -->
+<div class="slate-container" id="clapboardSlate">
+<div class="slate-box">
+<!-- Clapper Top Sticks (Crimson & Cream diagonal slashes) -->
+<div class="clapper-holder" id="clapperArmHolder">
+<div class="clapper-base-stick"></div>
+<div class="clapper-arm-stick" id="clapperArm"></div>
+<div class="clapper-hinge"></div>
+</div>
+<!-- Slate Details -->
+<div class="slate-body">
+<div class="slate-header-title">
+<div>
+<span class="slate-studio">DIGITAL MAGNET CINEMA</span>
+<div class="slate-prod">BRANDS. CINEMA. IMPACT.</div>
+</div>
+<div class="slate-badge-roll">ROLL 01</div>
+</div>
+<div class="slate-grid">
+<div class="slate-cell">
+<span class="slate-label">SCENE</span>
+<div class="slate-val">01</div>
+</div>
+<div class="slate-cell">
+<span class="slate-label">TAKE</span>
+<div class="slate-val">01</div>
+</div>
+<div class="slate-cell">
+<span class="slate-label">SOUND</span>
+<div class="slate-val">SYNC</div>
+</div>
+</div>
+<div class="slate-info-row">
+<span>DIR: <b>YOU (THE CLIENT)</b></span>
+<span>CAM: <b>ARRI 4K</b></span>
+</div>
+<div class="slate-info-row" style="margin-top:2px;">
+<span>DATE: <b>TODAY • 2026</b></span>
+<span>FPS: <b>24 FPS</b></span>
+</div>
+<!-- Light & Simple CTA Button -->
+<button class="action-trigger-btn" id="actionBtn" onclick="triggerClapboardAction(event)" type="button">
+<span>ENTER STUDIO</span>
+<svg viewbox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="click-hint">Click to clap the slate &amp; enter the experience</div>
+</div>
+</div>
+</div>
+</div>
+<!-- FLOATING REPLAY ENTRANCE BUTTON -->
+<button id="replayEntranceBtn" onclick="resetAndReplayEntrance()" title="Re-watch Cinematic Entrance">
+<span style="font-size:12px;">🎬</span> Take 01
+</button>
+<!-- NAV -->
+<nav id="nav">
+<a class="brand dmm-brand" href="#home">
+<span class="dmm-wordmark">DIGITAL MAGNET MEDIA</span>
+<span class="dmm-tagline">BRANDS. CINEMA. IMPACT.</span>
+</a>
+<ul class="nul">
+<li><a class="on" href="#home" id="nl-home">Home</a></li>
+<li><a href="about.html" id="nl-about">About</a></li>
+<li><a href="services.html" id="nl-works">Services &amp; Works</a></li>
+<li><a href="contact.html" id="nl-contact">Contact</a></li>
+</ul>
+<div class="nav-actions">
+<button class="nav-replay-btn" onclick="resetAndReplayEntrance()" title="Re-experience entrance">🎬 Take 01</button>
+<button class="ncta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">GET TICKETS</button>
+</div>
+</nav>
+<!-- 01. HOME PAGE -->
+<main id="home">
+<section class="hero" id="heroHome">
+<!-- CINEMATIC BACKGROUND SYSTEM -->
+<div class="cine-backdrop">
+<div class="projector-beam"></div>
+<div class="cine-light-leak leak-1"></div>
+<div class="cine-light-leak leak-2"></div>
+<div class="spool-container spool-top">
+<svg fill="none" stroke="#8B1C14" stroke-width="2.5" style="width:100%;height:100%;" viewbox="0 0 200 200">
+<circle cx="100" cy="100" r="92" stroke="#B8860B" stroke-dasharray="4 6"></circle>
+<circle cx="100" cy="100" r="80"></circle>
+<circle cx="100" cy="100" fill="rgba(139,28,20,0.08)" r="42" stroke="#8B1C14"></circle>
+<circle cx="100" cy="100" fill="#8B1C14" r="14"></circle>
+<circle cx="100" cy="55" fill="none" r="16" stroke="#D4A020" stroke-width="2"></circle>
+<circle cx="138" cy="78" fill="none" r="16" stroke="#D4A020" stroke-width="2"></circle>
+<circle cx="138" cy="122" fill="none" r="16" stroke="#D4A020" stroke-width="2"></circle>
+<circle cx="100" cy="145" fill="none" r="16" stroke="#D4A020" stroke-width="2"></circle>
+<circle cx="62" cy="122" fill="none" r="16" stroke="#D4A020" stroke-width="2"></circle>
+<circle cx="62" cy="78" fill="none" r="16" stroke="#D4A020" stroke-width="2"></circle>
+</svg>
+</div>
+<!-- CONTINUOUS RECURRING MOVIE POSTERS SHOWREEL STRIP -->
+<div class="filmstrip-track">
+<div class="film-reel-vertical">
+<div class="film-inner-strip">
+<!-- REEL SET 1: RECURRING ICONIC BLOCKBUSTERS -->
+<!-- Poster 01: KGF Chapter 2 (Yash & Neel) -->
+<div class="poster-film-frame">
+<div class="film-perforations-side left"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="film-perforations-side right"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="poster-card">
+<div class="poster-card-visual" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDL6ysfFg3Ic3xT4JdHI-rfQbSWryvP_V42nzWpR2V8etUxCSTPyEaFYTpkdISANI1ru1FZUWKXlDkpEA4CZJ_4AuEC1jMF1G97M3upX7snq1ZTtB2hgoEZyOE7VxjMbcNd4hF9F257oZhg8MdBB5DNYv8e--mtbfiuYl2jGjH2wu-8SRtGO6m_sAmOI3evFeayUlf6mvs77MmdDnUcPkUYbcQyMz2FwyOxGFsLXpmBBwMdmj11MMjgKQ');">
+<span class="poster-card-badge">PAN-INDIA HIT</span>
+<span class="poster-card-rec"><span class="poster-rec-dot"></span>REC</span>
+</div>
+<div class="poster-meta">
+<div class="poster-title-row">
+<span class="poster-title">K.G.F CHAPTER 2</span>
+<span class="poster-year">2022</span>
+</div>
+<div class="poster-director">Dir. Prashanth Neel • Yash</div>
+<div class="poster-stats-chip">
+<span>BOX OFFICE: <b>₹1250 CR+</b></span>
+<span>CAM: <b>ARRI ALEXA</b></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Poster 02: RRR (S.S. Rajamouli) -->
+<div class="poster-film-frame">
+<div class="film-perforations-side left"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="film-perforations-side right"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="poster-card">
+<div class="poster-card-visual" style="background-image: url('https://lh3.googleusercontent.com/aida/AEtjO1Wx7IfNEagMdYzrt4bDOTmCsCe8yBBnc3v-eEGI3u81GQKlFiOz2__e8XSKzfXj7IS_n3cj8XyLSB2TUfPLjsUEReZquSSUGwQ68t9Mk_GY6YpQX8ZU5PVgcZ1UFiwMlDU7K8mKKMFo2qx6zZCrl3aUyzM5veVNxmxs_Jkt6JTrm5ZDXUClUml8xHLvJ0XtuECE2EJ2-PAkPmecKMxwhEXb685IftYsy8dyat40ibag12bFhLxqXdkpk6NJ');">
+<span class="poster-card-badge">OSCAR WINNER</span>
+<span class="poster-card-rec"><span class="poster-rec-dot"></span>4K</span>
+</div>
+<div class="poster-meta">
+<div class="poster-title-row">
+<span class="poster-title">RRR: RISE ROAR REVOLT</span>
+<span class="poster-year">2022</span>
+</div>
+<div class="poster-director">Dir. S.S. Rajamouli</div>
+<div class="poster-stats-chip">
+<span>WORLDWIDE: <b>₹1387 CR</b></span>
+<span>RATIO: <b>2.39:1</b></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Poster 03: KANTARA (Rishab Shetty) -->
+<div class="poster-film-frame">
+<div class="film-perforations-side left"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="film-perforations-side right"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="poster-card">
+<div class="poster-card-visual" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2rac8H_m1EQfVSuJCPv-DHQbGKbn73zjnRFaFmeZDA8WR_cvKbJZ7IMoxcr2VyGTuatkMsBkPjUtp15jTpZtQCuoKZK_hPvKLMg4UcET2eHapay0NOpGGVdPmGWUunKOV8sN_x3TE4aPj-RHDk525Zli6dzzqKZMUNQoFflzVMMe-MFI87FocXEzSWkksCKIQPCLDNyRNj7P_qBc7_J9P_GWD-_31srKL3YffkYrwu9jHTgvUU3-qOA');">
+<span class="poster-card-badge">DIVINE PHENOMENON</span>
+<span class="poster-card-rec"><span class="poster-rec-dot"></span>RAW</span>
+</div>
+<div class="poster-meta">
+<div class="poster-title-row">
+<span class="poster-title">KANTARA: A LEGEND</span>
+<span class="poster-year">2022</span>
+</div>
+<div class="poster-director">Dir. Rishab Shetty</div>
+<div class="poster-stats-chip">
+<span>ROI MULTIPLIER: <b>25X</b></span>
+<span>AUDIO: <b>DOLBY</b></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Poster 04: PUSHPA (Allu Arjun & Sukumar) -->
+<div class="poster-film-frame">
+<div class="film-perforations-side left"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="film-perforations-side right"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="poster-card">
+<div class="poster-card-visual" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVN5mv1DgWd6TZIK9eOI66KtF2WhBhr-yY6nQdddmFXfjsXVZ0yn5D3SGbrcor_PRZ3qd3bnwOHLH_TQw3066vNkARHurN4_dRFN8JjaohkpUVuKLo6y9PyKLmgZjXv7YhHDYNWAuxQnN0CKKIfInv0MpTerrV3V3NNEGtUIJjR4ahodB2R25qWHj8xq7Eak7r_0hPiJ5uTNS6KkJWtT1AYRdmuxXMMmTdZ0xIT-EQ_ABSEwfvlo1Fuw');">
+<span class="poster-card-badge">MASS WAVE</span>
+<span class="poster-card-rec"><span class="poster-rec-dot"></span>24FPS</span>
+</div>
+<div class="poster-meta">
+<div class="poster-title-row">
+<span class="poster-title">PUSHPA: THE RISE</span>
+<span class="poster-year">2021</span>
+</div>
+<div class="poster-director">Dir. Sukumar • Allu Arjun</div>
+<div class="poster-stats-chip">
+<span>THAGGEDHE LE: <b>100%</b></span>
+<span>COLOR: <b>HDR</b></span>
+</div>
+</div>
+</div>
+</div>
+<!-- REEL SET 2: SEAMLESS RECURRING REPEAT FOR CONTINUOUS LOOP -->
+<!-- Repeat Poster 01 -->
+<div class="poster-film-frame">
+<div class="film-perforations-side left"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="film-perforations-side right"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="poster-card">
+<div class="poster-card-visual" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDL6ysfFg3Ic3xT4JdHI-rfQbSWryvP_V42nzWpR2V8etUxCSTPyEaFYTpkdISANI1ru1FZUWKXlDkpEA4CZJ_4AuEC1jMF1G97M3upX7snq1ZTtB2hgoEZyOE7VxjMbcNd4hF9F257oZhg8MdBB5DNYv8e--mtbfiuYl2jGjH2wu-8SRtGO6m_sAmOI3evFeayUlf6mvs77MmdDnUcPkUYbcQyMz2FwyOxGFsLXpmBBwMdmj11MMjgKQ');">
+<span class="poster-card-badge">PAN-INDIA HIT</span>
+<span class="poster-card-rec"><span class="poster-rec-dot"></span>REC</span>
+</div>
+<div class="poster-meta">
+<div class="poster-title-row">
+<span class="poster-title">K.G.F CHAPTER 2</span>
+<span class="poster-year">2022</span>
+</div>
+<div class="poster-director">Dir. Prashanth Neel • Yash</div>
+<div class="poster-stats-chip">
+<span>BOX OFFICE: <b>₹1250 CR+</b></span>
+<span>CAM: <b>ARRI ALEXA</b></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Repeat Poster 02 -->
+<div class="poster-film-frame">
+<div class="film-perforations-side left"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="film-perforations-side right"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="poster-card">
+<div class="poster-card-visual" style="background-image: url('https://lh3.googleusercontent.com/aida/AEtjO1Wx7IfNEagMdYzrt4bDOTmCsCe8yBBnc3v-eEGI3u81GQKlFiOz2__e8XSKzfXj7IS_n3cj8XyLSB2TUfPLjsUEReZquSSUGwQ68t9Mk_GY6YpQX8ZU5PVgcZ1UFiwMlDU7K8mKKMFo2qx6zZCrl3aUyzM5veVNxmxs_Jkt6JTrm5ZDXUClUml8xHLvJ0XtuECE2EJ2-PAkPmecKMxwhEXb685IftYsy8dyat40ibag12bFhLxqXdkpk6NJ');">
+<span class="poster-card-badge">OSCAR WINNER</span>
+<span class="poster-card-rec"><span class="poster-rec-dot"></span>4K</span>
+</div>
+<div class="poster-meta">
+<div class="poster-title-row">
+<span class="poster-title">RRR: RISE ROAR REVOLT</span>
+<span class="poster-year">2022</span>
+</div>
+<div class="poster-director">Dir. S.S. Rajamouli</div>
+<div class="poster-stats-chip">
+<span>WORLDWIDE: <b>₹1387 CR</b></span>
+<span>RATIO: <b>2.39:1</b></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Repeat Poster 03 -->
+<div class="poster-film-frame">
+<div class="film-perforations-side left"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="film-perforations-side right"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="poster-card">
+<div class="poster-card-visual" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2rac8H_m1EQfVSuJCPv-DHQbGKbn73zjnRFaFmeZDA8WR_cvKbJZ7IMoxcr2VyGTuatkMsBkPjUtp15jTpZtQCuoKZK_hPvKLMg4UcET2eHapay0NOpGGVdPmGWUunKOV8sN_x3TE4aPj-RHDk525Zli6dzzqKZMUNQoFflzVMMe-MFI87FocXEzSWkksCKIQPCLDNyRNj7P_qBc7_J9P_GWD-_31srKL3YffkYrwu9jHTgvUU3-qOA');">
+<span class="poster-card-badge">DIVINE PHENOMENON</span>
+<span class="poster-card-rec"><span class="poster-rec-dot"></span>RAW</span>
+</div>
+<div class="poster-meta">
+<div class="poster-title-row">
+<span class="poster-title">KANTARA: A LEGEND</span>
+<span class="poster-year">2022</span>
+</div>
+<div class="poster-director">Dir. Rishab Shetty</div>
+<div class="poster-stats-chip">
+<span>ROI MULTIPLIER: <b>25X</b></span>
+<span>AUDIO: <b>DOLBY</b></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Repeat Poster 04 -->
+<div class="poster-film-frame">
+<div class="film-perforations-side left"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="film-perforations-side right"><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div><div class="film-perf"></div></div>
+<div class="poster-card">
+<div class="poster-card-visual" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVN5mv1DgWd6TZIK9eOI66KtF2WhBhr-yY6nQdddmFXfjsXVZ0yn5D3SGbrcor_PRZ3qd3bnwOHLH_TQw3066vNkARHurN4_dRFN8JjaohkpUVuKLo6y9PyKLmgZjXv7YhHDYNWAuxQnN0CKKIfInv0MpTerrV3V3NNEGtUIJjR4ahodB2R25qWHj8xq7Eak7r_0hPiJ5uTNS6KkJWtT1AYRdmuxXMMmTdZ0xIT-EQ_ABSEwfvlo1Fuw');">
+<span class="poster-card-badge">MASS WAVE</span>
+<span class="poster-card-rec"><span class="poster-rec-dot"></span>24FPS</span>
+</div>
+<div class="poster-meta">
+<div class="poster-title-row">
+<span class="poster-title">PUSHPA: THE RISE</span>
+<span class="poster-year">2021</span>
+</div>
+<div class="poster-director">Dir. Sukumar • Allu Arjun</div>
+<div class="poster-stats-chip">
+<span>THAGGEDHE LE: <b>100%</b></span>
+<span>COLOR: <b>HDR</b></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="spr t" id="sprHT"></div>
+<div class="h-scene">Scene 01 — Home</div>
+<div class="h-year">2016</div>
+<div class="h-content-wrap">
+<div class="h-head">
+      Directing your<br/>
+      brand to a<br/>
+<span class="cr">blockbuster</span> <span class="gd">run.</span>
+</div>
+<p class="h-tag">We orchestrate high-fidelity <span class="kw">marketing campaigns</span> that don't just reach audiences — they command and <span class="kw">stand out to millions.</span></p>
+</div>
+<div class="h-bot">
+<div class="h-btns">
+<button class="btn-cr" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Audition Your Brand</button>
+<button class="btn-ol" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Watch Showreel</button>
+</div>
+<div class="h-scroll-ind"><div class="hsl"></div><div class="hsb">Scroll</div></div>
+</div>
+<div class="spr b" id="sprHB"></div>
+</section>
+<!-- TICKER MARQUEE -->
+<div class="mq"><div class="mqi">
+<div class="mq-item">BRAND STRATEGY<span class="mq-dot">◆</span>GROWTH MARKETING<span class="mq-dot">◆</span>CONTENT &amp; SEO<span class="mq-dot">◆</span>CREATIVE DIRECTION<span class="mq-dot">◆</span>BRAND STRATEGY<span class="mq-dot">◆</span>GROWTH MARKETING<span class="mq-dot">◆</span>CONTENT &amp; SEO<span class="mq-dot">◆</span>CREATIVE DIRECTION<span class="mq-dot">◆</span></div>
+<div class="mq-item">BRAND STRATEGY<span class="mq-dot">◆</span>GROWTH MARKETING<span class="mq-dot">◆</span>CONTENT &amp; SEO<span class="mq-dot">◆</span>CREATIVE DIRECTION<span class="mq-dot">◆</span>BRAND STRATEGY<span class="mq-dot">◆</span>GROWTH MARKETING<span class="mq-dot">◆</span>CONTENT &amp; SEO<span class="mq-dot">◆</span>CREATIVE DIRECTION<span class="mq-dot">◆</span></div>
+</div></div>
+<!-- STATS COUNTER BAR -->
+<div class="stats-row">
+<div class="stat"><div class="stat-n">98<sup>%</sup></div><div class="stat-l">Retention Rate</div></div>
+<div class="stat"><div class="stat-n">400<sup>+</sup></div><div class="stat-l">Blockbusters</div></div>
+<div class="stat"><div class="stat-n">12B<sup>+</sup></div><div class="stat-l">Impressions</div></div>
+<div class="stat"><div class="stat-n">24<sup>/7</sup></div><div class="stat-l">Creative Desk</div></div>
+</div>
+<!-- 02. THE MAGNET MANTRA (CORE PHILOSOPHY - 3 WISE MONKEYS) -->
+<section class="sec s0" id="mantra" style="border-bottom: 1px solid var(--ln);">
+<div class="eb"><span class="ebt">Our Core Philosophy</span></div>
+<h2 class="sh">The <em>Magnet Mantra.</em></h2>
+<div class="mantra-grid">
+<!-- Monkey 01: See No Junk -->
+<div class="mantra-card">
+<div class="mantra-img-box">
+<img alt="See No Junk - Wise Monkey Hand-drawn Sketch" src="https://lh3.googleusercontent.com/aida/AEtjO1V4cnOOET-YclgSz8LHnssftvytVOSeIMTr5mu4wNUl1dMP9Syq6FkqGaiMUnzdxUSXRCLDMy_fqcHjtvR1hCjiuEXyfbTEaYLcG3suC3gH5JrqOZGrCwBE1TCGcjQkaALR8z1jEMO8iPGDl8wSk5qlj9275Sn4HWfKW0q4HGJMW5CRE_VIFC3gLBkpP7fktKlEUqF54s66o8IWPHpfhe-mh6-rytXZckDbNj_4xmRdR_z2nmUENeXiVXQ"/>
+<div class="mantra-badge">01 • THE RULE</div>
+</div>
+<div class="mantra-body">
+<div class="mantra-num">01</div>
+<h3 class="mantra-title">SEE NO JUNK</h3>
+<p class="mantra-desc">We ignore the vanity metrics that don't drive real growth. Strategy over vanity, every single time.</p>
+</div>
+</div>
+<!-- Monkey 02: Hear No Jargon -->
+<div class="mantra-card">
+<div class="mantra-img-box">
+<img alt="Hear No Jargon - Wise Monkey Hand-drawn Sketch" src="https://lh3.googleusercontent.com/aida/AEtjO1Vg-mw8NuWJ2qwEOcdQw8cVp8YR-N0c0zvdA8e2mjOdaJiA9mRG6XRWJ8GvMKbx4IntFglMOGIY4j_0_6u4nQWHfW8qyGPaMsjt_2LzuzDG4c7XzZ0qcxFfVPHkq0mMsDxYlspzl8ZYGABn8S53_G7g9rlNtvCLJuufcZkTchvnLsvnZRkgSjdwGCzl8wSM3exLjNkg_rau21cnZaSgovM4QqxtKaxqKFd6FCD3rB2FUgsFKtaTanKa5XXo"/>
+<div class="mantra-badge">02 • THE CLARITY</div>
+</div>
+<div class="mantra-body">
+<div class="mantra-num">02</div>
+<h3 class="mantra-title">HEAR NO JARGON</h3>
+<p class="mantra-desc">We cut through the buzzword noise to deliver clear, actionable results. Real data, no fluff.</p>
+</div>
+</div>
+<!-- Monkey 03: Speak No Lies -->
+<div class="mantra-card">
+<div class="mantra-img-box">
+<img alt="Speak No Lies - Wise Monkey Hand-drawn Sketch" src="https://lh3.googleusercontent.com/aida/AEtjO1WCTNOQ_osj7UiGDQblu03l_8IyCE6AnUo2iTKpzr79Tkv0M7XkTK_UIpBpuF7oZAUByuf5d3gZVLsrMsyhEz5d2kxjlupBDTEF7rUYdX_R5rZq4ORksyxzrKVERZwRmc5F4WsvjCU6yfAOgcjuUInSsdfFT1zAIhf8iSG23xaL4nnoeRgpJcUpTBZJVCWm0Yti6KtzOQAPzUguE5XseRhD7WqoMIsiIWaeYmrif4WfpUY0YMfFHSR7wedy"/>
+<div class="mantra-badge">03 • THE TRUTH</div>
+</div>
+<div class="mantra-body">
+<div class="mantra-num">03</div>
+<h3 class="mantra-title">SPEAK NO LIES</h3>
+<p class="mantra-desc">Our reports are honest, transparent, and built on verifiable impact. We let the ROI do the talking.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 03. PRODUCTION DEPARTMENTS (LEGENDARY DIRECTORS) -->
+<section class="sec s1" id="services">
+<div class="eb"><span class="ebt">Production Departments</span></div>
+<h2 class="sh">Every channel,<br/>one <em>strategy.</em></h2>
+<div class="srv-grid">
+<!-- Dir 01: S.S. Rajamouli -->
+<div class="srv">
+<div>
+<div class="srv-art">
+<img alt="S.S. Rajamouli line sketch portrait" src="https://lh3.googleusercontent.com/aida/AEtjO1Wx7IfNEagMdYzrt4bDOTmCsCe8yBBnc3v-eEGI3u81GQKlFiOz2__e8XSKzfXj7IS_n3cj8XyLSB2TUfPLjsUEReZquSSUGwQ68t9Mk_GY6YpQX8ZU5PVgcZ1UFiwMlDU7K8mKKMFo2qx6zZCrl3aUyzM5veVNxmxs_Jkt6JTrm5ZDXUClUml8xHLvJ0XtuECE2EJ2-PAkPmecKMxwhEXb685IftYsy8dyat40ibag12bFhLxqXdkpk6NJ"/>
+<div class="srv-role-badge"><span>Dir. 01 • The Visionary</span></div>
+</div>
+<div class="srv-head-row">
+<span class="srv-dir-name">S.S. RAJAMOULI</span>
+<span class="srv-tag">STRATEGY</span>
+</div>
+<p class="srv-quote">"Ek baar commitment kar li... / The Grand Vision"</p>
+<div class="srv-div"></div>
+<h3 class="srv-title">Brand Strategy &amp; World-Building</h3>
+<p class="srv-desc">World-building positioning so compelling audiences can't look away from your brand story.</p>
+</div>
+</div>
+<!-- Dir 02: Prashanth Neel -->
+<div class="srv">
+<div>
+<div class="srv-art">
+<img alt="Prashanth Neel line sketch portrait" src="https://lh3.googleusercontent.com/aida/AEtjO1VXmNmtdYnmhVm_gbTrmF6dmH_fQewPiyzD7ehv9LskgMtsdCzYYlNpqBTcbRwnqd8GRIC70A3o8ufMNGuSlQcPAyyBZs4iogbSt1j78cOU7qG2T1LEXBPFB0dfzIiL4D9XlLfBvwRxOjp7oHrSUHnlw-0h7V8M5qstVldS9OdQmk5ajDU3h7GkzY1tEVaa0GNBiVC6mIV7HTwXDIHYCUAisoejuMFEEXvPVeTUOBZmR3pSZLrQkfDSAKyf"/>
+<div class="srv-role-badge"><span>Dir. 02 • The Dynamo</span></div>
+</div>
+<div class="srv-head-row">
+<span class="srv-dir-name">PRASHANTH NEEL</span>
+<span class="srv-tag">GROWTH</span>
+</div>
+<p class="srv-quote">"Violence... Violence... High ROAS"</p>
+<div class="srv-div"></div>
+<h3 class="srv-title">Growth Marketing &amp; Explosive ROAS</h3>
+<p class="srv-desc">Explosive data-driven paid campaigns with maximum ROAS and unstoppable momentum in your market.</p>
+</div>
+</div>
+<!-- Dir 03: Mani Ratnam -->
+<div class="srv">
+<div>
+<div class="srv-art">
+<img alt="Mani Ratnam line sketch portrait" src="https://lh3.googleusercontent.com/aida/AEtjO1VZldWcQsNwjtiCS4Qg6BP2KrTjbHl33SlGUTsuQFyLHcWtERTcLEdvPONSYHb9jfczG7BceqNvdZ_tlG57CreaTZtf_LaWO1eMAJkcAsM5XybVELcWUe1jPP8Xs1FSERiMhL6BqwjRVs2gaKeprgAoHEPJo7i6AEmT5SNJgSA4TrgW06-RaIe0WMZuTgDO0YmQOF9lZs6SspWDQ0bNrgniwiO10sD1Nqk5-9tYSCysbbCopE3K3dlhqKlm"/>
+<div class="srv-role-badge"><span>Dir. 03 • The Maestro</span></div>
+</div>
+<div class="srv-head-row">
+<span class="srv-dir-name">MANI RATNAM</span>
+<span class="srv-tag">CONTENT &amp; SEO</span>
+</div>
+<p class="srv-quote">"Kadhal... oru vizhiyil / Poetic Nuance"</p>
+<div class="srv-div"></div>
+<h3 class="srv-title">Organic Storytelling &amp; SEO</h3>
+<p class="srv-desc">Organic storytelling that ranks and captivates — every word crafted with intention to resonate with millions.</p>
+</div>
+</div>
+<!-- Dir 04: Upendra -->
+<div class="srv">
+<div>
+<div class="srv-art">
+<img alt="Upendra line sketch portrait" src="https://lh3.googleusercontent.com/aida/AEtjO1WHw_kTFBfi8yS2IjxGJDNTNeFz3vuNGbuXHjFOTztq0pXmHgsKHW-yr-ubE45vF1cnFnGFynSEloOCsxLQWRlnNBPtZscqCzRqUWV93S1BFyiqtXkVGY3C9fzhIOxep6RrO_P1_2Zcm-JrdwnYPuw2PYsDLAmK98aAsbcuwNVoXorUQDR8ItS564kTOvKmctFBlXSdmjvZlSVcLjmVWKCGylFrv-0tG9hF6B5qdvJI3hG2g7SMMvyJlZXE"/>
+<div class="srv-role-badge"><span>Dir. 04 • The Disruptor</span></div>
+</div>
+<div class="srv-head-row">
+<span class="srv-dir-name">UPENDRA</span>
+<span class="srv-tag">SOCIAL MEDIA</span>
+</div>
+<p class="srv-quote">"Naanu bere... Nanna style-e bere / Rule-Breaker"</p>
+<div class="srv-div"></div>
+<h3 class="srv-title">Social Media &amp; Viral Community</h3>
+<p class="srv-desc">Bold, pattern-breaking social strategy across every platform that refuses to blend in.</p>
+</div>
+</div>
+<!-- Dir 05: Shankar -->
+<div class="srv">
+<div>
+<div class="srv-art">
+<img alt="Shankar line sketch portrait" src="https://lh3.googleusercontent.com/aida/AEtjO1XU6-ot-51rrc0rqYumL1k9HMpYcFgcOytiyApYc_HcSm3ecM4ZqQF06RgYGtw2xkoGL1f7UV_lOQWJAK3n9FwyFHCNsAjRB1zULz4exxJtUew4B8dADBzH8qTZlswWscxwKLcZo1TGjlPPVSQsSoDiJhCuGzOoY7OkgKnlJnCK50x1dEyBXG64TzrHq6MAXncawKvwUDdMVu9Wpnw5YwQkxetllJNgvG7jc7_cQHY4vl_iSidYfYmqcRBR"/>
+<div class="srv-role-badge"><span>Dir. 05 • The Grand Scale</span></div>
+</div>
+<div class="srv-head-row">
+<span class="srv-dir-name">SHANKAR</span>
+<span class="srv-tag">WEB &amp; TECH</span>
+</div>
+<p class="srv-quote">"Grandeur beyond imagination / VFX &amp; Scale"</p>
+<div class="srv-div"></div>
+<h3 class="srv-title">Web Design &amp; High-Tech Dev</h3>
+<p class="srv-desc">Websites built to command attention — fast, conversion-focused, and with a cinematic edge.</p>
+</div>
+</div>
+<!-- Dir 06: Sukumar -->
+<div class="srv">
+<div>
+<div class="srv-art">
+<img alt="Sukumar line sketch portrait" src="https://lh3.googleusercontent.com/aida/AEtjO1X_EBxEkBc9OQYqVpkP2R1iqaXJ7ZQnge_isO_PDMx0G_YAKMJGHKOhbag6LzrSM_d-kMZ2zJ5ip8yRjjma2OK04rtQvkCclZPsYREqOvy1bz31Z0HMb2zqRMIhlFfb9la-5BotOJeS5FgpNYlZBUkvZERJRA_oVZk4o7MSMjy4eXxTTYsCngTjRcFDO_GxDg0V-CPV4j3VGd7gN6EfGpRCu8WrkjflPtE4AZ2VoI9Mc7Nb4QZiB_wdNkM"/>
+<div class="srv-role-badge"><span>Dir. 06 • The Architect</span></div>
+</div>
+<div class="srv-head-row">
+<span class="srv-dir-name">SUKUMAR</span>
+<span class="srv-tag">RETENTION</span>
+</div>
+<p class="srv-quote">"Logic meets raw emotion / Mastermind Script"</p>
+<div class="srv-div"></div>
+<h3 class="srv-title">Email Marketing &amp; Logic Funnels</h3>
+<p class="srv-desc">Sequenced journeys and automated conversion flows calculated with mathematical precision.</p>
+</div>
+</div>
+<!-- Dir 07: Yogaraj Bhat -->
+<div class="srv">
+<div>
+<div class="srv-art">
+<img alt="Yogaraj Bhat line sketch portrait" src="https://lh3.googleusercontent.com/aida/AEtjO1UPtRb7FpNksdcKAX1g4r4V8G1Fqq0ZARlw1VJoY582K0PGS24fMEw5uAtJB8_eFsjFd5Gj02-Ww5mUjNhy10zapg88jnhsV96vgw1HHzPnrh4HnAMcy6pbUkyaJJxUPk_nYnpQkKhuvvl2rLAHZsOIBF64Szd8ZqBC_RghTjn2yxAYzg9pZ2l7G16OT31xpb2hlmNM38C32KRNNa4LEkSNtDkH4mWFE5jWzFwcE4QZwoGloRrdbJzu7Tc"/>
+<div class="srv-role-badge"><span>Dir. 07 • The Bard</span></div>
+</div>
+<div class="srv-head-row">
+<span class="srv-dir-name">YOGARAJ BHAT</span>
+<span class="srv-tag">LYRICS &amp; COPY</span>
+</div>
+<p class="srv-quote">"Anisuthide yaako indu... Organic Reach"</p>
+<div class="srv-div"></div>
+<h3 class="srv-title">Lyrics, Copywriting &amp; Poetic SEO</h3>
+<p class="srv-desc">Soulful regional narrative, indelible catchphrases, and emotional resonance that lingers like a classic monsoon melody.</p>
+</div>
+</div>
+<!-- Dir 08: Rishab Shetty -->
+<div class="srv">
+<div>
+<div class="srv-art">
+<img alt="Rishab Shetty line sketch portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2rac8H_m1EQfVSuJCPv-DHQbGKbn73zjnRFaFmeZDA8WR_cvKbJZ7IMoxcr2VyGTuatkMsBkPjUtp15jTpZtQCuoKZK_hPvKLMg4UcET2eHapay0NOpGGVdPmGWUunKOV8sN_x3TE4aPj-RHDk525Zli6dzzqKZMUNQoFflzVMMe-MFI87FocXEzSWkksCKIQPCLDNyRNj7P_qBc7_J9P_GWD-_31srKL3YffkYrwu9jHTgvUU3-qOA"/>
+<div class="srv-role-badge"><span>DIR. 08 • THE ROOTED VISIONARY</span></div>
+</div>
+<div class="srv-head-row">
+<span class="srv-dir-name">RISHAB SHETTY</span>
+<span class="srv-tag">BRAND FILMS &amp; AV</span>
+</div>
+<p class="srv-quote">"Shivaaaa... Folklore meets modern box office"</p>
+<div class="srv-div"></div>
+<h3 class="srv-title">Brand Films &amp; Cultural Impact</h3>
+<p class="srv-desc">High-impact video commercials and rooted brand storytelling that captivates audiences across pan-India screens.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- QUOTE -->
+<div class="big-quote">
+<p class="bq-text">"Your brand is the <span>hero</span>. We write the story, direct the campaign, and pack the house."</p>
+<p class="bq-attr">— Digital Magnet Media</p>
+</div>
+<!-- HOW WE WORK: FOUR ACTS -->
+<section class="sec s1">
+<div class="eb"><span class="ebt">How We Work — The Four Acts</span></div>
+<h2 class="sh">Four acts,<br/>one <em>blockbuster.</em></h2>
+<div class="proc-strip">
+<!-- Act 01: Kamal Haasan -->
+<div class="proc-step">
+<div class="proc-arrow">→</div>
+<div style="width:100%;aspect-ratio:1/1;overflow:hidden;border:1px solid rgba(139,28,20,0.18);border-radius:2px;background:#EDEAE2;margin-bottom:18px;position:relative;">
+<img alt="Kamal Haasan detective line sketch - Act 01 Discovery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk7tDSBkO-f9E_0TZOIBUAmJV1hClHov_SE1jZPIwcQ9uYISSAcLua2MmsH_uxuqPkkjB-dqXbBGgrBtWmz0g39Cp0B96OubQheYgBqWLAlG19fFiUlhJVzpnmtCFBsrZexkmwBHDdCizo7Kut877n7ndYmN0G1L0NyqqTyL3Jpw_Y8kyw--Dpy36RIU-5gx2oQ5XpfdGWOzewfssolZgfZgvf37opFDQ3Aby6DPXu0_7dDiInGfkixA" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+<div style="position:absolute;bottom:8px;left:8px;background:rgba(26,10,8,0.85);backdrop-filter:blur(4px);padding:3px 8px;border-radius:2px;border:1px solid rgba(212,160,32,0.4);font-family:var(--DM);font-size:9px;letter-spacing:1.5px;color:#D4A020;text-transform:uppercase;font-weight:700;">ACT 01 • THE SCRIPT DOCTOR</div>
+</div>
+<div class="proc-num">01</div>
+<div class="proc-title">Discovery</div>
+<p style="font-family:var(--CG);font-style:italic;font-size:13.5px;color:var(--cr);margin-bottom:6px;font-weight:600;">"The Mastermind Script Analysis"</p>
+<p class="proc-desc">Deep-dive research, audience diagnostics, and detective script breakdown to uncover your brand's unique narrative angle.</p>
+</div>
+<!-- Act 02: Rajinikanth -->
+<div class="proc-step">
+<div class="proc-arrow">→</div>
+<div style="width:100%;aspect-ratio:1/1;overflow:hidden;border:1px solid rgba(139,28,20,0.18);border-radius:2px;background:#EDEAE2;margin-bottom:18px;position:relative;">
+<img alt="Rajinikanth sunglasses swagger sketch - Act 02 Strategy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF6wuRuf1sdR_7B1rG-IVqYEUnrNzFpGmPUFIY3suOjLtE07lqTSw7HjW7RFk3iTMW1_o2UKexB9vJQFHrEU9_lha7XDqb9LxvlRVY9OPmdbwagxN4ik-yhv2RLCEBHPPaLwAWFKEgthk79D497VP7_iPQQpf-BIp4xsl-5TSAceJ2Cdy6yWE60OMrjMGDF4hJ93TkZXWmgItW-5lTBMwDVInucXTl74WUT8a6fkkTDE8g86jdhw7_DQ" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+<div style="position:absolute;bottom:8px;left:8px;background:rgba(26,10,8,0.85);backdrop-filter:blur(4px);padding:3px 8px;border-radius:2px;border:1px solid rgba(212,160,32,0.4);font-family:var(--DM);font-size:9px;letter-spacing:1.5px;color:#D4A020;text-transform:uppercase;font-weight:700;">ACT 02 • THE BLOCKBUSTER PLAN</div>
+</div>
+<div class="proc-num">02</div>
+<div class="proc-title">Strategy</div>
+<p style="font-family:var(--CG);font-style:italic;font-size:13.5px;color:var(--cr);margin-bottom:6px;font-weight:600;">"The Superstar Blueprint • En vazhi, thani vazhi"</p>
+<p class="proc-desc">Unstoppable multi-channel roadmap with distinctive market positioning engineered to command instant industry leadership.</p>
+</div>
+<!-- Act 03: Allu Arjun -->
+<div class="proc-step">
+<div class="proc-arrow">→</div>
+<div style="width:100%;aspect-ratio:1/1;overflow:hidden;border:1px solid rgba(139,28,20,0.18);border-radius:2px;background:#EDEAE2;margin-bottom:18px;position:relative;">
+<img alt="Allu Arjun Thaggedhe Le sketch - Act 03 Execution" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVN5mv1DgWd6TZIK9eOI66KtF2WhBhr-yY6nQdddmFXfjsXVZ0yn5D3SGbrcor_PRZ3qd3bnwOHLH_TQw3066vNkARHurN4_dRFN8JjaohkpUVuKLo6y9PyKLmgZjXv7YhHDYNWAuxQnN0CKKIfInv0MpTerrV3V3NNEGtUIJjR4ahodB2R25qWHj8xq7Eak7r_0hPiJ5uTNS6KkJWtT1AYRdmuxXMMmTdZ0xIT-EQ_ABSEwfvlo1Fuw" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+<div style="position:absolute;bottom:8px;left:8px;background:rgba(26,10,8,0.85);backdrop-filter:blur(4px);padding:3px 8px;border-radius:2px;border:1px solid rgba(212,160,32,0.4);font-family:var(--DM);font-size:9px;letter-spacing:1.5px;color:#D4A020;text-transform:uppercase;font-weight:700;">ACT 03 • ZERO COMPROMISE</div>
+</div>
+<div class="proc-num">03</div>
+<div class="proc-title">Execution</div>
+<p style="font-family:var(--CG);font-style:italic;font-size:13.5px;color:var(--cr);margin-bottom:6px;font-weight:600;">"The Mass Action Delivery • Thaggedhe Le"</p>
+<p class="proc-desc">High-octane campaigns premiere across all channels. High-fidelity creative collides with ruthless performance marketing.</p>
+</div>
+<!-- Act 04: Yash (Rocky Bhai) -->
+<div class="proc-step">
+<div style="width:100%;aspect-ratio:1/1;overflow:hidden;border:1px solid rgba(139,28,20,0.18);border-radius:2px;background:#EDEAE2;margin-bottom:18px;position:relative;">
+<img alt="Yash Rocky Bhai hammer sketch - Act 04 Growth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL6ysfFg3Ic3xT4JdHI-rfQbSWryvP_V42nzWpR2V8etUxCSTPyEaFYTpkdISANI1ru1FZUWKXlDkpEA4CZJ_4AuEC1jMF1G97M3upX7snq1ZTtB2hgoEZyOE7VxjMbcNd4hF9F257oZhg8MdBB5DNYv8e--mtbfiuYl2jGjH2wu-8SRtGO6m_sAmOI3evFeayUlf6mvs77MmdDnUcPkUYbcQyMz2FwyOxGFsLXpmBBwMdmj11MMjgKQ" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+<div style="position:absolute;bottom:8px;left:8px;background:rgba(26,10,8,0.85);backdrop-filter:blur(4px);padding:3px 8px;border-radius:2px;border:1px solid rgba(212,160,32,0.4);font-family:var(--DM);font-size:9px;letter-spacing:1.5px;color:#D4A020;text-transform:uppercase;font-weight:700;">ACT 04 • 100-DAY BLOCKBUSTER</div>
+</div>
+<div class="proc-num">04</div>
+<div class="proc-title">Growth</div>
+<p style="font-family:var(--CG);font-style:italic;font-size:13.5px;color:var(--cr);margin-bottom:6px;font-weight:600;">"Box Office Supremacy • Salaam Rocky Bhai"</p>
+<p class="proc-desc">Compounding ROI, exponential brand equity, and sustained market dominion that ensures an unstoppable 100-day box office run.</p>
+</div>
+</div>
+</section>
+<!-- FAMOUS DIALOGUES / TESTIMONIALS -->
+<section class="sec s0">
+<div class="eb"><span class="ebt">Famous Dialogues — Marketing Edition</span></div>
+<h2 class="sh"><em>Iconic lines,</em><br/>real results.</h2>
+<div class="dlg-grid">
+<div class="dlg"><p class="dlg-q">"Aa dinagalu hogi hoguttave… aadare namma brand yavagaloo iruttade!"</p><div class="dlg-attr">— The Digital Magnet Way</div></div>
+<div class="dlg"><p class="dlg-q">"In this industry your brand either grows or it disappears. We make sure it grows."</p><div class="dlg-attr">— Digital Magnet Media</div></div>
+<div class="dlg"><p class="dlg-q">"They said impossible. We said — just watch us. Every campaign, a blockbuster."</p><div class="dlg-attr">— Sandalwood Spirit</div></div>
+<div class="dlg"><p class="dlg-q">"RCB fans never give up on their team — that's exactly how loyal we are to every single client, every single campaign, every single day."</p><div class="dlg-attr">— Ee Sala Cup Namde 🏏</div></div>
+</div>
+</section>
+<!-- CTA BAND -->
+<div class="cta" id="contact">
+<h2 class="cta-t">Ready for your brand's<br/><em>blockbuster moment?</em></h2>
+<button class="btn-gd" onclick="window.location.href='mailto:india@digitalmagnetmedia.com'">Begin a Conversation</button>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="site-footer">
+<div class="site-footer__inner">
+<div class="site-footer__top">
+<div>
+<div class="site-footer__wordmark">DIGITAL MAGNET MEDIA</div>
+<div class="site-footer__tag">BRANDS. CINEMA. IMPACT.</div>
+<p class="site-footer__copy">A digital marketing studio combining clear strategy, cinematic creative, performance media, and conversion-focused web experiences.</p>
+</div>
+<div>
+<div class="site-footer__title">Bengaluru Studio</div>
+<div class="site-footer__text">Nagarbhaavi, Bengaluru<br>Karnataka, India<br>+91 80 4122 9080</div>
+</div>
+<div>
+<div class="site-footer__title">New York Desk</div>
+<div class="site-footer__text">Broadway &amp; SoHo<br>New York, NY, USA<br>+1 212 640 8820</div>
+</div>
+</div>
+<div class="site-footer__bottom">
+<p>© 2026 DIGITAL MAGNET MEDIA. ALL RIGHTS RESERVED.</p>
+<div class="site-footer__links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services &amp; Works</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+</div>
+</footer>
+
+
+<script>
+// SPROCKET HOLES GENERATOR
+function mkSpr(id){
+  const el=document.getElementById(id);
+  if(!el)return;
+  const n=Math.ceil(window.innerWidth > 0 ? window.innerWidth / 20 : 60);
+  el.innerHTML='';
+  for(let i=0;i<n;i++){const h=document.createElement('div');h.className='sphole';el.appendChild(h);}
+}
+mkSpr('sprHT');
+mkSpr('sprHB');
+window.addEventListener('resize', ()=>{ mkSpr('sprHT'); mkSpr('sprHB'); });
+
+// SYNTHESIZED SUBTLE SNAP SOUND VIA WEB AUDIO API
+function playClapperSound() {
+  try {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtx) return;
+    const ctx = new AudioCtx();
+
+    // Crisp wooden slate snap
+    const bufferSize = ctx.sampleRate * 0.08;
+    const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.015));
+    }
+    const noise = ctx.createBufferSource();
+    noise.buffer = buffer;
+
+    const filter = ctx.createBiquadFilter();
+    filter.type = 'highpass';
+    filter.frequency.setValueAtTime(1000, ctx.currentTime);
+
+    const gain = ctx.createGain();
+    gain.gain.setValueAtTime(0.6, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.07);
+
+    noise.connect(filter);
+    filter.connect(gain);
+    gain.connect(ctx.destination);
+
+    noise.start();
+    noise.stop(ctx.currentTime + 0.08);
+  } catch(e) {}
+}
+
+// ENTRANCE TRIGGER LOGIC
+let isOpening = false;
+function triggerClapboardAction(e) {
+  if (e) e.stopPropagation();
+  if (isOpening) return;
+  isOpening = true;
+
+  const overlay = document.getElementById('entranceOverlay');
+  const slate = document.getElementById('clapboardSlate');
+  const flash = document.getElementById('flashOverlay');
+
+  // Step 1: Snap the clapper arm down
+  slate.classList.add('clapped');
+  playClapperSound();
+
+  // Step 2: Smooth soft reveal transition
+  setTimeout(() => {
+    if (flash) flash.classList.add('active');
+    setTimeout(() => { if (flash) flash.classList.remove('active'); }, 140);
+
+    overlay.classList.add('opening');
+  }, 180);
+
+  // Step 3: Complete opening sequence
+  setTimeout(() => {
+    overlay.classList.add('opened');
+    isOpening = false;
+  }, 1300);
+}
+
+function handleCurtainTrigger(e) {
+  triggerClapboardAction(e);
+}
+
+// RESET & REPLAY ENTRANCE FUNCTIONALITY
+function resetAndReplayEntrance() {
+  const overlay = document.getElementById('entranceOverlay');
+  const slate = document.getElementById('clapboardSlate');
+  if (!overlay || !slate) return;
+
+  isOpening = false;
+  overlay.classList.remove('opened');
+  overlay.classList.remove('opening');
+  slate.classList.remove('clapped');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// AUTO-CLAP AFTER FOUR SECONDS IF THE VISITOR HAS NOT ENTERED
+window.setTimeout(() => {
+  const overlay = document.getElementById('entranceOverlay');
+  if (overlay && !overlay.classList.contains('opened') && !isOpening) {
+    triggerClapboardAction();
+  }
+}, 4000);
+</script>
+</body></html>
+
