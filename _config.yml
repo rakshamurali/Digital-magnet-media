@@ -1,12 +1,14 @@
 title: Digital Magnet Media
 description: Brands. Cinema. Impact.
-url: ""
-baseurl: ""
+
+url: "https://rakshamurali.github.io"
+baseurl: "/Digital-magnet-media"
+
 sass:
   sass_dir: _sass
   style: compressed
+
 exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
-
