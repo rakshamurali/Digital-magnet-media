@@ -643,18 +643,6 @@ nav{background:rgba(245,242,236,.97);border-bottom:1px solid var(--ln);padding:1
 .sh em{font-family:var(--CG);font-style:italic;color:var(--cr);font-size:.95em;}
 
 /* MANTRA SECTION */
-.mantra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.mantra-card{background:var(--bg);border:1px solid var(--ln);border-radius:4px;overflow:hidden;transition:transform .25s ease, box-shadow .25s ease;display:flex;flex-direction:column;box-shadow:2px 2px 0px rgba(26,10,8,0.04);}
-.mantra-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(26,10,8,0.08);border-color:rgba(139,28,20,0.3);}
-.mantra-img-box{position:relative;width:100%;aspect-ratio:1/1;background:#EDEAE2;overflow:hidden;border-bottom:1px solid var(--ln);}
-.mantra-img-box img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
-.mantra-card:hover .mantra-img-box img{transform:scale(1.03);}
-.mantra-badge{position:absolute;top:14px;left:14px;background:rgba(26,10,8,0.85);backdrop-filter:blur(4px);color:var(--gd2);font-family:var(--DM);font-size:9.5px;letter-spacing:1.5px;font-weight:700;padding:4px 9px;border-radius:2px;border:1px solid rgba(212,160,32,0.35);}
-.mantra-body{padding:26px 24px;flex-grow:1;display:flex;flex-direction:column;}
-.mantra-num{font-family:var(--BB);font-size:32px;color:rgba(139,28,20,0.2);line-height:1;margin-bottom:4px;}
-.mantra-title{font-family:var(--BB);font-size:24px;letter-spacing:1px;color:var(--cr);line-height:1.1;margin-bottom:12px;}
-.mantra-closing{margin-top:40px;text-align:center;font-family:var(--BB);font-size:clamp(26px,4vw,44px);line-height:1.2;letter-spacing:1px;color:var(--cr);}
-.mantra-desc{font-size:13.5px;color:var(--tx2);line-height:1.7;}
 
 /* SERVICES / DIRECTORS GRID */
 .srv-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1px;background:var(--ln);border:1px solid var(--ln);}
@@ -726,7 +714,6 @@ footer{background:var(--ink);border-top:1px solid rgba(245,242,236,.06);position
   nav{padding:14px 20px;}
   .hero{padding:0 20px 48px;}
   .stats-row{grid-template-columns:repeat(2,1fr);}
-  .mantra-grid{grid-template-columns:1fr;}
   .srv-grid,.proc-strip{grid-template-columns:1fr;}
   .cta{grid-template-columns:1fr;}
   .ft-main{grid-template-columns:1fr 1fr;}
@@ -1079,50 +1066,6 @@ footer{background:var(--ink);border-top:1px solid rgba(245,242,236,.06);position
 <div class="stat"><div class="stat-n">12B<sup>+</sup></div><div class="stat-l">Impressions</div></div>
 <div class="stat"><div class="stat-n">24<sup>/7</sup></div><div class="stat-l">Creative Desk</div></div>
 </div>
-<!-- 02. THE MAGNET MANTRA (CORE PHILOSOPHY - 3 WISE MONKEYS) -->
-<section class="sec s0" id="mantra" style="border-bottom: 1px solid var(--ln);">
-<div class="eb"><span class="ebt">Our Core Philosophy</span></div>
-<h2 class="sh">The <em>Magnet Mantra.</em></h2>
-<div class="mantra-grid">
-<!-- Monkey 01: See No Competition -->
-<div class="mantra-card">
-<div class="mantra-img-box">
-<img alt="Hand-drawn wise monkey covering its eyes" src="assets/images/monkey_1.png"/>
-<div class="mantra-badge">01 • THE RULE</div>
-</div>
-<div class="mantra-body">
-<div class="mantra-num">01</div>
-<h3 class="mantra-title">SEE NO COMPETITION</h3>
-<p class="mantra-desc">We don’t chase what others are doing. We focus on what your brand can become.</p>
-</div>
-</div>
-<!-- Monkey 02: Speak Less. Do More. -->
-<div class="mantra-card">
-<div class="mantra-img-box">
-<img alt="Hand-drawn wise monkey covering its mouth" src="assets/images/monkey_2.png"/>
-<div class="mantra-badge">02 • THE CLARITY</div>
-</div>
-<div class="mantra-body">
-<div class="mantra-num">02</div>
-<h3 class="mantra-title">SPEAK LESS. DO MORE.</h3>
-<p class="mantra-desc">No empty promises. Just ideas, execution, and work that speaks for itself.</p>
-</div>
-</div>
-<!-- Monkey 03: Trust Without Doubt -->
-<div class="mantra-card">
-<div class="mantra-img-box">
-<img alt="Hand-drawn wise monkey covering its ears" src="assets/images/monkey_3.png"/>
-<div class="mantra-badge">03 • THE TRUTH</div>
-</div>
-<div class="mantra-body">
-<div class="mantra-num">03</div>
-<h3 class="mantra-title">TRUST WITHOUT DOUBT</h3>
-<p class="mantra-desc">Your brand is in good hands. Our goal is simple — make it successful.</p>
-</div>
-</div>
-</div>
-<p class="mantra-closing">WE DON’T JUST PROMOTE YOUR BRAND.<br/>WE MAKE IT MATTER.</p>
-</section>
 <!-- 03. PRODUCTION DEPARTMENTS (LEGENDARY DIRECTORS) -->
 <section class="sec s1" id="services">
 <div class="eb"><span class="ebt">Production Departments</span></div>
