@@ -644,24 +644,16 @@ nav{background:rgba(245,242,236,.97);border-bottom:1px solid var(--ln);padding:1
 
 /* MANTRA SECTION */
 
-/* SERVICES / DIRECTORS GRID */
-.srv-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1px;background:var(--ln);border:1px solid var(--ln);}
-.srv{background:var(--bg);padding:24px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;transition:background .3s, transform .2s;position:relative;overflow:hidden;}
-.srv::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cr),var(--gd2));transform:scaleX(0);transform-origin:left;transition:transform .38s;z-index:2;}
-.srv:hover{background:var(--bg1);}
-.srv:hover::before{transform:scaleX(1);}
-.srv-art{width:100%;aspect-ratio:1/1;overflow:hidden;border:1px solid rgba(139,28,20,0.18);border-radius:2px;background:#EDEAE2;position:relative;margin-bottom:16px;}
-.srv-art img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;}
-.srv:hover .srv-art img{transform:scale(1.04);}
-.srv-role-badge{position:absolute;bottom:8px;left:8px;background:rgba(26,10,8,0.85);backdrop-filter:blur(4px);padding:3px 8px;border-radius:2px;border:1px solid rgba(212,160,32,0.4);}
-.srv-role-badge span{font-family:var(--DM);font-size:9px;letter-spacing:1.5px;color:rgb(212, 160, 32);text-transform:uppercase;font-weight:700;}
-.srv-head-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
-.srv-dir-name{font-family:var(--BB);font-size:21px;letter-spacing:1px;color:var(--cr);line-height:1;}
-.srv-tag{font-family:var(--DM);font-size:8.5px;letter-spacing:1px;text-transform:uppercase;color:var(--gd);border:1px solid rgba(184, 134, 11, 0.35);padding:2px 6px;border-radius:2px;font-weight:600;background:rgba(184, 134, 11, 0.06);}
-.srv-quote{font-family:var(--CG);font-style:italic;font-size:13.5px;color:var(--tx3);margin-bottom:10px;line-height:1.35;font-weight:600;}
-.srv-div{height:1px;background:var(--ln);margin-bottom:12px;}
-.srv-title{font-family:var(--BB);font-size:18px;letter-spacing:0.5px;color:var(--ink);margin-bottom:6px;}
+/* PRODUCTION DEPARTMENTS GRID */
+.srv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--ln);border:1px solid var(--ln);}
+.srv{background:var(--bg);padding:32px 26px;min-height:236px;}
+.srv-head-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+.srv-label{font-family:var(--DM);font-size:9px;font-weight:700;letter-spacing:2px;color:var(--cr);}
+.srv-num{font-family:var(--BB);font-size:18px;line-height:1;color:rgba(139,28,20,.3);}
+.srv-title{font-family:var(--BB);font-size:20px;letter-spacing:.3px;color:var(--ink);line-height:1.2;text-transform:uppercase;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--ln);}
 .srv-desc{font-size:13px;color:var(--tx2);line-height:1.65;}
+@media(max-width:900px){.srv-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:600px){.srv-grid{grid-template-columns:1fr;}.srv{min-height:0;padding:28px 24px;}}
 
 /* PROCESS */
 .proc-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln);}
@@ -712,12 +704,25 @@ footer{background:var(--ink);border-top:1px solid rgba(245,242,236,.06);position
 
 @media (max-width: 900px) {
   nav{padding:14px 20px;}
-  .hero{padding:0 20px 48px;}
+  .hero{padding:400px 20px 48px;}
   .stats-row{grid-template-columns:repeat(2,1fr);}
   .srv-grid,.proc-strip{grid-template-columns:1fr;}
   .cta{grid-template-columns:1fr;}
   .ft-main{grid-template-columns:1fr 1fr;}
-  .filmstrip-track{display:none;}
+  .filmstrip-track{
+    display:flex;
+    top:72px;
+    bottom:auto;
+    left:50%;
+    right:auto;
+    width:min(280px,calc(100% - 40px));
+    height:300px;
+    transform:translateX(-50%);
+    opacity:0.95;
+  }
+  .film-reel-vertical{width:100%;}
+  .h-scene{right:20px;}
+  .h-tag{font-size:18px;}
   .slate-box{width:90vw;}
 }
 @media (max-width: 640px) {
@@ -737,6 +742,8 @@ footer{background:var(--ink);border-top:1px solid rgba(245,242,236,.06);position
   html{scroll-behavior:auto;}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
 }
+.brand-statement{text-align:center;border-bottom:1px solid var(--ln);}
+.brand-statement h2{font-family:var(--BB);font-size:clamp(26px,4vw,44px);line-height:1.2;letter-spacing:1px;color:var(--cr);}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231a0a08'/%3E%3Cpath d='M14 46V18h8l10 15 10-15h8v28h-8V30L32 44 22 30v16z' fill='%23d4a020'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
@@ -1066,147 +1073,45 @@ footer{background:var(--ink);border-top:1px solid rgba(245,242,236,.06);position
 <div class="stat"><div class="stat-n">12B<sup>+</sup></div><div class="stat-l">Impressions</div></div>
 <div class="stat"><div class="stat-n">24<sup>/7</sup></div><div class="stat-l">Creative Desk</div></div>
 </div>
-<!-- 03. PRODUCTION DEPARTMENTS (LEGENDARY DIRECTORS) -->
+<!-- BRAND STATEMENT -->
+<section class="sec s0 brand-statement" aria-label="Our brand promise">
+<h2>WE DON’T JUST PROMOTE YOUR BRAND.<br/>WE MAKE IT MATTER.</h2>
+</section>
+<!-- PRODUCTION DEPARTMENTS -->
 <section class="sec s1" id="services">
 <div class="eb"><span class="ebt">Production Departments</span></div>
 <h2 class="sh">Every channel,<br/>one <em>strategy.</em></h2>
 <div class="srv-grid">
-<!-- Dir 01: S.S. Rajamouli -->
-<div class="srv">
-<div>
-<div class="srv-art">
-<img alt="S.S. Rajamouli line sketch portrait" src="assets/images/ss-rajamouli-portrait.png"/>
-<div class="srv-role-badge"><span>Dir. 01 • The Visionary</span></div>
-</div>
-<div class="srv-head-row">
-<span class="srv-dir-name">S.S. RAJAMOULI</span>
-<span class="srv-tag">STRATEGY</span>
-</div>
-<p class="srv-quote">"Ek baar commitment kar li... / The Grand Vision"</p>
-<div class="srv-div"></div>
-<h3 class="srv-title">Brand Strategy &amp; World-Building</h3>
-<p class="srv-desc">World-building positioning so compelling audiences can't look away from your brand story.</p>
-</div>
-</div>
-<!-- Dir 02: Prashanth Neel -->
-<div class="srv">
-<div>
-<div class="srv-art">
-<img alt="Prashanth Neel line sketch portrait" src="assets/images/prashanth-neel-portrait.png"/>
-<div class="srv-role-badge"><span>Dir. 02 • The Dynamo</span></div>
-</div>
-<div class="srv-head-row">
-<span class="srv-dir-name">PRASHANTH NEEL</span>
-<span class="srv-tag">GROWTH</span>
-</div>
-<p class="srv-quote">"Violence... Violence... High ROAS"</p>
-<div class="srv-div"></div>
-<h3 class="srv-title">Growth Marketing &amp; Explosive ROAS</h3>
-<p class="srv-desc">Explosive data-driven paid campaigns with maximum ROAS and unstoppable momentum in your market.</p>
-</div>
-</div>
-<!-- Dir 03: Mani Ratnam -->
-<div class="srv">
-<div>
-<div class="srv-art">
-<img alt="Mani Ratnam line sketch portrait" src="assets/images/mani-ratnam-portrait.png"/>
-<div class="srv-role-badge"><span>Dir. 03 • The Maestro</span></div>
-</div>
-<div class="srv-head-row">
-<span class="srv-dir-name">MANI RATNAM</span>
-<span class="srv-tag">CONTENT &amp; SEO</span>
-</div>
-<p class="srv-quote">"Kadhal... oru vizhiyil / Poetic Nuance"</p>
-<div class="srv-div"></div>
-<h3 class="srv-title">Organic Storytelling &amp; SEO</h3>
-<p class="srv-desc">Organic storytelling that ranks and captivates — every word crafted with intention to resonate with millions.</p>
-</div>
-</div>
-<!-- Dir 04: Upendra -->
-<div class="srv">
-<div>
-<div class="srv-art">
-<img alt="Upendra line sketch portrait" src="assets/images/upendra-portrait.png"/>
-<div class="srv-role-badge"><span>Dir. 04 • The Disruptor</span></div>
-</div>
-<div class="srv-head-row">
-<span class="srv-dir-name">UPENDRA</span>
-<span class="srv-tag">SOCIAL MEDIA</span>
-</div>
-<p class="srv-quote">"Naanu bere... Nanna style-e bere / Rule-Breaker"</p>
-<div class="srv-div"></div>
-<h3 class="srv-title">Social Media &amp; Viral Community</h3>
-<p class="srv-desc">Bold, pattern-breaking social strategy across every platform that refuses to blend in.</p>
-</div>
-</div>
-<!-- Dir 05: Shankar -->
-<div class="srv">
-<div>
-<div class="srv-art">
-<img alt="Shankar line sketch portrait" src="assets/images/shankar-portrait.png"/>
-<div class="srv-role-badge"><span>Dir. 05 • The Grand Scale</span></div>
-</div>
-<div class="srv-head-row">
-<span class="srv-dir-name">SHANKAR</span>
-<span class="srv-tag">WEB &amp; TECH</span>
-</div>
-<p class="srv-quote">"Grandeur beyond imagination / VFX &amp; Scale"</p>
-<div class="srv-div"></div>
-<h3 class="srv-title">Web Design &amp; High-Tech Dev</h3>
-<p class="srv-desc">Websites built to command attention — fast, conversion-focused, and with a cinematic edge.</p>
-</div>
-</div>
-<!-- Dir 06: Sukumar -->
-<div class="srv">
-<div>
-<div class="srv-art">
-<img alt="Sukumar line sketch portrait" src="assets/images/sukumar-portrait.png"/>
-<div class="srv-role-badge"><span>Dir. 06 • The Architect</span></div>
-</div>
-<div class="srv-head-row">
-<span class="srv-dir-name">SUKUMAR</span>
-<span class="srv-tag">RETENTION</span>
-</div>
-<p class="srv-quote">"Logic meets raw emotion / Mastermind Script"</p>
-<div class="srv-div"></div>
-<h3 class="srv-title">Email Marketing &amp; Logic Funnels</h3>
-<p class="srv-desc">Sequenced journeys and automated conversion flows calculated with mathematical precision.</p>
-</div>
-</div>
-<!-- Dir 07: Yogaraj Bhat -->
-<div class="srv">
-<div>
-<div class="srv-art">
-<img alt="Yogaraj Bhat line sketch portrait" src="assets/images/yogaraj-bhat-portrait.png"/>
-<div class="srv-role-badge"><span>Dir. 07 • The Bard</span></div>
-</div>
-<div class="srv-head-row">
-<span class="srv-dir-name">YOGARAJ BHAT</span>
-<span class="srv-tag">LYRICS &amp; COPY</span>
-</div>
-<p class="srv-quote">"Anisuthide yaako indu... Organic Reach"</p>
-<div class="srv-div"></div>
-<h3 class="srv-title">Lyrics, Copywriting &amp; Poetic SEO</h3>
-<p class="srv-desc">Soulful regional narrative, indelible catchphrases, and emotional resonance that lingers like a classic monsoon melody.</p>
-</div>
-</div>
-<!-- Dir 08: Rishab Shetty -->
-<div class="srv">
-<div>
-<div class="srv-art">
-<img alt="Rishab Shetty line sketch portrait" src="assets/images/rishab-shetty-portrait.png"/>
-<div class="srv-role-badge"><span>DIR. 08 • THE ROOTED VISIONARY</span></div>
-</div>
-<div class="srv-head-row">
-<span class="srv-dir-name">RISHAB SHETTY</span>
-<span class="srv-tag">BRAND FILMS &amp; AV</span>
-</div>
-<p class="srv-quote">"Shivaaaa... Folklore meets modern box office"</p>
-<div class="srv-div"></div>
-<h3 class="srv-title">Brand Films &amp; Cultural Impact</h3>
-<p class="srv-desc">High-impact video commercials and rooted brand storytelling that captivates audiences across pan-India screens.</p>
-</div>
-</div>
+<article class="srv">
+<div class="srv-head-row"><span class="srv-label">DEPT // 01</span><span class="srv-num" aria-hidden="true">01</span></div>
+<h3 class="srv-title">Brand Strategy</h3>
+<p class="srv-desc">Core positioning, narrative mythos, and distinct brand identity built to command market recall.</p>
+</article>
+<article class="srv">
+<div class="srv-head-row"><span class="srv-label">DEPT // 02</span><span class="srv-num" aria-hidden="true">02</span></div>
+<h3 class="srv-title">Growth Marketing &amp; Paid Media</h3>
+<p class="srv-desc">Algorithmic media buying, multi-channel performance funnels, and high-velocity ROAS.</p>
+</article>
+<article class="srv">
+<div class="srv-head-row"><span class="srv-label">DEPT // 03</span><span class="srv-num" aria-hidden="true">03</span></div>
+<h3 class="srv-title">Content &amp; Social Choreography</h3>
+<p class="srv-desc">Pattern-breaking social narratives, viral creator distribution, and community scale.</p>
+</article>
+<article class="srv">
+<div class="srv-head-row"><span class="srv-label">DEPT // 04</span><span class="srv-num" aria-hidden="true">04</span></div>
+<h3 class="srv-title">Web Design &amp; Digital Tech</h3>
+<p class="srv-desc">High-speed interactive web flagships engineered for frictionless conversion and cinematic polish.</p>
+</article>
+<article class="srv">
+<div class="srv-head-row"><span class="srv-label">DEPT // 05</span><span class="srv-num" aria-hidden="true">05</span></div>
+<h3 class="srv-title">Lifecycle &amp; Retention</h3>
+<p class="srv-desc">Automated behavioral email/SMS journeys designed to turn first-time buyers into lifetime advocates.</p>
+</article>
+<article class="srv">
+<div class="srv-head-row"><span class="srv-label">DEPT // 06</span><span class="srv-num" aria-hidden="true">06</span></div>
+<h3 class="srv-title">Theatrical Asset Production</h3>
+<p class="srv-desc">Commercial film direction, 3D motion graphics, and high-impact creative suites for all channels.</p>
+</article>
 </div>
 </section>
 <!-- QUOTE -->

@@ -1,12 +1,12 @@
 ---
 layout: null
-title: "About — The Cast & Crew"
+title: "About — The Founder"
 permalink: /about.html
 ---
 <!DOCTYPE html><html lang="en" style=""><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>About — The Cast &amp; Crew | Digital Magnet Media</title>
+<title>About — The Founder | Digital Magnet Media</title>
 <meta content="Meet the strategists, storytellers, technologists, and growth architects behind Digital Magnet Media." name="description">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231a0a08'/%3E%3Cpath d='M14 46V18h8l10 15 10-15h8v28h-8V30L32 44 22 30v16z' fill='%23d4a020'/%3E%3C/svg%3E">
 <!-- Google Fonts -->
@@ -48,25 +48,24 @@ permalink: /about.html
   .dmm-brand { display: flex; flex-direction: column; text-decoration: none; line-height: 1; }
   .dmm-wordmark { font-family: "Bebas Neue", sans-serif; font-size: 28px; letter-spacing: 1.4px; color: #8B1C14; line-height: .95; text-transform: uppercase; font-weight: 400; }
   .dmm-tagline { font-family: "DM Sans", sans-serif; font-size: 9px; letter-spacing: .22em; color: #665C58; text-transform: uppercase; font-weight: 600; margin-top: 4px; }
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-  .transform-style-3d {
-    transform-style: preserve-3d;
-  }
-  .backface-hidden {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
-  .rotate-y-180 {
-    transform: rotateY(180deg);
-  }
-  .flip-card-inner {
-    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-  }
-  .group:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
+.founder-panel{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.45fr);gap:64px;padding:40px;background:#FAF8F5;border:1px solid #E2DBD1;border-radius:6px;align-items:center;}
+.founder-id{background:#fff;padding:22px;border:1px solid #E2DBD1;border-radius:4px;}
+.founder-label{display:block;font-family:monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#8B1C14;line-height:1.6;}
+.founder-id-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;}
+.founder-stamp{font-family:monospace;font-size:9px;color:white;background:#8B1C14;padding:3px 6px;}
+.founder-portrait{width:100%;height:auto;object-fit:cover;aspect-ratio:1/1;display:grid;place-items:center;background:#F5F2EC;border:1px solid #E2DBD1;margin-bottom:18px;color:#8B1C14;font-family:Anton,sans-serif;font-size:clamp(64px,10vw,112px);}
+.founder-id-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid #E2DBD1;margin-top:20px;padding-top:16px;font-family:monospace;font-size:9px;color:#665C58;}
+.founder-role{font-family:monospace;font-size:11px;color:#665C58;margin-top:6px;}
+.founder-quote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;line-height:1.5;border-left:2px solid #8B1C14;padding-left:18px;margin:22px 0;color:#2C1C18;}
+.founder-bio{font-size:14px;line-height:1.8;color:#665C58;}
+.founder-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;border-top:1px solid #E2DBD1;padding-top:20px;margin-top:24px;}
+.founder-metric{background:white;border:1px solid #E2DBD1;padding:16px;}
+.founder-metric>div{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
+.founder-metric .material-symbols-outlined{font-size:18px;color:#8B1C14;}
+.founder-metric strong{font-family:Anton,sans-serif;font-size:19px;font-weight:400;color:#2C1C18;}
+.founder-metric .founder-label{color:#665C58;font-size:8px;}
+@media(max-width:800px){.founder-panel{grid-template-columns:1fr;gap:32px;padding:24px;}.founder-id{width:100%;max-width:360px;margin:auto;}}
+@media(max-width:380px){.founder-panel{padding:16px;}.founder-metric{padding:10px;}.founder-metric strong{font-size:16px;}}
 </style>
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
 </head>
@@ -102,7 +101,7 @@ permalink: /about.html
 <!-- Scene Marker -->
 <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#FAF8F5] border border-[#E2DBD1] text-[#8B1C14] font-mono text-xs uppercase tracking-wider mb-6">
 <span class="material-symbols-outlined text-sm">movie</span>
-<span class="">Scene 02 — The Cast &amp; Crew</span>
+<span class="">Scene 02 — Our Story</span>
 </div>
 <h1 class="font-anton text-5xl md:text-7xl uppercase tracking-tight text-[#2C1C18] leading-[1.05] mb-6">
         The minds behind <br><span class="text-[#8B1C14]">the blockbuster.</span>
@@ -158,234 +157,31 @@ permalink: /about.html
 <div class="w-12 h-0.5 bg-[#8B1C14] mx-auto mt-8"></div>
 </section>
 <!-- GRAND FINALE CTA SECTION -->
-<!-- INTERACTIVE FLIP CARDS SECTION: THE CAST & CREW -->
-<section class="max-w-7xl mx-auto px-6 md:px-12 py-20 border-b border-[#E2DBD1]" id="cast-and-crew">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-<div>
-<span class="font-mono text-xs font-bold text-[#8B1C14] uppercase tracking-widest block mb-2">DRAMATIS PERSONAE</span>
-<h2 class="font-anton text-3xl md:text-4xl uppercase text-[#2C1C18]">The Leading Ensemble</h2>
+<!-- LEADERSHIP: THE FOUNDER -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 py-20 border-b border-[#E2DBD1]" id="founder">
+<div class="mb-10">
+<span class="founder-label">LEADERSHIP</span>
+<h2 class="font-anton text-3xl md:text-4xl uppercase text-[#2C1C18]">The Founder</h2>
 </div>
-<p class="font-mono text-xs text-[#665C58] mt-3 md:mt-0 flex items-center gap-1.5 bg-[#FAF8F5] px-3 py-1.5 border border-[#E2DBD1] rounded">
-<span class="material-symbols-outlined text-sm text-[#8B1C14]">touch_app</span>
-        Hover any card to reveal the real crew member
-      </p>
-</div>
-<!-- 4-Column Responsive Flip Card Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
-<!-- CARD 1: BRAND STRATEGIST -->
-<div class="group h-[500px] perspective-1000 cursor-pointer">
-<div class="relative w-full h-full transform-style-3d flip-card-inner shadow-sm rounded-lg">
-<!-- FRONT: SKETCH ARCHETYPE -->
-<div class="absolute inset-0 w-full h-full backface-hidden bg-[#FAF8F5] border border-[#E2DBD1] rounded-lg p-5 flex flex-col justify-between overflow-hidden">
-<div>
-<div class="flex items-center justify-between pb-3 border-b border-[#E2DBD1]">
-<span class="font-mono text-[11px] font-bold text-[#8B1C14] tracking-wider uppercase">Archetype: The Mastermind</span>
-<span class="font-mono text-[10px] text-[#665C58]">TAKE 01</span>
-</div>
-<div class="mt-4 aspect-square w-full rounded overflow-hidden bg-[#F5F2EC] border border-[#E2DBD1]/60 flex items-center justify-center">
-<img alt="The Visionary Detective Archetype sketch" class="w-full h-full object-cover object-top mix-blend-multiply" src="{{ '/assets/images/the-visionary-detective-archetype-sketch.jpg' | relative_url }}">
-</div>
-</div>
-<div class="pt-4">
-<span class="text-xs font-mono uppercase text-[#665C58] block mb-1">Role in Production</span>
-<h3 class="font-anton text-2xl uppercase text-[#2C1C18] leading-tight">Brand Strategist</h3>
-<p class="text-xs text-[#665C58] mt-1 line-clamp-1">Screenplay Architecture &amp; Market Vision</p>
-<div class="mt-4 pt-3 border-t border-[#E2DBD1]/80 flex items-center justify-between text-[11px] font-mono text-[#8B1C14]">
-<span class="">Hover to reveal real crew member</span>
-<span class="material-symbols-outlined text-sm">autorenew</span>
-</div>
-</div>
-</div>
-<!-- BACK: REAL TEAM MEMBER -->
-<div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-white border-2 border-[#8B1C14] rounded-lg p-5 flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between pb-3 border-b border-[#E2DBD1]">
-<span class="font-mono text-[10px] bg-[#8B1C14] text-white px-2 py-0.5 rounded font-semibold uppercase tracking-wider">CREW IDENTIFIED</span>
-<span class="font-mono text-[11px] text-[#D4A020] font-bold flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">verified</span> Verified
-                </span>
-</div>
-<div class="mt-4 aspect-square w-full rounded overflow-hidden border border-[#E2DBD1]">
-<img alt="Ananya Sharma - Head of Brand Strategy" class="w-full h-full object-cover object-top" src="{{ '/assets/images/ananya-sharma-head-of-brand-strategy.jpg' | relative_url }}">
-</div>
-<div class="mt-4">
-<h4 class="font-anton text-2xl uppercase text-[#2C1C18] leading-none">Ananya Sharma</h4>
-<p class="font-mono text-xs text-[#8B1C14] font-semibold mt-1">Head of Brand Strategy &amp; Positioning</p>
-<p class="font-grotesk text-xs text-[#665C58] leading-relaxed mt-2.5">
-                  Ex-Ogilvy strategist with 10+ years crafting compelling market-entry narratives and world-building positioning.
-                </p>
-</div>
-</div>
-<div class="pt-3 border-t border-[#E2DBD1] flex items-center justify-between">
-<span class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#FAF8F5] border border-[#E2DBD1] text-[11px] font-mono font-medium text-[#2C1C18] rounded">
-<span class="w-1.5 h-1.5 rounded-full bg-[#8B1C14]"></span>
-                120+ Brands Scaled
-              </span>
-<span class="font-mono text-[10px] text-[#665C58]">BLR / NYC</span>
-</div>
-</div>
-</div>
-</div>
-<!-- CARD 2: CREATIVE DIRECTOR -->
-<div class="group h-[500px] perspective-1000 cursor-pointer">
-<div class="relative w-full h-full transform-style-3d flip-card-inner shadow-sm rounded-lg">
-<!-- FRONT: SKETCH ARCHETYPE -->
-<div class="absolute inset-0 w-full h-full backface-hidden bg-[#FAF8F5] border border-[#E2DBD1] rounded-lg p-5 flex flex-col justify-between overflow-hidden">
-<div>
-<div class="flex items-center justify-between pb-3 border-b border-[#E2DBD1]">
-<span class="font-mono text-[11px] font-bold text-[#8B1C14] tracking-wider uppercase">Archetype: The Storyteller</span>
-<span class="font-mono text-[10px] text-[#665C58]">TAKE 02</span>
-</div>
-<div class="mt-4 aspect-square w-full rounded overflow-hidden bg-[#F5F2EC] border border-[#E2DBD1]/60 flex items-center justify-center">
-<img alt="The Eccentric Auteur sketch" class="w-full h-full object-cover object-top mix-blend-multiply" src="{{ '/assets/images/the-eccentric-auteur-sketch.jpg' | relative_url }}">
-</div>
-</div>
-<div class="pt-4">
-<span class="text-xs font-mono uppercase text-[#665C58] block mb-1">Role in Production</span>
-<h3 class="font-anton text-2xl uppercase text-[#2C1C18] leading-tight">Creative Director</h3>
-<p class="text-xs text-[#665C58] mt-1 line-clamp-1">Narrative Direction &amp; Emotional Hooks</p>
-<div class="mt-4 pt-3 border-t border-[#E2DBD1]/80 flex items-center justify-between text-[11px] font-mono text-[#8B1C14]">
-<span class="">Hover to reveal real crew member</span>
-<span class="material-symbols-outlined text-sm">autorenew</span>
-</div>
-</div>
-</div>
-<!-- BACK: REAL TEAM MEMBER -->
-<div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-white border-2 border-[#8B1C14] rounded-lg p-5 flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between pb-3 border-b border-[#E2DBD1]">
-<span class="font-mono text-[10px] bg-[#8B1C14] text-white px-2 py-0.5 rounded font-semibold uppercase tracking-wider">CREW IDENTIFIED</span>
-<span class="font-mono text-[11px] text-[#D4A020] font-bold flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">verified</span> Verified
-                </span>
-</div>
-<div class="mt-4 aspect-square w-full rounded overflow-hidden border border-[#E2DBD1]">
-<img alt="Vikramaditya Rao - Executive Creative Director" class="w-full h-full object-cover object-top" src="{{ '/assets/images/vikramaditya-rao-executive-creative-director.jpg' | relative_url }}">
-</div>
-<div class="mt-4">
-<h4 class="font-anton text-2xl uppercase text-[#2C1C18] leading-none">Vikramaditya Rao</h4>
-<p class="font-mono text-xs text-[#8B1C14] font-semibold mt-1">Executive Creative Director</p>
-<p class="font-grotesk text-xs text-[#665C58] leading-relaxed mt-2.5">
-                  Award-winning copywriter and filmmaker passionate about emotional resonance and bold visual identities.
-                </p>
-</div>
-</div>
-<div class="pt-3 border-t border-[#E2DBD1] flex items-center justify-between">
-<span class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#FAF8F5] border border-[#E2DBD1] text-[11px] font-mono font-medium text-[#2C1C18] rounded">
-<span class="w-1.5 h-1.5 rounded-full bg-[#8B1C14]"></span>
-                4× Cannes Lions Shortlist
-              </span>
-<span class="font-mono text-[10px] text-[#665C58]">BLR</span>
-</div>
-</div>
-</div>
-</div>
-<!-- CARD 3: GROWTH MARKETING LEAD -->
-<div class="group h-[500px] perspective-1000 cursor-pointer">
-<div class="relative w-full h-full transform-style-3d flip-card-inner shadow-sm rounded-lg">
-<!-- FRONT: SKETCH ARCHETYPE -->
-<div class="absolute inset-0 w-full h-full backface-hidden bg-[#FAF8F5] border border-[#E2DBD1] rounded-lg p-5 flex flex-col justify-between overflow-hidden">
-<div>
-<div class="flex items-center justify-between pb-3 border-b border-[#E2DBD1]">
-<span class="font-mono text-[11px] font-bold text-[#8B1C14] tracking-wider uppercase">Archetype: The Box Office Dynamo</span>
-<span class="font-mono text-[10px] text-[#665C58]">TAKE 03</span>
-</div>
-<div class="mt-4 aspect-square w-full rounded overflow-hidden bg-[#F5F2EC] border border-[#E2DBD1]/60 flex items-center justify-center">
-<img alt="The High-Octane Action Hero sketch" class="w-full h-full object-cover object-top mix-blend-multiply" src="{{ '/assets/images/the-high-octane-action-hero-sketch.jpg' | relative_url }}">
-</div>
-</div>
-<div class="pt-4">
-<span class="text-xs font-mono uppercase text-[#665C58] block mb-1">Role in Production</span>
-<h3 class="font-anton text-2xl uppercase text-[#2C1C18] leading-tight">Growth Lead</h3>
-<p class="text-xs text-[#665C58] mt-1 line-clamp-1">ROAS Optimization &amp; Media Scaling</p>
-<div class="mt-4 pt-3 border-t border-[#E2DBD1]/80 flex items-center justify-between text-[11px] font-mono text-[#8B1C14]">
-<span class="">Hover to reveal real crew member</span>
-<span class="material-symbols-outlined text-sm">autorenew</span>
-</div>
-</div>
-</div>
-<!-- BACK: REAL TEAM MEMBER -->
-<div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-white border-2 border-[#8B1C14] rounded-lg p-5 flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between pb-3 border-b border-[#E2DBD1]">
-<span class="font-mono text-[10px] bg-[#8B1C14] text-white px-2 py-0.5 rounded font-semibold uppercase tracking-wider">CREW IDENTIFIED</span>
-<span class="font-mono text-[11px] text-[#D4A020] font-bold flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">verified</span> Verified
-                </span>
-</div>
-<div class="mt-4 aspect-square w-full rounded overflow-hidden border border-[#E2DBD1]">
-<img alt="Karthik Iyer - VP Growth Marketing" class="w-full h-full object-cover object-top" src="{{ '/assets/images/karthik-iyer-vp-growth-marketing.jpg' | relative_url }}">
-</div>
-<div class="mt-4">
-<h4 class="font-anton text-2xl uppercase text-[#2C1C18] leading-none">Karthik Iyer</h4>
-<p class="font-mono text-xs text-[#8B1C14] font-semibold mt-1">VP of Performance &amp; Growth Marketing</p>
-<p class="font-grotesk text-xs text-[#665C58] leading-relaxed mt-2.5">
-                  Data-driven growth architect managing ₹80Cr+ in performance media with relentless focus on ROAS.
-                </p>
-</div>
-</div>
-<div class="pt-3 border-t border-[#E2DBD1] flex items-center justify-between">
-<span class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#FAF8F5] border border-[#E2DBD1] text-[11px] font-mono font-medium text-[#2C1C18] rounded">
-<span class="w-1.5 h-1.5 rounded-full bg-[#8B1C14]"></span>
-                ₹80Cr+ Ad Spend Managed
-              </span>
-<span class="font-mono text-[10px] text-[#665C58]">BLR</span>
-</div>
-</div>
-</div>
-</div>
-<!-- CARD 4: TECHNOLOGY & WEB LEAD -->
-<div class="group h-[500px] perspective-1000 cursor-pointer">
-<div class="relative w-full h-full transform-style-3d flip-card-inner shadow-sm rounded-lg">
-<!-- FRONT: SKETCH ARCHETYPE -->
-<div class="absolute inset-0 w-full h-full backface-hidden bg-[#FAF8F5] border border-[#E2DBD1] rounded-lg p-5 flex flex-col justify-between overflow-hidden">
-<div>
-<div class="flex items-center justify-between pb-3 border-b border-[#E2DBD1]">
-<span class="font-mono text-[11px] font-bold text-[#8B1C14] tracking-wider uppercase">Archetype: The Technologist</span>
-<span class="font-mono text-[10px] text-[#665C58]">TAKE 04</span>
-</div>
-<div class="mt-4 aspect-square w-full rounded overflow-hidden bg-[#F5F2EC] border border-[#E2DBD1]/60 flex items-center justify-center">
-<img alt="The Sci-Fi Tech Mastermind sketch" class="w-full h-full object-cover object-top mix-blend-multiply" src="{{ '/assets/images/the-sci-fi-tech-mastermind-sketch.jpg' | relative_url }}">
-</div>
-</div>
-<div class="pt-4">
-<span class="text-xs font-mono uppercase text-[#665C58] block mb-1">Role in Production</span>
-<h3 class="font-anton text-2xl uppercase text-[#2C1C18] leading-tight">Technology &amp; Web</h3>
-<p class="text-xs text-[#665C58] mt-1 line-clamp-1">Full-Stack Digital Architecture &amp; CRO</p>
-<div class="mt-4 pt-3 border-t border-[#E2DBD1]/80 flex items-center justify-between text-[11px] font-mono text-[#8B1C14]">
-<span class="">Hover to reveal real crew member</span>
-<span class="material-symbols-outlined text-sm">autorenew</span>
-</div>
-</div>
-</div>
-<!-- BACK: REAL TEAM MEMBER -->
-<div class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-white border-2 border-[#8B1C14] rounded-lg p-5 flex flex-col justify-between">
-<div>
-<div class="flex items-center justify-between pb-3 border-b border-[#E2DBD1]">
-<span class="font-mono text-[10px] bg-[#8B1C14] text-white px-2 py-0.5 rounded font-semibold uppercase tracking-wider">CREW IDENTIFIED</span>
-<span class="font-mono text-[11px] text-[#D4A020] font-bold flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">verified</span> Verified
-                </span>
-</div>
-<div class="mt-4 aspect-square w-full rounded overflow-hidden border border-[#E2DBD1]">
-<img alt="Siddharth Menon - Lead Web Engineer" class="w-full h-full object-cover object-top" src="{{ '/assets/images/siddharth-menon-lead-web-engineer.jpg' | relative_url }}">
-</div>
-<div class="mt-4">
-<h4 class="font-anton text-2xl uppercase text-[#2C1C18] leading-none">Siddharth Menon</h4>
-<p class="font-mono text-xs text-[#8B1C14] font-semibold mt-1">Lead Web Engineer &amp; Technologist</p>
-<p class="font-grotesk text-xs text-[#665C58] leading-relaxed mt-2.5">
-                  Full-stack designer and engineer crafting lightning-fast, high-converting digital storefronts and bespoke web experiences.
-                </p>
-</div>
-</div>
-<div class="pt-3 border-t border-[#E2DBD1] flex items-center justify-between">
-<span class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#FAF8F5] border border-[#E2DBD1] text-[11px] font-mono font-medium text-[#2C1C18] rounded">
-<span class="w-1.5 h-1.5 rounded-full bg-[#8B1C14]"></span>
-                99.9% Uptime &amp; 100 PageSpeed
-              </span>
-<span class="font-mono text-[10px] text-[#665C58]">BLR / NYC</span>
-</div>
-</div>
+<div class="founder-panel">
+<article class="founder-id">
+<div class="founder-id-top"><span class="founder-label">LEADERSHIP / FOUNDER</span><span class="founder-stamp">DIRECTOR</span></div>
+<img class="founder-portrait" src="assets/images/founder-DMM.webp" alt="Dhanu Krishna, Founder and CEO of Digital Magnet Media" width="480" height="480" loading="lazy"/>
+<h3 class="font-anton text-xl uppercase text-[#2C1C18]">Dhanu Krishna</h3>
+<p class="founder-label">FOUNDER &amp; CEO</p>
+<div class="founder-id-bottom"><span>Bengaluru, IN • Indiranagar</span><span>EST. 2016</span></div>
+</article>
+<div class="founder-profile">
+<span class="founder-label">LEADERSHIP PROFILE</span>
+<h3 class="font-anton text-3xl md:text-4xl uppercase text-[#2C1C18]">Dhanu Krishna</h3>
+<p class="founder-role">FOUNDER &amp; CEO</p>
+<blockquote class="founder-quote">“We build campaigns that cut through the noise—pairing clear brand conviction with measurable commercial performance.”</blockquote>
+<p class="founder-bio">Dhanu Krishna founded Digital Magnet Media in Bengaluru to build high-impact brands through bold strategy and digital performance. Over eight years, he has led growth trajectories, product launches, and digital go-to-market roadmaps for fast-growing scale-ups and established brands.</p>
+<div class="founder-metrics">
+<div class="founder-metric"><div><span class="material-symbols-outlined" aria-hidden="true">workspace_premium</span><strong>8+ YEARS</strong></div><span class="founder-label">BUILDING BRANDS</span></div>
+<div class="founder-metric"><div><span class="material-symbols-outlined" aria-hidden="true">trending_up</span><strong>₹140CR+</strong></div><span class="founder-label">CLIENT REVENUE DRIVEN</span></div>
+<div class="founder-metric"><div><span class="material-symbols-outlined" aria-hidden="true">emoji_events</span><strong>4+ AWARDS</strong></div><span class="founder-label">INDUSTRY HONORS</span></div>
+<div class="founder-metric"><div><span class="material-symbols-outlined" aria-hidden="true">public</span><strong>BLR // NYC</strong></div><span class="founder-label">PERFORMANCE HQ</span></div>
 </div>
 </div>
 </div>
