@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Services &amp; Works — Digital Magnet Media</title>
-<meta content="Explore Digital Magnet Media’s services, campaign capabilities, and selected commercial work." name="description"/>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231a0a08'/%3E%3Cpath d='M14 46V18h8l10 15 10-15h8v28h-8V30L32 44 22 30v16z' fill='%23d4a020'/%3E%3C/svg%3E">
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script>
     tailwind.config = {
@@ -41,10 +37,6 @@
     }
   </script>
 <style>
-    .dmm-brand { display: flex; flex-direction: column; text-decoration: none; line-height: 1; }
-    .dmm-wordmark { font-family: "Bebas Neue", sans-serif; font-size: 28px; letter-spacing: 1.4px; color: #8B1C14; line-height: .95; text-transform: uppercase; font-weight: 400; }
-    .dmm-tagline { font-family: "DM Sans", sans-serif; font-size: 9px; letter-spacing: .22em; color: #665C58; text-transform: uppercase; font-weight: 600; margin-top: 4px; }
-    html { scroll-behavior: smooth; }
     body {
       background-color: #F5F2EC;
       color: #1A1817;
@@ -72,8 +64,27 @@
     .service-icon-box:hover {
       transform: translateY(-4px);
     }
-    .service-icon-box:hover .icon-glow {
+
+    /* Active Highlight State for selected Practice Area Tab */
+    .practice-item-btn.is-active {
+      transform: translateY(-4px);
+    }
+    .practice-item-btn.is-active .icon-plate {
+      background-color: #FAF8F4;
+      border-color: #8B1C14;
+      box-shadow: 0 8px 24px -6px rgba(139, 28, 20, 0.15);
+    }
+    .practice-item-btn.is-active .active-indicator-bar {
+      width: 3.5rem;
+      background-color: #8B1C14;
+    }
+    .practice-item-btn.is-active .inspect-badge {
       opacity: 1;
+      color: #8B1C14;
+      font-weight: 700;
+    }
+    .practice-item-btn.is-active .practice-title {
+      color: #8B1C14;
     }
 
     .editorial-border {
@@ -104,7 +115,9 @@
     .animate-marquee:hover {
       animation-play-state: paused;
     }
-  </style>
+  @media(max-width:1100px){header>div{flex-wrap:wrap;gap:16px;}header .services-navigation{order:3;width:100%;overflow-x:auto;padding-bottom:4px;}header .services-navigation a{white-space:nowrap;}}
+.practice-item-btn:focus-visible{outline:2px solid #8B1C14;outline-offset:4px;}
+</style>
 <link rel="stylesheet" href="/Digital-magnet-media/assets/css/site.css">
 </head>
 <body class="antialiased selection:bg-crimson selection:text-cream">
@@ -125,21 +138,27 @@
 <header class="sticky top-0 z-50 bg-[#F5F2EC]/90 backdrop-blur-md border-b border-[#1A1817]/10 transition-colors">
 <div class="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
 <!-- Brand Logo -->
-<a class="dmm-brand" href="index.html">
-<span class="dmm-wordmark">DIGITAL MAGNET MEDIA</span>
-<span class="dmm-tagline">BRANDS. CINEMA. IMPACT.</span>
+<a class="flex items-center gap-3 group" href="index.html">
+<div class="w-9 h-9 rounded-sm bg-crimson text-cream flex items-center justify-center font-display text-2xl tracking-wider shadow-sm transition-transform group-hover:scale-105">
+          M
+        </div>
+<div class="flex flex-col">
+<span class="font-display text-2xl tracking-wide text-ink-dark leading-none">DIGITAL MAGNET MEDIA</span>
+<span class="text-[9px] font-mono tracking-[0.25em] text-crimson uppercase font-semibold">Cinematic Digital Growth</span>
+</div>
 </a>
 <!-- Navigation Links -->
-<nav class="hidden md:flex items-center space-x-9 text-sm font-sans font-medium tracking-wide text-ink-muted">
+<nav class="services-navigation flex items-center gap-5 text-sm font-sans font-medium tracking-wide text-ink-muted">
 <a class="hover:text-crimson transition-colors" href="index.html">Home</a>
 <a class="hover:text-crimson transition-colors" href="about.html">About</a>
-<a class="text-crimson font-semibold relative py-1 border-b-2 border-crimson" href="services.html">Services &amp; Works</a>
+<a class="text-crimson font-semibold relative py-1 border-b-2 border-crimson" href="#services">Services &amp; Works</a>
+<a class="hover:text-crimson transition-colors" href="#testimonials">Reviews</a>
 <a class="hover:text-crimson transition-colors" href="contact.html">Contact</a>
 </nav>
 <!-- CTA Action -->
 <div class="flex items-center gap-4">
-<a class="inline-flex items-center gap-2 bg-crimson hover:bg-crimson-deep text-cream text-xs font-mono font-semibold tracking-wider uppercase px-5 py-2.5 rounded-sm shadow-sm transition-all hover:shadow-md active:translate-y-0.5" href="contact.html">
-<span>START A PROJECT</span>
+<a class="inline-flex items-center gap-2 bg-crimson hover:bg-crimson-deep text-cream text-xs font-mono font-semibold tracking-wider uppercase px-5 py-2.5 rounded-sm shadow-sm transition-all hover:shadow-md active:translate-y-0.5" href="#contact">
+<span class="">START A PROJECT</span>
 <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </a>
 </div>
@@ -150,10 +169,10 @@
 <div class="max-w-7xl mx-auto text-center relative z-10">
 <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-crimson-light border border-crimson/20 text-crimson font-mono text-xs uppercase tracking-widest mb-6">
 <span class="w-1.5 h-1.5 rounded-full bg-crimson"></span>
-<span>FULL-SERVICE DIGITAL MARKETING &amp; CREATIVE SUITE</span>
+<span class="">FULL-SERVICE DIGITAL MARKETING &amp; CREATIVE SUITE</span>
 </div>
 <h1 class="font-display text-6xl sm:text-7xl lg:text-8xl tracking-tight text-ink-dark uppercase max-w-5xl mx-auto leading-[0.92] mb-6">
-        PERFORMANCE ARITHMETIC. <br/>
+        PERFORMANCE ARITHMETIC. <br>
 <span class="text-crimson font-normal">CINEMATIC RESONANCE.</span>
 </h1>
 <p class="font-serif italic text-2xl lg:text-3xl text-ink-muted max-w-3xl mx-auto leading-relaxed font-light mb-8">
@@ -183,7 +202,7 @@
 <!-- TRUSTED CLIENTS MARQUEE TICKER -->
 <div class="w-full py-5 bg-[#FAF8F4] border-b border-[#1A1817]/10 overflow-hidden">
 <div class="max-w-7xl mx-auto px-6 mb-3 flex items-center justify-between text-[11px] font-mono uppercase tracking-widest text-ink-subtle">
-<span>TRUSTED BY INDUSTRY TITANS &amp; AMBITIOUS HIGH-GROWTH BRANDS</span>
+<span class="">TRUSTED BY INDUSTRY TITANS &amp; AMBITIOUS HIGH-GROWTH BRANDS</span>
 <span class="hidden sm:inline">GLOBAL IMPACT • PAN-INDIA FOOTPRINT</span>
 </div>
 <div class="relative w-full overflow-hidden">
@@ -222,204 +241,668 @@
 </div>
 <!-- CORE SERVICES SECTION (INSPIRED BY THE USER'S ATTACHED IMAGE) -->
 <section class="relative py-24 px-6 lg:px-12 bg-[#F5F2EC] overflow-hidden border-b border-[#1A1817]/10" id="services">
-<!-- Watermark Text Matching the Shared Image -->
-<div class="watermark-text">DIGITAL MARKETING</div>
+<!-- Editorial Watermark Text in unified warm crimson hue -->
+<div class="watermark-text" style="color: rgba(139, 28, 20, 0.03); letter-spacing: 0.18em; font-family: 'Bebas Neue', sans-serif;">DIGITAL MARKETING</div>
 <div class="max-w-7xl mx-auto relative z-10">
 <!-- Section Header -->
-<div class="text-center max-w-2xl mx-auto mb-16">
+<div class="text-center max-w-2xl mx-auto mb-10">
 <span class="text-crimson font-mono text-xs uppercase tracking-widest font-semibold block mb-2">01 // CORE ARCHITECTURE</span>
 <h2 class="font-serif italic text-4xl lg:text-5xl text-ink-dark mb-4">Our Practice Areas</h2>
 <p class="font-sans text-sm text-ink-muted leading-relaxed">
-          From search strategy to lifecycle campaigns, every capability is planned and delivered by experienced specialists.
-        </p>
+        From algorithmic search dominance to high-converting CRM drips, every capability is executed in-house. Select any practice area below to review exact deliverables, tech stack, and execution roadmap.
+      </p>
+<div class="inline-flex items-center gap-2 mt-4 px-3 py-1 rounded-full bg-crimson/5 border border-crimson/15 text-crimson font-mono text-[11px] tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-crimson animate-pulse"></span>
+<span class="">Click any practice area icon below to inspect deliverables &amp; execution roadmap</span>
 </div>
-<!-- HORIZONTAL MINIMALIST LINE-ART ICON STRIP (EXACT DESIGN OF THE ATTACHED IMAGE) -->
-<div class="w-full overflow-x-auto pb-8 pt-4 scrollbar-none">
-<div class="min-w-[980px] grid grid-cols-7 gap-4 items-end text-center">
+</div>
+<!-- HORIZONTAL MINIMALIST LINE-ART ICON STRIP (Interactive Selectors) -->
+<div class="w-full overflow-x-auto pb-4 pt-2 scrollbar-none">
+<div class="min-w-[980px] grid grid-cols-7 gap-3 items-end text-center">
 <!-- 01 SEO & Rankings -->
-<div class="service-icon-box flex flex-col items-center group cursor-pointer">
-<div class="relative h-28 w-24 flex items-center justify-center mb-4">
-<!-- Handcrafted SVG line art -->
-<svg fill="none" height="84" viewbox="0 0 100 100" width="84" xmlns="http://www.w3.org/2000/svg">
-<!-- Tiny decorative gold dots & arrows -->
-<circle cx="28" cy="26" fill="none" r="3" stroke="#D4A020" stroke-width="1.5"></circle>
-<path d="M78 24L86 16M86 16H79M86 16V23" stroke="#D4A020" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-<text fill="#D4A020" font-family="Space Grotesk" font-size="8" x="74" y="32">SEO ↑</text>
-<!-- Magnifying glass circle & handle -->
-<circle cx="48" cy="46" fill="#FAF8F4" r="24" stroke="#8B1C14" stroke-width="2.5"></circle>
-<line stroke="#8B1C14" stroke-linecap="round" stroke-width="2.5" x1="38" x2="58" y1="46" y2="46"></line>
-<line stroke="#4A100B" stroke-linecap="round" stroke-width="3.5" x1="65" x2="84" y1="63" y2="82"></line>
-<text fill="#8D8882" font-family="Space Grotesk" font-size="7" x="18" y="74">#rank 1</text>
+<button class="practice-item-btn is-active service-icon-box flex flex-col items-center group cursor-pointer focus:outline-none w-full bg-transparent border-0 p-3 rounded-md transition-all text-center" id="practice-tab-1" onclick="window.togglePracticeDetails(1)" type="button">
+<div class="icon-plate relative h-28 w-24 flex items-center justify-center mb-3 rounded-sm border border-transparent transition-all duration-300">
+<svg fill="none" height="80" viewBox="0 0 100 100" width="80" xmlns="http://www.w3.org/2000/svg">
+<circle cx="28" cy="26" fill="none" r="3" stroke="#8B1C14" stroke-width="1.5"></circle>
+<path d="M78 24L86 16M86 16H79M86 16V23" stroke="#8B1C14" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+<circle cx="48" cy="46" fill="#FAF8F4" r="24" stroke="#8B1C14" stroke-width="2"></circle>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="2" x1="38" x2="58" y1="46" y2="46"></line>
+<line stroke="#1A1817" stroke-linecap="round" stroke-width="3" x1="65" x2="84" y1="63" y2="82"></line>
+<text fill="#8B1C14" font-family="Space Grotesk" font-size="7.5" font-weight="600" x="22" y="74">#RANK 1</text>
 </svg>
 </div>
-<!-- Underline indicator -->
-<div class="w-14 h-0.5 bg-crimson/25 mb-4 group-hover:w-20 group-hover:bg-crimson transition-all"></div>
-<!-- Labels Matching Cursive/Serif Aesthetic in Reference -->
-<h3 class="font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
-              SEO &amp;<br/>Rankings
-            </h3>
+<div class="active-indicator-bar w-12 h-0.5 bg-crimson/30 mb-2.5 transition-all"></div>
+<h3 class="practice-title font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
+            SEO &amp;<br>Rankings
+          </h3>
 <span class="text-[10px] font-mono text-ink-subtle uppercase tracking-wider mt-1.5">Algorithmic Moat</span>
-</div>
+<span class="inspect-badge text-[10px] font-mono text-crimson uppercase tracking-wider mt-2 flex items-center gap-1 transition-all">
+            Inspect <span class="material-symbols-outlined text-[13px]">arrow_drop_down</span>
+</span>
+</button>
 <!-- 02 Social Media -->
-<div class="service-icon-box flex flex-col items-center group cursor-pointer">
-<div class="relative h-28 w-24 flex items-center justify-center mb-4">
-<svg fill="none" height="84" viewbox="0 0 100 100" width="84" xmlns="http://www.w3.org/2000/svg">
-<!-- Counter bubble -->
-<rect fill="#8B1C14" height="15" rx="7.5" width="28" x="8" y="16"></rect>
-<text fill="#F5F2EC" font-family="Space Grotesk" font-size="8" font-weight="bold" x="13" y="27">+12k</text>
-<!-- Phone silhouette -->
-<rect fill="#FAF8F4" height="66" rx="8" stroke="#8B1C14" stroke-width="2.5" width="38" x="30" y="18"></rect>
-<!-- Chat speech bars inside screen -->
-<rect fill="#F8F1DD" height="9" rx="2" stroke="#D4A020" stroke-width="1.8" width="24" x="37" y="28"></rect>
-<rect fill="#F8F1DD" height="9" rx="2" stroke="#D4A020" stroke-width="1.8" width="24" x="37" y="42"></rect>
-<circle cx="49" cy="74" fill="none" r="3" stroke="#8B1C14" stroke-width="1.8"></circle>
-<!-- Floating comment pin & speech dot -->
-<path d="M72 20C72 16.5 75 14 78 14C81 14 84 16.5 84 20C84 24 78 28 78 28C78 28 72 24 72 20Z" fill="#FAF8F4" stroke="#D4A020" stroke-width="1.5"></path>
-<path d="M74 34L85 34L81 44L74 44Z" fill="none" stroke="#8B1C14" stroke-width="1.5"></path>
+<button class="practice-item-btn service-icon-box flex flex-col items-center group cursor-pointer focus:outline-none w-full bg-transparent border-0 p-3 rounded-md transition-all text-center" id="practice-tab-2" onclick="window.togglePracticeDetails(2)" type="button">
+<div class="icon-plate relative h-28 w-24 flex items-center justify-center mb-3 rounded-sm border border-transparent transition-all duration-300">
+<svg fill="none" height="80" viewBox="0 0 100 100" width="80" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#FAF8F4" height="14" rx="7" stroke="#8B1C14" stroke-width="1.5" width="28" x="10" y="16"></rect>
+<text fill="#8B1C14" font-family="Space Grotesk" font-size="7.5" font-weight="bold" x="15" y="26.5">+12k</text>
+<rect fill="#FAF8F4" height="66" rx="7" stroke="#8B1C14" stroke-width="2" width="38" x="31" y="18"></rect>
+<rect fill="#F5F2EC" height="8" rx="1.5" stroke="#8B1C14" stroke-width="1.4" width="24" x="38" y="29"></rect>
+<rect fill="#F5F2EC" height="8" rx="1.5" stroke="#8B1C14" stroke-width="1.4" width="24" x="38" y="42"></rect>
+<circle cx="50" cy="73" fill="none" r="2.5" stroke="#8B1C14" stroke-width="1.5"></circle>
+<path d="M73 20C73 16.5 76 14 79 14C82 14 85 16.5 85 20C85 24 79 28 79 28C79 28 73 24 73 20Z" fill="#FAF8F4" stroke="#8B1C14" stroke-width="1.4"></path>
 </svg>
 </div>
-<div class="w-14 h-0.5 bg-crimson/25 mb-4 group-hover:w-20 group-hover:bg-crimson transition-all"></div>
-<h3 class="font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
-              Social<br/>Media
-            </h3>
+<div class="active-indicator-bar w-12 h-0.5 bg-crimson/30 mb-2.5 transition-all"></div>
+<h3 class="practice-title font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
+            Social<br>Media
+          </h3>
 <span class="text-[10px] font-mono text-ink-subtle uppercase tracking-wider mt-1.5">Viral Narrative</span>
-</div>
+<span class="inspect-badge text-[10px] font-mono text-ink-subtle group-hover:text-crimson uppercase tracking-wider mt-2 opacity-60 group-hover:opacity-100 flex items-center gap-1 transition-all">
+            Inspect <span class="material-symbols-outlined text-[13px]">arrow_drop_down</span>
+</span>
+</button>
 <!-- 03 Paid Ads -->
-<div class="service-icon-box flex flex-col items-center group cursor-pointer">
-<div class="relative h-28 w-24 flex items-center justify-center mb-4">
-<svg fill="none" height="84" viewbox="0 0 100 100" width="84" xmlns="http://www.w3.org/2000/svg">
-<!-- Network nodes with currency symbol -->
-<line stroke="#8B1C14" stroke-width="2.5" x1="48" x2="48" y1="78" y2="46"></line>
-<line stroke="#8B1C14" stroke-width="2" x1="48" x2="28" y1="46" y2="28"></line>
-<line stroke="#8B1C14" stroke-width="2" x1="48" x2="68" y1="46" y2="28"></line>
-<!-- Central Node -->
-<circle cx="48" cy="46" fill="#F8F1DD" r="10" stroke="#8B1C14" stroke-width="2"></circle>
-<text fill="#8B1C14" font-family="DM Sans" font-size="10" font-weight="bold" x="44" y="50">₹</text>
-<!-- Left Node -->
-<circle cx="28" cy="28" fill="#FAF8F4" r="6" stroke="#8B1C14" stroke-width="1.8"></circle>
-<!-- Right Node with ₹ -->
-<circle cx="68" cy="28" fill="#F8F1DD" r="8" stroke="#D4A020" stroke-width="1.8"></circle>
-<text fill="#8B1C14" font-family="DM Sans" font-size="8" x="65" y="31">₹</text>
-<!-- Extra floating coin node -->
-<circle cx="82" cy="18" fill="#FAF8F4" r="7" stroke="#D4A020" stroke-width="1.5"></circle>
-<text fill="#D4A020" font-family="DM Sans" font-size="7" x="79" y="21">₹</text>
-<!-- Lightning conversion spark -->
-<path d="M72 44L84 38L78 52L90 46" opacity="0.6" stroke="#8B1C14" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
-<!-- Ground bar -->
-<line stroke="#8B1C14" stroke-linecap="round" stroke-width="2.5" x1="38" x2="58" y1="80" y2="80"></line>
+<button class="practice-item-btn service-icon-box flex flex-col items-center group cursor-pointer focus:outline-none w-full bg-transparent border-0 p-3 rounded-md transition-all text-center" id="practice-tab-3" onclick="window.togglePracticeDetails(3)" type="button">
+<div class="icon-plate relative h-28 w-24 flex items-center justify-center mb-3 rounded-sm border border-transparent transition-all duration-300">
+<svg fill="none" height="80" viewBox="0 0 100 100" width="80" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#8B1C14" stroke-width="2" x1="48" x2="48" y1="76" y2="46"></line>
+<line stroke="#8B1C14" stroke-width="1.8" x1="48" x2="28" y1="46" y2="28"></line>
+<line stroke="#8B1C14" stroke-width="1.8" x1="48" x2="68" y1="46" y2="28"></line>
+<circle cx="48" cy="46" fill="#FAF8F4" r="10" stroke="#8B1C14" stroke-width="2"></circle>
+<text fill="#8B1C14" font-family="Space Grotesk" font-size="10" font-weight="bold" x="44" y="50">₹</text>
+<circle cx="28" cy="28" fill="#FAF8F4" r="6" stroke="#8B1C14" stroke-width="1.6"></circle>
+<circle cx="68" cy="28" fill="#FAF8F4" r="7.5" stroke="#8B1C14" stroke-width="1.6"></circle>
+<text fill="#8B1C14" font-family="Space Grotesk" font-size="8" x="65" y="31">₹</text>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="2" x1="38" x2="58" y1="78" y2="78"></line>
 </svg>
 </div>
-<div class="w-14 h-0.5 bg-crimson/25 mb-4 group-hover:w-20 group-hover:bg-crimson transition-all"></div>
-<h3 class="font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
-              Paid<br/>Ads
-            </h3>
+<div class="active-indicator-bar w-12 h-0.5 bg-crimson/30 mb-2.5 transition-all"></div>
+<h3 class="practice-title font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
+            Paid<br>Ads
+          </h3>
 <span class="text-[10px] font-mono text-ink-subtle uppercase tracking-wider mt-1.5">ROAS Engineering</span>
-</div>
+<span class="inspect-badge text-[10px] font-mono text-ink-subtle group-hover:text-crimson uppercase tracking-wider mt-2 opacity-60 group-hover:opacity-100 flex items-center gap-1 transition-all">
+            Inspect <span class="material-symbols-outlined text-[13px]">arrow_drop_down</span>
+</span>
+</button>
 <!-- 04 Content Marketing -->
-<div class="service-icon-box flex flex-col items-center group cursor-pointer">
-<div class="relative h-28 w-24 flex items-center justify-center mb-4">
-<svg fill="none" height="84" viewbox="0 0 100 100" width="84" xmlns="http://www.w3.org/2000/svg">
-<!-- Content tree / interconnected editorial network -->
-<line stroke="#8B1C14" stroke-linecap="round" stroke-width="3" x1="50" x2="50" y1="78" y2="44"></line>
-<line stroke="#8B1C14" stroke-linecap="round" stroke-width="2" x1="50" x2="68" y1="56" y2="38"></line>
-<line stroke="#8B1C14" stroke-linecap="round" stroke-width="2" x1="50" x2="34" y1="62" y2="46"></line>
-<!-- Cluster leaves/rings in gold and crimson -->
-<circle cx="36" cy="42" fill="none" r="10" stroke="#8B1C14" stroke-width="1.8"></circle>
-<circle cx="48" cy="30" fill="none" r="12" stroke="#D4A020" stroke-width="2"></circle>
-<circle cx="62" cy="34" fill="none" r="11" stroke="#8B1C14" stroke-width="1.8"></circle>
-<circle cx="50" cy="42" fill="none" r="8" stroke="#D4A020" stroke-dasharray="2 2" stroke-width="1.5"></circle>
-<!-- Base roots/lines -->
-<line stroke="#D4A020" stroke-linecap="round" stroke-width="2" x1="26" x2="74" y1="78" y2="78"></line>
-<line stroke="#D4A020" stroke-dasharray="3 2" stroke-linecap="round" stroke-width="1.5" x1="32" x2="68" y1="82" y2="82"></line>
+<button class="practice-item-btn service-icon-box flex flex-col items-center group cursor-pointer focus:outline-none w-full bg-transparent border-0 p-3 rounded-md transition-all text-center" id="practice-tab-4" onclick="window.togglePracticeDetails(4)" type="button">
+<div class="icon-plate relative h-28 w-24 flex items-center justify-center mb-3 rounded-sm border border-transparent transition-all duration-300">
+<svg fill="none" height="80" viewBox="0 0 100 100" width="80" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="2.5" x1="50" x2="50" y1="76" y2="44"></line>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="1.8" x1="50" x2="68" y1="56" y2="38"></line>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="1.8" x1="50" x2="34" y1="62" y2="46"></line>
+<circle cx="36" cy="42" fill="none" r="9" stroke="#8B1C14" stroke-width="1.6"></circle>
+<circle cx="48" cy="30" fill="#FAF8F4" r="11" stroke="#8B1C14" stroke-width="1.8"></circle>
+<circle cx="62" cy="34" fill="none" r="10" stroke="#8B1C14" stroke-width="1.6"></circle>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="2" x1="28" x2="72" y1="76" y2="76"></line>
+<line stroke="#8B1C14" stroke-dasharray="3 2" stroke-linecap="round" stroke-width="1.5" x1="34" x2="66" y1="80" y2="80"></line>
 </svg>
 </div>
-<div class="w-14 h-0.5 bg-crimson/25 mb-4 group-hover:w-20 group-hover:bg-crimson transition-all"></div>
-<h3 class="font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
-              Content<br/>Marketing
-            </h3>
+<div class="active-indicator-bar w-12 h-0.5 bg-crimson/30 mb-2.5 transition-all"></div>
+<h3 class="practice-title font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
+            Content<br>Marketing
+          </h3>
 <span class="text-[10px] font-mono text-ink-subtle uppercase tracking-wider mt-1.5">Editorial Authority</span>
-</div>
+<span class="inspect-badge text-[10px] font-mono text-ink-subtle group-hover:text-crimson uppercase tracking-wider mt-2 opacity-60 group-hover:opacity-100 flex items-center gap-1 transition-all">
+            Inspect <span class="material-symbols-outlined text-[13px]">arrow_drop_down</span>
+</span>
+</button>
 <!-- 05 Email Campaigns -->
-<div class="service-icon-box flex flex-col items-center group cursor-pointer">
-<div class="relative h-28 w-24 flex items-center justify-center mb-4">
-<svg fill="none" height="84" viewbox="0 0 100 100" width="84" xmlns="http://www.w3.org/2000/svg">
-<!-- Speed lines -->
-<line stroke="#8B1C14" stroke-linecap="round" stroke-width="1.5" x1="12" x2="22" y1="36" y2="36"></line>
-<line stroke="#8B1C14" stroke-linecap="round" stroke-width="1.5" x1="10" x2="20" y1="42" y2="42"></line>
-<!-- Envelope Body -->
+<button class="practice-item-btn service-icon-box flex flex-col items-center group cursor-pointer focus:outline-none w-full bg-transparent border-0 p-3 rounded-md transition-all text-center" id="practice-tab-5" onclick="window.togglePracticeDetails(5)" type="button">
+<div class="icon-plate relative h-28 w-24 flex items-center justify-center mb-3 rounded-sm border border-transparent transition-all duration-300">
+<svg fill="none" height="80" viewBox="0 0 100 100" width="80" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="1.5" x1="14" x2="22" y1="36" y2="36"></line>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="1.5" x1="12" x2="20" y1="42" y2="42"></line>
 <rect fill="#FAF8F4" height="34" rx="3" stroke="#8B1C14" stroke-width="2" width="46" x="24" y="30"></rect>
-<!-- Opened letter sheet coming out -->
-<path d="M30 30V18C30 16.5 31.5 15 33 15H61C62.5 15 64 16.5 64 18V30" fill="#F8F1DD" stroke="#D4A020" stroke-width="2"></path>
-<line stroke="#D4A020" stroke-linecap="round" stroke-width="1.8" x1="36" x2="58" y1="21" y2="21"></line>
-<line stroke="#D4A020" stroke-linecap="round" stroke-width="1.8" x1="36" x2="52" y1="26" y2="26"></line>
-<!-- Envelope fold -->
-<path d="M25 31L47 48L69 31" stroke="#8B1C14" stroke-width="2"></path>
-<!-- Open Rate Badge -->
-<rect fill="#6A130D" height="15" rx="3" width="28" x="62" y="44"></rect>
-<text fill="#F8F1DD" font-family="Space Grotesk" font-size="6" font-weight="bold" x="65" y="51">OPEN</text>
-<text fill="#F8F1DD" font-family="Space Grotesk" font-size="6" x="67" y="57">42%</text>
-<!-- Sparkle stars -->
-<path d="M78 20L80 16L82 20L86 22L82 24L80 28L78 24L74 22Z" fill="#D4A020"></path>
-<line opacity="0.4" stroke="#8B1C14" stroke-width="1.5" x1="20" x2="72" y1="80" y2="80"></line>
+<path d="M30 30V18C30 16.5 31.5 15 33 15H61C62.5 15 64 16.5 64 18V30" fill="#FAF8F4" stroke="#8B1C14" stroke-width="1.8"></path>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="1.5" x1="36" x2="58" y1="21" y2="21"></line>
+<path d="M25 31L47 48L69 31" stroke="#8B1C14" stroke-width="1.8"></path>
+<rect fill="#8B1C14" height="13" rx="2.5" width="26" x="63" y="46"></rect>
+<text fill="#FAF8F4" font-family="Space Grotesk" font-size="6.5" font-weight="bold" x="67" y="55">OPEN</text>
 </svg>
 </div>
-<div class="w-14 h-0.5 bg-crimson/25 mb-4 group-hover:w-20 group-hover:bg-crimson transition-all"></div>
-<h3 class="font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
-              Email<br/>Campaigns
-            </h3>
+<div class="active-indicator-bar w-12 h-0.5 bg-crimson/30 mb-2.5 transition-all"></div>
+<h3 class="practice-title font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
+            Email<br>Campaigns
+          </h3>
 <span class="text-[10px] font-mono text-ink-subtle uppercase tracking-wider mt-1.5">Lifecycle Retention</span>
-</div>
+<span class="inspect-badge text-[10px] font-mono text-ink-subtle group-hover:text-crimson uppercase tracking-wider mt-2 opacity-60 group-hover:opacity-100 flex items-center gap-1 transition-all">
+            Inspect <span class="material-symbols-outlined text-[13px]">arrow_drop_down</span>
+</span>
+</button>
 <!-- 06 Analytics & Reporting -->
-<div class="service-icon-box flex flex-col items-center group cursor-pointer">
-<div class="relative h-28 w-24 flex items-center justify-center mb-4">
-<svg fill="none" height="84" viewbox="0 0 100 100" width="84" xmlns="http://www.w3.org/2000/svg">
-<!-- Grid backdrop -->
+<button class="practice-item-btn service-icon-box flex flex-col items-center group cursor-pointer focus:outline-none w-full bg-transparent border-0 p-3 rounded-md transition-all text-center" id="practice-tab-6" onclick="window.togglePracticeDetails(6)" type="button">
+<div class="icon-plate relative h-28 w-24 flex items-center justify-center mb-3 rounded-sm border border-transparent transition-all duration-300">
+<svg fill="none" height="80" viewBox="0 0 100 100" width="80" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#FAF8F4" height="48" stroke="#8B1C14" stroke-width="2" width="46" x="22" y="24"></rect>
-<line opacity="0.3" stroke="#8B1C14" stroke-width="1" x1="22" x2="68" y1="40" y2="40"></line>
-<line opacity="0.3" stroke="#8B1C14" stroke-width="1" x1="22" x2="68" y1="56" y2="56"></line>
-<line opacity="0.3" stroke="#8B1C14" stroke-width="1" x1="37" x2="37" y1="24" y2="72"></line>
-<line opacity="0.3" stroke="#8B1C14" stroke-width="1" x1="52" x2="52" y1="24" y2="72"></line>
-<!-- Vertical Growth Bars inside -->
-<rect fill="#8B1C14" height="14" opacity="0.4" width="6" x="27" y="58"></rect>
+<line opacity="0.2" stroke="#8B1C14" stroke-width="1" x1="22" x2="68" y1="40" y2="40"></line>
+<line opacity="0.2" stroke="#8B1C14" stroke-width="1" x1="22" x2="68" y1="56" y2="56"></line>
+<rect fill="#8B1C14" height="14" opacity="0.35" width="6" x="27" y="58"></rect>
 <rect fill="#8B1C14" height="28" opacity="0.6" width="6" x="42" y="44"></rect>
 <rect fill="#8B1C14" height="40" width="6" x="57" y="32"></rect>
-<!-- Upward Rocketing Arrow Line with gold circles -->
-<path d="M28 62L43 46L58 32L78 14" stroke="#8B1C14" stroke-linecap="round" stroke-width="2.5"></path>
-<path d="M68 14H78V24" stroke="#8B1C14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-<circle cx="28" cy="62" fill="#F8F1DD" r="3" stroke="#D4A020" stroke-width="1.5"></circle>
-<circle cx="43" cy="46" fill="#F8F1DD" r="3" stroke="#D4A020" stroke-width="1.5"></circle>
-<circle cx="58" cy="32" fill="#F8F1DD" r="3" stroke="#D4A020" stroke-width="1.5"></circle>
+<path d="M28 62L43 46L58 32L76 16" stroke="#8B1C14" stroke-linecap="round" stroke-width="2.2"></path>
+<path d="M66 16H76V26" stroke="#8B1C14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
 <line stroke="#8B1C14" stroke-linecap="round" stroke-width="2" x1="18" x2="74" y1="78" y2="78"></line>
 </svg>
 </div>
-<div class="w-14 h-0.5 bg-crimson/25 mb-4 group-hover:w-20 group-hover:bg-crimson transition-all"></div>
-<h3 class="font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
-              Analytics &amp;<br/>Reporting
-            </h3>
+<div class="active-indicator-bar w-12 h-0.5 bg-crimson/30 mb-2.5 transition-all"></div>
+<h3 class="practice-title font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
+            Analytics &amp;<br>Reporting
+          </h3>
 <span class="text-[10px] font-mono text-ink-subtle uppercase tracking-wider mt-1.5">Real-time P&amp;L</span>
-</div>
+<span class="inspect-badge text-[10px] font-mono text-ink-subtle group-hover:text-crimson uppercase tracking-wider mt-2 opacity-60 group-hover:opacity-100 flex items-center gap-1 transition-all">
+            Inspect <span class="material-symbols-outlined text-[13px]">arrow_drop_down</span>
+</span>
+</button>
 <!-- 07 Brand Identity -->
-<div class="service-icon-box flex flex-col items-center group cursor-pointer">
-<div class="relative h-28 w-24 flex items-center justify-center mb-4">
-<svg fill="none" height="84" viewbox="0 0 100 100" width="84" xmlns="http://www.w3.org/2000/svg">
-<!-- Royal Gold Crown on Top -->
-<path d="M30 36L38 24L50 34L62 24L70 36H30Z" fill="#F8F1DD" stroke="#D4A020" stroke-linejoin="round" stroke-width="2"></path>
+<button class="practice-item-btn service-icon-box flex flex-col items-center group cursor-pointer focus:outline-none w-full bg-transparent border-0 p-3 rounded-md transition-all text-center" id="practice-tab-7" onclick="window.togglePracticeDetails(7)" type="button">
+<div class="icon-plate relative h-28 w-24 flex items-center justify-center mb-3 rounded-sm border border-transparent transition-all duration-300">
+<svg fill="none" height="80" viewBox="0 0 100 100" width="80" xmlns="http://www.w3.org/2000/svg">
+<path d="M30 36L38 24L50 34L62 24L70 36H30Z" fill="#FAF8F4" stroke="#8B1C14" stroke-linejoin="round" stroke-width="1.8"></path>
 <circle cx="50" cy="28" fill="#8B1C14" r="2.5"></circle>
-<!-- Tiny floating sparkle star -->
-<path d="M78 22L80 18L82 22L86 24L82 26L80 30L78 26L74 24Z" fill="#D4A020"></path>
-<!-- Prestige Price / Luggage Tag -->
-<rect fill="#FAF8F4" height="24" rx="4" stroke="#8B1C14" stroke-width="2" width="36" x="32" y="44"></rect>
-<circle cx="40" cy="56" fill="#F8F1DD" r="3" stroke="#D4A020" stroke-width="1.8"></circle>
-<line stroke="#8B1C14" stroke-linecap="round" stroke-width="1.8" x1="48" x2="62" y1="52" y2="52"></line>
-<line stroke="#8B1C14" stroke-linecap="round" stroke-width="1.8" x1="48" x2="58" y1="59" y2="59"></line>
-<line opacity="0.4" stroke="#8B1C14" stroke-width="1.5" x1="24" x2="76" y1="78" y2="78"></line>
+<rect fill="#FAF8F4" height="24" rx="4" stroke="#8B1C14" stroke-width="1.8" width="36" x="32" y="44"></rect>
+<circle cx="40" cy="56" fill="none" r="3" stroke="#8B1C14" stroke-width="1.5"></circle>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="1.5" x1="48" x2="62" y1="52" y2="52"></line>
+<line stroke="#8B1C14" stroke-linecap="round" stroke-width="1.5" x1="48" x2="58" y1="59" y2="59"></line>
+<line opacity="0.3" stroke="#8B1C14" stroke-width="1.5" x1="24" x2="76" y1="78" y2="78"></line>
 </svg>
 </div>
-<div class="w-14 h-0.5 bg-crimson/25 mb-4 group-hover:w-20 group-hover:bg-crimson transition-all"></div>
-<h3 class="font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
-              Brand<br/>Identity
-            </h3>
+<div class="active-indicator-bar w-12 h-0.5 bg-crimson/30 mb-2.5 transition-all"></div>
+<h3 class="practice-title font-serif italic text-xl text-ink-dark leading-tight group-hover:text-crimson transition-colors">
+            Brand<br>Identity
+          </h3>
 <span class="text-[10px] font-mono text-ink-subtle uppercase tracking-wider mt-1.5">Prestige &amp; Moat</span>
+<span class="inspect-badge text-[10px] font-mono text-ink-subtle group-hover:text-crimson uppercase tracking-wider mt-2 opacity-60 group-hover:opacity-100 flex items-center gap-1 transition-all">
+            Inspect <span class="material-symbols-outlined text-[13px]">arrow_drop_down</span>
+</span>
+</button>
+</div>
+</div>
+<!-- INTERACTIVE EXPANDABLE DETAILS PANEL (Controlled via togglePracticeDetails) -->
+<div class="mt-4 transition-all duration-300 ease-out" id="practice-details-container">
+<!-- 01 Detail (Open by default) -->
+<div class="practice-detail-card bg-[#FAF8F4] border-2 border-crimson/30 p-7 lg:p-10 rounded-sm shadow-md relative" id="practice-detail-1">
+<div class="flex items-center justify-between border-b border-[#1A1817]/10 pb-5 mb-7">
+<div class="flex items-center gap-3">
+<span class="bg-crimson text-cream font-mono text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-sm">DEPT 01 // SEARCH ARCHITECTURE</span>
+<span class="text-xs font-mono text-ink-subtle hidden sm:inline">• HIGH-INTENT ORGANIC DOMINANCE</span>
+</div>
+<button class="text-ink-muted hover:text-crimson focus:outline-none flex items-center gap-1 font-mono text-xs uppercase transition-colors" onclick="window.closePracticeDetails()" type="button">
+<span class="">Dismiss Panel</span> <span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-4 lg:border-r border-[#1A1817]/10 lg:pr-8">
+<h4 class="font-serif italic text-3xl lg:text-4xl text-ink-dark mb-3">SEO &amp; Algorithmic Search Domination</h4>
+<p class="font-sans text-sm text-ink-muted leading-relaxed mb-6">
+              We construct defensible organic pipelines by reverse-engineering Google RankBrain and AI Overviews, turning your brand into the undisputed default answer for high-intent commercial queries.
+            </p>
+<div class="p-4 bg-crimson-light/50 border border-crimson/20 rounded-sm mb-6">
+<span class="text-[10px] font-mono uppercase text-crimson font-bold tracking-wider block mb-1">Expected Commercial Impact // KPI</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display text-3xl text-crimson">+280%</span>
+<span class="text-xs font-sans text-ink-muted">Organic qualified demo / purchase volume in 180 days</span>
+</div>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-deep text-cream text-xs font-mono font-semibold tracking-wider uppercase px-5 py-3 rounded-sm shadow-sm transition-all hover:shadow-md" href="#contact">
+<span class="">Commission This Practice Area</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="lg:col-span-8 space-y-6">
+<div>
+<h5 class="font-mono text-xs uppercase text-ink-dark font-bold tracking-wider mb-3 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-crimson"></span> Core Deliverables &amp; Execution Roadmap
+              </h5>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">1. Technical Core Web Vitals Remediation</span>
+<p class="text-ink-muted leading-relaxed">Sub-second LCP optimization, server-side DOM pruning, and headless indexing architecture audits.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">2. Semantic Cluster &amp; Entity Mapping</span>
+<p class="text-ink-muted leading-relaxed">Natural language entity networks designed to capture primary search intents and AI overview citations.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">3. High-Authority Editorial Digital PR</span>
+<p class="text-ink-muted leading-relaxed">Bespoke investigative industry studies yielding tier-1 contextual backlinks from Forbes, ET &amp; TechCrunch.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">4. Generative AI Search Engine Moat</span>
+<p class="text-ink-muted leading-relaxed">Systematic schema markup and citation engineering across Perplexity, ChatGPT Search, and Copilot.</p>
+</div>
+</div>
+</div>
+<div>
+<h5 class="font-mono text-xs uppercase text-ink-dark font-bold tracking-wider mb-2.5 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-gold"></span> Tooling &amp; Enterprise Stack
+              </h5>
+<div class="flex flex-wrap gap-2 text-[11px] font-mono">
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Ahrefs Enterprise</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">SEMrush</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Screaming Frog SEO Spider</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">SurferSEO AI</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Google Search Console API</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Sitebulb Crawler</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 02 Detail -->
+<div class="practice-detail-card hidden bg-[#FAF8F4] border-2 border-crimson/30 p-7 lg:p-10 rounded-sm shadow-md relative" id="practice-detail-2">
+<div class="flex items-center justify-between border-b border-[#1A1817]/10 pb-5 mb-7">
+<div class="flex items-center gap-3">
+<span class="bg-crimson text-cream font-mono text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-sm">DEPT 02 // SOCIAL MEDIA &amp; VIRALITY</span>
+<span class="text-xs font-mono text-ink-subtle hidden sm:inline">• CINEMATIC CULTURAL MOMENTUM</span>
+</div>
+<button class="text-ink-muted hover:text-crimson focus:outline-none flex items-center gap-1 font-mono text-xs uppercase transition-colors" onclick="window.closePracticeDetails()" type="button">
+<span class="">Dismiss Panel</span> <span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-4 lg:border-r border-[#1A1817]/10 lg:pr-8">
+<h4 class="font-serif italic text-3xl lg:text-4xl text-ink-dark mb-3">Social Media &amp; Viral Choreography</h4>
+<p class="font-sans text-sm text-ink-muted leading-relaxed mb-6">
+              Cinematic short-form formats, sonic branding, and vernacular storytelling that turn fleeting scrolls into cult brand loyalty and organic consumer velocity.
+            </p>
+<div class="p-4 bg-crimson-light/50 border border-crimson/20 rounded-sm mb-6">
+<span class="text-[10px] font-mono uppercase text-crimson font-bold tracking-wider block mb-1">Expected Commercial Impact // KPI</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display text-3xl text-crimson">5.2M+</span>
+<span class="text-xs font-sans text-ink-muted">Organic viral views monthly + 34% drop in blended CAC</span>
+</div>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-deep text-cream text-xs font-mono font-semibold tracking-wider uppercase px-5 py-3 rounded-sm shadow-sm transition-all hover:shadow-md" href="#contact">
+<span class="">Commission This Practice Area</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="lg:col-span-8 space-y-6">
+<div>
+<h5 class="font-mono text-xs uppercase text-ink-dark font-bold tracking-wider mb-3 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-crimson"></span> Core Deliverables &amp; Execution Roadmap
+              </h5>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">1. Weekly 4K Cinema Reels &amp; TikToks</span>
+<p class="text-ink-muted leading-relaxed">Professional color-grading, RED pipeline assets, and hyper-engaging first-3-second retention hooks.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">2. Vernacular &amp; Meme Response Desk</span>
+<p class="text-ink-muted leading-relaxed">Rapid turnaround cultural reactive content drafted, approved, and live within 2 hours of trend emergence.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">3. Tier-1 Influencer &amp; Creator Seedings</span>
+<p class="text-ink-muted leading-relaxed">Unboxing theater and organic talent ambassadorships free of transactional sponsor fatigue.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">4. Community Conversation Engine</span>
+<p class="text-ink-muted leading-relaxed">High-touch comment-section wit, bespoke direct messaging funnels, and automated keyword trigger flows.</p>
+</div>
+</div>
+</div>
+<div>
+<h5 class="font-mono text-xs uppercase text-ink-dark font-bold tracking-wider mb-2.5 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-gold"></span> Tooling &amp; Enterprise Stack
+              </h5>
+<div class="flex flex-wrap gap-2 text-[11px] font-mono">
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">DaVinci Resolve</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">RED Cinema Camera Suite</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Sprout Social</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">ManyChat Pro</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">CapCut Enterprise</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">CreatorIQ</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 03 Detail -->
+<div class="practice-detail-card hidden bg-[#FAF8F4] border-2 border-crimson/30 p-7 lg:p-10 rounded-sm shadow-md relative" id="practice-detail-3">
+<div class="flex items-center justify-between border-b border-[#1A1817]/10 pb-5 mb-7">
+<div class="flex items-center gap-3">
+<span class="bg-crimson text-cream font-mono text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-sm">DEPT 03 // PERFORMANCE MEDIA &amp; ADS</span>
+<span class="text-xs font-mono text-ink-subtle hidden sm:inline">• QUANTITATIVE REVENUE ARITHMETIC</span>
+</div>
+<button class="text-ink-muted hover:text-crimson focus:outline-none flex items-center gap-1 font-mono text-xs uppercase transition-colors" onclick="window.closePracticeDetails()" type="button">
+<span class="">Dismiss Panel</span> <span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-4 lg:border-r border-[#1A1817]/10 lg:pr-8">
+<h4 class="font-serif italic text-3xl lg:text-4xl text-ink-dark mb-3">Paid Ads &amp; ROAS Engineering</h4>
+<p class="font-sans text-sm text-ink-muted leading-relaxed mb-6">
+              Direct-response advertising engineered with hedge-fund discipline. Every rupee deployed is governed by automated bid scripts and relentless 12-hook creative testing matrices.
+            </p>
+<div class="p-4 bg-crimson-light/50 border border-crimson/20 rounded-sm mb-6">
+<span class="text-[10px] font-mono uppercase text-crimson font-bold tracking-wider block mb-1">Expected Commercial Impact // KPI</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display text-3xl text-crimson">8.4x - 11.4x</span>
+<span class="text-xs font-sans text-ink-muted">Blended ROAS sustained at high 8-figure monthly spend</span>
+</div>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-deep text-cream text-xs font-mono font-semibold tracking-wider uppercase px-5 py-3 rounded-sm shadow-sm transition-all hover:shadow-md" href="#contact">
+<span class="">Commission This Practice Area</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="lg:col-span-8 space-y-6">
+<div>
+<h5 class="font-mono text-xs uppercase text-ink-dark font-bold tracking-wider mb-3 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-crimson"></span> Core Deliverables &amp; Execution Roadmap
+              </h5>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">1. Omni-Channel Paid Distribution</span>
+<p class="text-ink-muted leading-relaxed">Meta Ads Manager, Google Performance Max, YouTube Pre-Roll, and programmatic native display networks.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">2. 12-Angle Creative Testing Matrix</span>
+<p class="text-ink-muted leading-relaxed">Rapid sandbox testing isolating problem-agitate, cinematic hero, unboxing, and skeptic comparison hooks.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">3. CAPI Server-Side Tracking &amp; Attribution</span>
+<p class="text-ink-muted leading-relaxed">Eliminating iOS tracking loss via first-party server containers, offline conversion uploads, and MER modeling.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">4. High-Converting CRO Landing Pages</span>
+<p class="text-ink-muted leading-relaxed">Dedicated advertorials and headless PDPs built for 4.2%+ checkout conversion velocity.</p>
+</div>
+</div>
+</div>
+<div>
+<h5 class="font-mono text-xs uppercase text-ink-dark font-bold tracking-wider mb-2.5 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-gold"></span> Tooling &amp; Enterprise Stack
+              </h5>
+<div class="flex flex-wrap gap-2 text-[11px] font-mono">
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Meta Ads Manager</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Google Ads 360</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Triple Whale</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Elevar CAPI</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Motion App (Creative Analytics)</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Northbeam</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 04 Detail -->
+<div class="practice-detail-card hidden bg-[#FAF8F4] border-2 border-crimson/30 p-7 lg:p-10 rounded-sm shadow-md relative" id="practice-detail-4">
+<div class="flex items-center justify-between border-b border-[#1A1817]/10 pb-5 mb-7">
+<div class="flex items-center gap-3">
+<span class="bg-crimson text-cream font-mono text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-sm">DEPT 04 // EDITORIAL &amp; THOUGHT LEADERSHIP</span>
+<span class="text-xs font-mono text-ink-subtle hidden sm:inline">• MARKET CATEGORY LEADERSHIP</span>
+</div>
+<button class="text-ink-muted hover:text-crimson focus:outline-none flex items-center gap-1 font-mono text-xs uppercase transition-colors" onclick="window.closePracticeDetails()" type="button">
+<span class="">Dismiss Panel</span> <span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-4 lg:border-r border-[#1A1817]/10 lg:pr-8">
+<h4 class="font-serif italic text-3xl lg:text-4xl text-ink-dark mb-3">Content Marketing &amp; Editorial Moats</h4>
+<p class="font-sans text-sm text-ink-muted leading-relaxed mb-6">
+              We engineer deep-dive white papers, investigative research decks, and episodic video podcasts that establish insurmountable intellectual moats around your market category.
+            </p>
+<div class="p-4 bg-crimson-light/50 border border-crimson/20 rounded-sm mb-6">
+<span class="text-[10px] font-mono uppercase text-crimson font-bold tracking-wider block mb-1">Expected Commercial Impact // KPI</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display text-3xl text-crimson">+145%</span>
+<span class="text-xs font-sans text-ink-muted">Increase in high-ticket enterprise inbound sales qualified leads</span>
+</div>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-deep text-cream text-xs font-mono font-semibold tracking-wider uppercase px-5 py-3 rounded-sm shadow-sm transition-all hover:shadow-md" href="#contact">
+<span class="">Commission This Practice Area</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="lg:col-span-8 space-y-6">
+<div>
+<h5 class="font-mono text-xs uppercase text-ink-dark font-bold tracking-wider mb-3 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-crimson"></span> Core Deliverables &amp; Execution Roadmap
+              </h5>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">1. Category Manifestos &amp; Benchmarks</span>
+<p class="text-ink-muted leading-relaxed">Definitive industry reports cited widely across media, establishing immediate sector authority.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">2. Founder &amp; C-Suite Ghostwriting</span>
+<p class="text-ink-muted leading-relaxed">Weekly long-form philosophical essays, Twitter/X threads, and LinkedIn think pieces that convert leaders.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">3. Episodic Video Podcasts &amp; Talk Shows</span>
+<p class="text-ink-muted leading-relaxed">Professional multi-camera format interviewing domain luminaries with high-production visual vignettes.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">4. 1-to-25 Content Atomization Engine</span>
+<p class="text-ink-muted leading-relaxed">System turning one cornerstone narrative into 25 micro-assets: carousels, video snippets, and email memos.</p>
+</div>
+</div>
+</div>
+<div>
+<h5 class="font-mono text-xs uppercase text-ink-dark font-bold tracking-wider mb-2.5 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-gold"></span> Tooling &amp; Enterprise Stack
+              </h5>
+<div class="flex flex-wrap gap-2 text-[11px] font-mono">
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Notion Editorial CMS</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Figma Layout System</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Riverside 4K</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Descript Pro</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Clearscope</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Substack Pro</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 05 Detail -->
+<div class="practice-detail-card hidden bg-[#FAF8F4] border-2 border-crimson/30 p-7 lg:p-10 rounded-sm shadow-md relative" id="practice-detail-5">
+<div class="flex items-center justify-between border-b border-[#1A1817]/10 pb-5 mb-7">
+<div class="flex items-center gap-3">
+<span class="bg-crimson text-cream font-mono text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-sm">DEPT 05 // LIFECYCLE &amp; RETENTION</span>
+<span class="text-xs font-mono text-ink-subtle hidden sm:inline">• RECURRING REVENUE EXTRACTION</span>
+</div>
+<button class="text-ink-muted hover:text-crimson focus:outline-none flex items-center gap-1 font-mono text-xs uppercase transition-colors" onclick="window.closePracticeDetails()" type="button">
+<span class="">Dismiss Panel</span> <span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-4 lg:border-r border-[#1A1817]/10 lg:pr-8">
+<h4 class="font-serif italic text-3xl lg:text-4xl text-ink-dark mb-3">Email Campaigns &amp; Lifecycle Retention</h4>
+<p class="font-sans text-sm text-ink-muted leading-relaxed mb-6">
+              Monetize your owned database relentlessly. We build dynamic segmentation engines, sensory HTML newsletters, and behavioral CRM flows that subscribers read like private letters.
+            </p>
+<div class="p-4 bg-crimson-light/50 border border-crimson/20 rounded-sm mb-6">
+<span class="text-[10px] font-mono uppercase text-crimson font-bold tracking-wider block mb-1">Expected Commercial Impact // KPI</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display text-3xl text-crimson">42.8%</span>
+<span class="text-xs font-sans text-ink-muted">Average open rate; 38%+ of total GMV driven by owned flows</span>
+</div>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-deep text-cream text-xs font-mono font-semibold tracking-wider uppercase px-5 py-3 rounded-sm shadow-sm transition-all hover:shadow-md" href="#contact">
+<span class="">Commission This Practice Area</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="lg:col-span-8 space-y-6">
+<div>
+<h5 class="font-mono text-xs uppercase text-ink-dark font-bold tracking-wider mb-3 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-crimson"></span> Core Deliverables &amp; Execution Roadmap
+              </h5>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">1. Bespoke Editorial Newsletters</span>
+<p class="text-ink-muted leading-relaxed">Tailored HTML typography, dark-mode bulletproofing, and signature columns driving weekly checkout volume.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">2. 8-Stage Automated Retention Funnels</span>
+<p class="text-ink-muted leading-relaxed">Dynamic welcome arcs, post-purchase replenishment alarms, VIP loyalty ladders, and sunset win-backs.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">3. Zero-Party Data Quiz Capture</span>
+<p class="text-ink-muted leading-relaxed">Custom interactive product recommendation quizzes mapping preferences directly into personalized drip logic.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">4. Inbox Deliverability &amp; Reputation Defense</span>
+<p class="text-ink-muted leading-relaxed">BIMI setup, DMARC/DKIM enforcement, aggressive list cleaning, and inbox placement monitoring.</p>
+</div>
+</div>
+</div>
+<div>
+<h5 class="font-mono text-xs uppercase text-ink-dark font-bold tracking-wider mb-2.5 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-gold"></span> Tooling &amp; Enterprise Stack
+              </h5>
+<div class="flex flex-wrap gap-2 text-[11px] font-mono">
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Klaviyo Premier</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Attentive / Postscript SMS</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Litmus Email Testing</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Segment CDP</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Braze</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Mailgun Infrastructure</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 06 Detail -->
+<div class="practice-detail-card hidden bg-[#FAF8F4] border-2 border-crimson/30 p-7 lg:p-10 rounded-sm shadow-md relative" id="practice-detail-6">
+<div class="flex items-center justify-between border-b border-[#1A1817]/10 pb-5 mb-7">
+<div class="flex items-center gap-3">
+<span class="bg-crimson text-cream font-mono text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-sm">DEPT 06 // EXECUTIVE ANALYTICS</span>
+<span class="text-xs font-mono text-ink-subtle hidden sm:inline">• REAL-TIME P&amp;L TELEMETRY</span>
+</div>
+<button class="text-ink-muted hover:text-crimson focus:outline-none flex items-center gap-1 font-mono text-xs uppercase transition-colors" onclick="window.closePracticeDetails()" type="button">
+<span class="">Dismiss Panel</span> <span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-4 lg:border-r border-[#1A1817]/10 lg:pr-8">
+<h4 class="font-serif italic text-3xl lg:text-4xl text-ink-dark mb-3">Analytics &amp; Executive Reporting</h4>
+<p class="font-sans text-sm text-ink-muted leading-relaxed mb-6">
+              No vanity metrics or manipulated screenshots. We build executive dashboard war rooms mapping every single marketing expenditure straight into EBITDA, LTV/CAC ratios, and net margins.
+            </p>
+<div class="p-4 bg-crimson-light/50 border border-crimson/20 rounded-sm mb-6">
+<span class="text-[10px] font-mono uppercase text-crimson font-bold tracking-wider block mb-1">Expected Commercial Impact // KPI</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display text-3xl text-crimson">100%</span>
+<span class="text-xs font-sans text-ink-muted">True financial visibility &amp; zero attribution blind spots</span>
+</div>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-deep text-cream text-xs font-mono font-semibold tracking-wider uppercase px-5 py-3 rounded-sm shadow-sm transition-all hover:shadow-md" href="#contact">
+<span class="">Commission This Practice Area</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="lg:col-span-8 space-y-6">
+<div>
+<h5 class="font-mono text-xs uppercase text-ink-dark font-bold tracking-wider mb-3 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-crimson"></span> Core Deliverables &amp; Execution Roadmap
+              </h5>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">1. Live Boardroom Telemetry Dashboards</span>
+<p class="text-ink-muted leading-relaxed">Unified Looker/Tableau portals updating real-time MER, ad spend velocity, and net daily revenues.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">2. Multi-Touch Attribution Modeling</span>
+<p class="text-ink-muted leading-relaxed">Algorithmic first-touch, last-touch, and Shapley linear attribution models preventing false budget shifts.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">3. Cohort LTV &amp; Repurchase Tracking</span>
+<p class="text-ink-muted leading-relaxed">Granular 30/60/90/365-day retention cohort analyses by acquisition creative and customer archetype.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">4. Weekly Video Executive Briefings</span>
+<p class="text-ink-muted leading-relaxed">Direct 10-minute weekly asynchronous Loom deconstructions by senior quantitative media directors.</p>
+</div>
+</div>
+</div>
+<div>
+<h5 class="font-mono text-xs uppercase text-ink-dark font-bold tracking-wider mb-2.5 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-gold"></span> Tooling &amp; Enterprise Stack
+              </h5>
+<div class="flex flex-wrap gap-2 text-[11px] font-mono">
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Google Analytics 4 360</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Google BigQuery</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Looker</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Tableau Cloud</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Northbeam Attribution</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Fivetran ETL</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 07 Detail -->
+<div class="practice-detail-card hidden bg-[#FAF8F4] border-2 border-crimson/30 p-7 lg:p-10 rounded-sm shadow-md relative" id="practice-detail-7">
+<div class="flex items-center justify-between border-b border-[#1A1817]/10 pb-5 mb-7">
+<div class="flex items-center gap-3">
+<span class="bg-crimson text-cream font-mono text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-sm">DEPT 07 // BRAND IDENTITY &amp; PRESTIGE</span>
+<span class="text-xs font-mono text-ink-subtle hidden sm:inline">• LUXURY POSITIONING &amp; COVETABILITY</span>
+</div>
+<button class="text-ink-muted hover:text-crimson focus:outline-none flex items-center gap-1 font-mono text-xs uppercase transition-colors" onclick="window.closePracticeDetails()" type="button">
+<span class="">Dismiss Panel</span> <span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-4 lg:border-r border-[#1A1817]/10 lg:pr-8">
+<h4 class="font-serif italic text-3xl lg:text-4xl text-ink-dark mb-3">Brand Identity &amp; Aesthetic Prestige</h4>
+<p class="font-sans text-sm text-ink-muted leading-relaxed mb-6">
+              We endow ambitious companies with cinematic gravitas. From high-fashion editorial typography to physical tactile packaging and digital flagships that command unmistakable pricing power.
+            </p>
+<div class="p-4 bg-crimson-light/50 border border-crimson/20 rounded-sm mb-6">
+<span class="text-[10px] font-mono uppercase text-crimson font-bold tracking-wider block mb-1">Expected Commercial Impact // KPI</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display text-3xl text-crimson">+65%</span>
+<span class="text-xs font-sans text-ink-muted">Elevation in customer willingness-to-pay &amp; brand equity multiple</span>
+</div>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-deep text-cream text-xs font-mono font-semibold tracking-wider uppercase px-5 py-3 rounded-sm shadow-sm transition-all hover:shadow-md" href="#contact">
+<span class="">Commission This Practice Area</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="lg:col-span-8 space-y-6">
+<div>
+<h5 class="font-mono text-xs uppercase text-ink-dark font-bold tracking-wider mb-3 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-crimson"></span> Core Deliverables &amp; Execution Roadmap
+              </h5>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">1. Bespoke Custom Logotype &amp; Wordmark</span>
+<p class="text-ink-muted leading-relaxed">Optical kerning guidelines, tactile stationery systems, and timeless heritage branding marks.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">2. 120-Page Comprehensive Brand Bible</span>
+<p class="text-ink-muted leading-relaxed">Art direction matrices, lighting guidelines, typographic hierarchies, and strict color psychology rules.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">3. Tactile Packaging &amp; Unboxing Drama</span>
+<p class="text-ink-muted leading-relaxed">Embossed foil techniques, sustainable luxury substrates, and choreographed sensory unboxing journeys.</p>
+</div>
+<div class="p-3.5 bg-cream/60 border border-[#1A1817]/10 rounded-sm">
+<span class="font-bold text-ink-dark block mb-1">4. Cinema Title Sequences &amp; Sonic ID</span>
+<p class="text-ink-muted leading-relaxed">3D motion graphics openers, proprietary audio mnemonic logos, and dynamic social media motion guidelines.</p>
+</div>
+</div>
+</div>
+<div>
+<h5 class="font-mono text-xs uppercase text-ink-dark font-bold tracking-wider mb-2.5 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-gold"></span> Tooling &amp; Enterprise Stack
+              </h5>
+<div class="flex flex-wrap gap-2 text-[11px] font-mono">
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Figma Design Systems</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Cinema 4D / Octane</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Adobe Illustrator Master</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">After Effects</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Pantone Matching System</span>
+<span class="px-2.5 py-1 bg-[#1A1817] text-cream rounded-sm">Procreate Cinema</span>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -428,145 +911,323 @@
 <div class="space-y-2">
 <div class="flex items-center gap-2 text-crimson font-mono text-xs font-bold uppercase tracking-wider">
 <span class="material-symbols-outlined text-base">verified</span>
-<span>END-TO-END EXECUTION</span>
+<span class="">END-TO-END EXECUTION</span>
 </div>
 <p class="text-ink-muted leading-relaxed">
-            No fragmented vendor handoffs. We unify creative production, digital distribution, and attribution under one roof so campaigns launch faster and perform harder.
-          </p>
+          No fragmented vendor handoffs. We unify creative production, digital distribution, and attribution under one roof so campaigns launch faster and perform harder.
+        </p>
 </div>
 <div class="space-y-2">
 <div class="flex items-center gap-2 text-crimson font-mono text-xs font-bold uppercase tracking-wider">
 <span class="material-symbols-outlined text-base">equalizer</span>
-<span>PROPRIETARY ROAS MODELS</span>
+<span class="">PROPRIETARY ROAS MODELS</span>
 </div>
 <p class="text-ink-muted leading-relaxed">
-            Every paid campaign operates with custom bid algorithms, rapid 12-angle split testing, and strict CAC caps calibrated to your gross margin economics.
-          </p>
+          Every paid campaign operates with custom bid algorithms, rapid 12-angle split testing, and strict CAC caps calibrated to your gross margin economics.
+        </p>
 </div>
 <div class="space-y-2">
 <div class="flex items-center gap-2 text-crimson font-mono text-xs font-bold uppercase tracking-wider">
 <span class="material-symbols-outlined text-base">theater_comedy</span>
-<span>SOUTH ASIAN POP CULTURE MASTERY</span>
+<span class="">SOUTH ASIAN POP CULTURE MASTERY</span>
 </div>
 <p class="text-ink-muted leading-relaxed">
-            We combine cultural insight, strong visual direction, and audience-first storytelling to create social content built for attention and action.
-          </p>
+          We understand cultural momentum. Our creative directors weave local vernacular cues, audio hooks, and high-energy pacing into viral commerce reels.
+        </p>
 </div>
 </div>
 </div>
 </section>
+<!-- WORKS DONE / BLOCKBUSTER CASE STUDIES SECTION -->
 <!-- CLIENT REVIEWS & TESTIMONIALS SECTION -->
 <section class="py-24 px-6 lg:px-12 bg-[#F5F2EC] border-b border-[#1A1817]/10" id="testimonials">
 <div class="max-w-7xl mx-auto">
-<div class="text-center max-w-2xl mx-auto mb-16">
-<span class="text-crimson font-mono text-xs uppercase tracking-widest font-semibold block mb-2">03 // DIRECTORS CUT</span>
-<h2 class="font-serif italic text-4xl lg:text-5xl text-ink-dark mb-4">Client Verdicts</h2>
-<p class="font-sans text-sm text-ink-muted">
-          Hear directly from the founders, CMOs, and venture leaders who trusted us with their commercial growth.
-        </p>
-</div>
+<div class="text-center max-w-2xl mx-auto mb-16"><span class="text-crimson font-mono text-xs uppercase tracking-widest font-semibold block mb-2">03 // VIDEO TESTIMONIALS &amp; CASE STUDIES</span>
+<h2 class="font-serif italic text-4xl lg:text-5xl text-ink-dark mb-4">Watch Their Stories</h2>
+<p class="font-sans text-sm text-ink-muted">Watch founders, CMOs, and venture leaders share their commercial growth stories on tape.</p></div>
 <!-- Testimonials Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Review 1 -->
-<div class="bg-[#FAF8F4] p-8 border border-[#1A1817]/10 rounded-sm flex flex-col justify-between relative shadow-sm">
-<div>
-<div class="flex items-center gap-1 text-gold mb-4">
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8"><!-- Video Card 1 -->
+<div class="bg-[#FAF8F4] border border-[#1A1817]/10 rounded-sm overflow-hidden flex flex-col justify-between group shadow-sm hover:border-crimson/40 transition-all duration-300">
+  <div>
+    <!-- Video Preview Frame -->
+    <div class="relative aspect-video w-full bg-[#1A1817] overflow-hidden cursor-pointer" onclick="window.openVideoTestimonial('Vikram Kulkarni', 'Founder &amp; CEO, Deccan Brew Co.', 'How Deccan Brew Scaled to 8.4x ROAS with Cinema Storytelling', '01:42')">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Vikram Kulkarni Testimonial" class="w-full h-full object-cover opacity-70 group-hover:scale-105 group-hover:opacity-60 transition-all duration-500">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#1A1817] via-transparent to-black/30"></div>
+      <!-- Top Badges -->
+      <div class="absolute top-3 left-3 flex items-center gap-2">
+        <span class="bg-crimson text-cream font-mono text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-sm flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-cream animate-pulse"></span> 4K UHD // RECORDED
+        </span>
+      </div>
+      <div class="absolute top-3 right-3">
+        <span class="bg-[#1A1817]/80 backdrop-blur-md text-gold font-mono text-[10px] font-semibold px-2 py-0.5 rounded-sm border border-gold/20">
+          01:42
+        </span>
+      </div>
+      <!-- Center Play Button -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="w-14 h-14 rounded-full bg-crimson/90 text-cream flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-crimson transition-all duration-300 border border-cream/20">
+          <span class="material-symbols-outlined text-3xl ml-1">play_arrow</span>
+        </div>
+      </div>
+      <!-- Bottom Ticker inside thumb -->
+      <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[10px] font-mono text-cream/80">
+        <span class="">SCALE: ₹14Cr REVENUE</span>
+        <span class="text-gold">WATCH BRIEF •</span>
+      </div>
+    </div>
+    <!-- Content Info -->
+    <div class="p-6">
+      <div class="flex items-center gap-1 text-gold mb-2">
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+      </div>
+      <h3 class="font-serif italic text-lg text-ink-dark leading-snug mb-2 group-hover:text-crimson transition-colors">
+        “From burning ad spend to an 8.4x return with cinema-level video storytelling.”
+      </h3>
+      <p class="font-sans text-xs text-ink-muted leading-relaxed">
+        Deccan Brew scaled direct D2C subscriber volume across 4 metro territories in under two quarters.
+      </p>
+    </div>
+  </div>
+  <div class="px-6 pb-6 pt-4 border-t border-[#1A1817]/10 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-full bg-crimson-light text-crimson font-mono font-bold flex items-center justify-center text-xs">
+        VK
+      </div>
+      <div>
+        <h4 class="font-sans font-semibold text-xs text-ink-dark">Vikram Kulkarni</h4>
+        <p class="font-mono text-[10px] text-ink-muted">Founder &amp; CEO, Deccan Brew Co.</p>
+      </div>
+    </div>
+    <button type="button" onclick="window.openVideoTestimonial('Vikram Kulkarni', 'Founder &amp; CEO, Deccan Brew Co.', 'How Deccan Brew Scaled to 8.4x ROAS with Cinema Storytelling', '01:42')" class="text-crimson font-mono text-[11px] uppercase tracking-wider font-semibold hover:underline flex items-center gap-0.5">
+      Play <span class="material-symbols-outlined text-sm">play_circle</span>
+    </button>
+  </div>
 </div>
-<p class="font-serif italic text-xl text-ink-dark leading-snug mb-6 font-normal">
-              "Digital Magnet Media transformed our business. We went from burning cash on generic product photo ads to generating an 8.4x return with cinema-level video storytelling."
-            </p>
+
+<!-- Video Card 2 (Verified Highlight) -->
+<div class="bg-[#FAF8F4] border-2 border-crimson/30 rounded-sm overflow-hidden flex flex-col justify-between group shadow-sm hover:border-crimson transition-all duration-300 relative">
+  <div class="absolute -top-3 right-6 bg-crimson text-cream font-mono text-[9px] tracking-wider uppercase px-2.5 py-0.5 rounded-sm z-20 shadow-sm">
+    VERIFIED CLIENT TAPE
+  </div>
+  <div>
+    <!-- Video Preview Frame -->
+    <div class="relative aspect-video w-full bg-[#1A1817] overflow-hidden cursor-pointer" onclick="window.openVideoTestimonial('Ananya Rao', 'VP Growth, Blazr Technologies', 'Viral Choreography: Generating ₹1.4 Crores in 45 Days', '02:15')">
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Ananya Rao Testimonial" class="w-full h-full object-cover opacity-70 group-hover:scale-105 group-hover:opacity-60 transition-all duration-500">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#1A1817] via-transparent to-black/30"></div>
+      <!-- Top Badges -->
+      <div class="absolute top-3 left-3 flex items-center gap-2">
+        <span class="bg-crimson text-cream font-mono text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-sm flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-cream animate-pulse"></span> 4K UHD // RECORDED
+        </span>
+      </div>
+      <div class="absolute top-3 right-3">
+        <span class="bg-[#1A1817]/80 backdrop-blur-md text-gold font-mono text-[10px] font-semibold px-2 py-0.5 rounded-sm border border-gold/20">
+          02:15
+        </span>
+      </div>
+      <!-- Center Play Button -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="w-14 h-14 rounded-full bg-crimson text-cream flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-crimson-deep transition-all duration-300 border border-cream/20">
+          <span class="material-symbols-outlined text-3xl ml-1">play_arrow</span>
+        </div>
+      </div>
+      <!-- Bottom Ticker inside thumb -->
+      <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[10px] font-mono text-cream/80">
+        <span class="">OUTCOME: ₹1.4CR IN 45 DAYS</span>
+        <span class="text-gold">WATCH BRIEF •</span>
+      </div>
+    </div>
+    <!-- Content Info -->
+    <div class="p-6">
+      <div class="flex items-center gap-1 text-gold mb-2">
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+      </div>
+      <h3 class="font-serif italic text-lg text-ink-dark leading-snug mb-2 group-hover:text-crimson transition-colors">
+        “They cracked a viral angle for our activewear brand that brought ₹1.4 Crores in 45 days.”
+      </h3>
+      <p class="font-sans text-xs text-ink-muted leading-relaxed">
+        Dynamic hook choreography and vernacular creator campaigns dropped customer acquisition costs by 41%.
+      </p>
+    </div>
+  </div>
+  <div class="px-6 pb-6 pt-4 border-t border-[#1A1817]/10 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-full bg-crimson-deep text-cream font-mono font-bold flex items-center justify-center text-xs">
+        AR
+      </div>
+      <div>
+        <h4 class="font-sans font-semibold text-xs text-ink-dark">Ananya Rao</h4>
+        <p class="font-mono text-[10px] text-ink-muted">VP Growth, Blazr Technologies</p>
+      </div>
+    </div>
+    <button type="button" onclick="window.openVideoTestimonial('Ananya Rao', 'VP Growth, Blazr Technologies', 'Viral Choreography: Generating ₹1.4 Crores in 45 Days', '02:15')" class="text-crimson font-mono text-[11px] uppercase tracking-wider font-semibold hover:underline flex items-center gap-0.5">
+      Play <span class="material-symbols-outlined text-sm">play_circle</span>
+    </button>
+  </div>
 </div>
-<div class="pt-6 border-t border-[#1A1817]/10 flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-crimson-light text-crimson font-mono font-bold flex items-center justify-center text-sm">
-              VK
-            </div>
-<div>
-<h4 class="font-sans font-semibold text-sm text-ink-dark">Vikram Kulkarni</h4>
-<p class="font-mono text-[11px] text-ink-muted">Founder &amp; CEO, Deccan Brew Co.</p>
+
+<!-- Video Card 3 -->
+<div class="bg-[#FAF8F4] border border-[#1A1817]/10 rounded-sm overflow-hidden flex flex-col justify-between group shadow-sm hover:border-crimson/40 transition-all duration-300">
+  <div>
+    <!-- Video Preview Frame -->
+    <div class="relative aspect-video w-full bg-[#1A1817] overflow-hidden cursor-pointer" onclick="window.openVideoTestimonial('Michael Stern', 'Principal, Luminary NY', 'Architectural Moat: Tripling Inbound High-Ticket Inquiries', '01:08')">
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Michael Stern Testimonial" class="w-full h-full object-cover opacity-70 group-hover:scale-105 group-hover:opacity-60 transition-all duration-500">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#1A1817] via-transparent to-black/30"></div>
+      <!-- Top Badges -->
+      <div class="absolute top-3 left-3 flex items-center gap-2">
+        <span class="bg-crimson text-cream font-mono text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-sm flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-cream animate-pulse"></span> 4K UHD // RECORDED
+        </span>
+      </div>
+      <div class="absolute top-3 right-3">
+        <span class="bg-[#1A1817]/80 backdrop-blur-md text-gold font-mono text-[10px] font-semibold px-2 py-0.5 rounded-sm border border-gold/20">
+          01:08
+        </span>
+      </div>
+      <!-- Center Play Button -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="w-14 h-14 rounded-full bg-crimson/90 text-cream flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-crimson transition-all duration-300 border border-cream/20">
+          <span class="material-symbols-outlined text-3xl ml-1">play_arrow</span>
+        </div>
+      </div>
+      <!-- Bottom Ticker inside thumb -->
+      <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[10px] font-mono text-cream/80">
+        <span class="">GROWTH: 3X INBOUND LEADS</span>
+        <span class="text-gold">WATCH BRIEF •</span>
+      </div>
+    </div>
+    <!-- Content Info -->
+    <div class="p-6">
+      <div class="flex items-center gap-1 text-gold mb-2">
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+      </div>
+      <h3 class="font-serif italic text-lg text-ink-dark leading-snug mb-2 group-hover:text-crimson transition-colors">
+        “The design, technical performance, and SEO execution are flawless. Inquiries tripled.”
+      </h3>
+      <p class="font-sans text-xs text-ink-muted leading-relaxed">
+        Secured premier search placement for luxury commercial developments in Manhattan and SoHo.
+      </p>
+    </div>
+  </div>
+  <div class="px-6 pb-6 pt-4 border-t border-[#1A1817]/10 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-full bg-gold-light text-crimson font-mono font-bold flex items-center justify-center text-xs">
+        MS
+      </div>
+      <div>
+        <h4 class="font-sans font-semibold text-xs text-ink-dark">Michael Stern</h4>
+        <p class="font-mono text-[10px] text-ink-muted">Principal, Luminary NY</p>
+      </div>
+    </div>
+    <button type="button" onclick="window.openVideoTestimonial('Michael Stern', 'Principal, Luminary NY', 'Architectural Moat: Tripling Inbound High-Ticket Inquiries', '01:08')" class="text-crimson font-mono text-[11px] uppercase tracking-wider font-semibold hover:underline flex items-center gap-0.5">
+      Play <span class="material-symbols-outlined text-sm">play_circle</span>
+    </button>
+  </div>
+</div></div>
 </div>
+<!-- Interactive Video Player Modal Overlay -->
+<div id="testimonial-video-modal" role="dialog" aria-modal="true" aria-labelledby="modal-video-title" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4 lg:p-8" onclick="if(event.target === this) window.closeVideoTestimonial()">
+  <div class="max-w-4xl w-full bg-[#1A1817] border border-crimson/40 rounded-sm shadow-2xl overflow-hidden relative flex flex-col">
+    <!-- Modal Header Bar -->
+    <div class="py-3 px-5 bg-[#121110] border-b border-cream/10 flex items-center justify-between text-xs font-mono">
+      <div class="flex items-center gap-3">
+        <span class="w-2 h-2 rounded-full bg-crimson animate-pulse"></span>
+        <span class="text-gold font-semibold tracking-wider uppercase" id="modal-client-meta">DIRECTORIAL DEBRIEF // VIKRAM KULKARNI</span>
+      </div>
+      <button type="button" onclick="window.closeVideoTestimonial()" class="text-cream/60 hover:text-crimson flex items-center gap-1 uppercase transition-colors">
+        Close <span class="material-symbols-outlined text-base">close</span>
+      </button>
+    </div>
+    <!-- Video Screen Simulation Area -->
+    <div class="relative aspect-video w-full bg-[#0a0a0a] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-crimson/20 via-transparent to-black"></div>
+      <!-- Playback Display State -->
+      <div class="text-center z-10 px-6 max-w-xl">
+        <span class="inline-block px-3 py-1 bg-crimson text-cream font-mono text-[10px] tracking-widest uppercase mb-4 rounded-sm">
+          TESTIMONIAL PREVIEW
+        </span>
+        <h3 id="modal-video-title" class="font-serif italic text-2xl lg:text-3xl text-cream mb-4 font-normal">
+          Scale Story Tape
+        </h3>
+        <p id="modal-video-client" class="font-sans text-xs text-cream/70 mb-6">
+          Client Name • Company
+        </p>
+        <p class="text-sm text-cream/70">The full video is not available yet. Contact us to learn more.</p>
+      </div>
+
+    </div>
+    <!-- Modal Footer Callout -->
+    <div class="py-3 px-5 bg-[#121110] border-t border-cream/10 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-cream/60 gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-gold">✦</span>
+        <span class="">Video preview only — full recordings are not available yet.</span>
+      </div>
+      <a href="#contact" onclick="window.closeVideoTestimonial()" class="text-cream hover:text-crimson font-semibold uppercase tracking-wider transition-colors flex items-center gap-1">
+        Commission Your Growth Campaign <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
+    </div>
+  </div>
 </div>
-</div>
-<!-- Review 2 -->
-<div class="bg-[#FAF8F4] p-8 border border-crimson/30 rounded-sm flex flex-col justify-between relative shadow-sm">
-<div class="absolute -top-3 right-6 bg-crimson text-cream font-mono text-[10px] tracking-wider uppercase px-2.5 py-0.5 rounded-sm">
-            VERIFIED OUTCOME
-          </div>
-<div>
-<div class="flex items-center gap-1 text-gold mb-4">
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="font-serif italic text-xl text-ink-dark leading-snug mb-6 font-normal">
-              "Their team thinks like showrunners, not spreadsheet clerks. They cracked a viral angle for our activewear brand that brought in ₹1.4 Crores in 45 days. Complete game changer."
-            </p>
-</div>
-<div class="pt-6 border-t border-[#1A1817]/10 flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-crimson-deep text-cream font-mono font-bold flex items-center justify-center text-sm">
-              AR
-            </div>
-<div>
-<h4 class="font-sans font-semibold text-sm text-ink-dark">Ananya Rao</h4>
-<p class="font-mono text-[11px] text-ink-muted">VP Growth, Blazr Technologies</p>
-</div>
-</div>
-</div>
-<!-- Review 3 -->
-<div class="bg-[#FAF8F4] p-8 border border-[#1A1817]/10 rounded-sm flex flex-col justify-between relative shadow-sm">
-<div>
-<div class="flex items-center gap-1 text-gold mb-4">
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="font-serif italic text-xl text-ink-dark leading-snug mb-6 font-normal">
-              "The design, technical performance, and SEO execution are flawless. Our organic inbound inquiries tripled within two quarters. Unrivaled creative discipline."
-            </p>
-</div>
-<div class="pt-6 border-t border-[#1A1817]/10 flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-gold-light text-crimson font-mono font-bold flex items-center justify-center text-sm">
-              MS
-            </div>
-<div>
-<h4 class="font-sans font-semibold text-sm text-ink-dark">Michael Stern</h4>
-<p class="font-mono text-[11px] text-ink-muted">Principal, Luminary NY</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+
+<script>
+  window.openVideoTestimonial = function(client, role, title, duration) {
+    var modal = document.getElementById('testimonial-video-modal');
+    if (!modal) return;
+    document.getElementById('modal-client-meta').innerText = 'DIRECTORIAL DEBRIEF // ' + client.toUpperCase();
+    document.getElementById('modal-video-title').innerText = title;
+    document.getElementById('modal-video-client').innerText = client + ' — ' + role;
+
+    window.testimonialTrigger = document.activeElement;
+    modal.classList.remove('hidden');
+    modal.querySelector('button').focus();
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeVideoTestimonial = function() {
+    var modal = document.getElementById('testimonial-video-modal');
+    if (!modal) return;
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+    if (window.testimonialTrigger) window.testimonialTrigger.focus();
+  };
+
+
+</script></section>
 <!-- START A PROJECT CALLOUT SECTION -->
 <section class="py-20 px-6 lg:px-12 bg-[#1A1817] text-[#F5F2EC] relative overflow-hidden" id="contact">
 <div class="max-w-4xl mx-auto text-center relative z-10">
 <span class="text-gold font-mono text-xs uppercase tracking-widest font-semibold block mb-4">READY TO SCALE?</span>
 <h2 class="font-display text-5xl lg:text-7xl tracking-tight uppercase mb-6 leading-none">
-        LET'S PRODUCE YOUR NEXT <br/><span class="text-crimson">COMMERCIAL HIT.</span>
+        LET'S PRODUCE YOUR NEXT <br><span class="text-crimson">COMMERCIAL HIT.</span>
 </h2>
 <p class="font-serif italic text-xl lg:text-2xl text-cream/80 max-w-2xl mx-auto mb-10 font-light">
         Schedule a private directorial briefing. We analyze your unit economics and present an actionable campaign blueprint within 48 hours.
       </p>
 <!-- Clean Action Form -->
-<form class="max-w-xl mx-auto flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault();">
-<input class="flex-1 bg-[#282523] border border-cream/20 text-cream px-4 py-3.5 text-sm focus:border-crimson focus:ring-0 rounded-sm placeholder:text-cream/40" placeholder="Enter your corporate email..." required="" type="email"/>
+<form class="max-w-xl mx-auto flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault(); window.location.href = 'mailto:hello@digitalmagnetmedia.com?subject=' + encodeURIComponent('Brand enquiry') + '&amp;body=' + encodeURIComponent('Hello Digital Magnet Media, I would like to discuss my brand. Contact email: ' + this.elements.email.value);">
+<input class="flex-1 bg-[#282523] border border-cream/20 text-cream px-4 py-3.5 text-sm focus:border-crimson focus:ring-0 rounded-sm placeholder:text-cream/40" name="email" aria-label="Your corporate email" placeholder="Enter your corporate email..." required="" type="email">
 <button class="bg-crimson hover:bg-crimson-deep text-cream px-8 py-3.5 text-xs font-mono font-bold uppercase tracking-wider rounded-sm transition-colors flex items-center justify-center gap-2" type="submit">
-<span>AUDITION BRAND</span>
+<span class="">AUDITION BRAND</span>
 <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </button>
 </form>
 <div class="flex items-center justify-center gap-6 mt-8 text-[11px] font-mono text-cream/50 tracking-wider">
-<span>STRICT CONFIDENTIALITY</span>
-<span>•</span>
-<span>NO RETAINER COMMITMENT FOR AUDIT</span>
+<span class="">STRICT CONFIDENTIALITY</span>
+<span class="">•</span>
+<span class="">NO RETAINER COMMITMENT FOR AUDIT</span>
 </div>
 </div>
 </section>
@@ -577,11 +1238,11 @@
 <div>
 <div class="site-footer__wordmark">DIGITAL MAGNET MEDIA</div>
 <div class="site-footer__tag">BRANDS. CINEMA. IMPACT.</div>
-<p class="site-footer__copy">A digital marketing studio combining clear strategy, cinematic creative, performance media, and conversion-focused web experiences.</p>
+<p class="site-footer__copy">A digital marketing office branch combining clear strategy, cinematic creative, performance media, and conversion-focused web experiences.</p>
 </div>
 <div>
-<div class="site-footer__title">Bengaluru Studio</div>
-<div class="site-footer__text">Nagarbhaavi, Bengaluru<br>Karnataka, India<br>+91 80 4122 9080</div>
+<div class="site-footer__title">Bengaluru Office Branch</div>
+<div class="site-footer__text">Nagarbhavi, Bengaluru<br>Karnataka, India<br>+91 80 4122 9080</div>
 </div>
 <div>
 <div class="site-footer__title">New York Desk</div>
@@ -601,5 +1262,58 @@
 </footer>
 
 
-</body></html>
+<script>
+  window.togglePracticeDetails = function(index) {
+    var container = document.getElementById('practice-details-container');
+    if (!container) return;
+    var targetCard = document.getElementById('practice-detail-' + index);
+    var targetBtn = document.getElementById('practice-tab-' + index);
+    var allCards = document.querySelectorAll('.practice-detail-card');
+    var allButtons = document.querySelectorAll('.practice-item-btn');
 
+    // Check if the current one is already active and visible
+    var isCurrentlyActive = targetBtn && targetBtn.classList.contains('is-active') && targetCard && !targetCard.classList.contains('hidden') && container.style.display !== 'none';
+
+    if (isCurrentlyActive) {
+      // Toggle closed
+      container.style.display = 'none';
+      if (targetCard) targetCard.classList.add('hidden');
+      if (targetBtn) targetBtn.classList.remove('is-active');
+      return;
+    }
+
+    // Deactivate all buttons
+    allButtons.forEach(function(btn) {
+      btn.classList.remove('is-active');
+    });
+
+    // Hide all cards
+    allCards.forEach(function(card) {
+      card.classList.add('hidden');
+    });
+
+    // Activate target
+    if (targetCard && targetBtn) {
+      container.style.display = 'block';
+      targetCard.classList.remove('hidden');
+      targetBtn.classList.add('is-active');
+
+      // Smooth scroll if needed for visibility
+      targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  };
+
+  window.closePracticeDetails = function() {
+    var container = document.getElementById('practice-details-container');
+    if (container) {
+      container.style.display = 'none';
+      var allCards = document.querySelectorAll('.practice-detail-card');
+      allCards.forEach(function(card) { card.classList.add('hidden'); });
+      var allButtons = document.querySelectorAll('.practice-item-btn');
+      allButtons.forEach(function(btn) { btn.classList.remove('is-active'); });
+    }
+  };
+</script>
+
+<script>document.addEventListener('keydown', function(event) { if (event.key === 'Escape') window.closeVideoTestimonial(); });</script>
+</body></html>
